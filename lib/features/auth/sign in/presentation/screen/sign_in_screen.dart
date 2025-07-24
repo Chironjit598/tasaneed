@@ -178,55 +178,21 @@ class SignInScreen extends StatelessWidget {
                           25.height,
 
                           /// Submit Button here
-                          CommonButton(
-                            titleText: AppString.signIn+" as Parents",
-                            isLoading: controller.isLoading,
-                            onTap: (){
-                              LocalStorage.myRoll="parents";
-                              controller.signInUser();
-                            },
-                          ),
-                          10.height,
+
 
                           /// Submit Button here
                           CommonButton(
-                            titleText: AppString.signIn+" as Nunny",
+                            buttonRadius: 60,
+                            titleText: AppString.signIn,
                             isLoading: controller.isLoading,
                             onTap: (){
-                              LocalStorage.myRoll="nunny";
                               controller.signInUser();
                             },
                           ),
 
-                          12.height,
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 1,
-                                width: 96.w,
-                                color: AppColors.textFiledColor,
-                              ),
-
-                              CommonText(
-                                left: 8,
-                                  right: 8,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  text: AppString.orLoginWith),
 
 
-
-                              Container(
-                                height: 1,
-                                width: 96.w,
-                                color: AppColors.textFiledColor,
-                              ),
-                            ],
-                          ),
-
-                          12.height,
+                          16.height,
 
                           ContinueWithGoogle(),
                           20.height,
@@ -240,7 +206,7 @@ class SignInScreen extends StatelessWidget {
                               CommonText(
 
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w700,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.textFiledColor,
                                   text: AppString.newHere),
 
@@ -253,7 +219,7 @@ class SignInScreen extends StatelessWidget {
                                 child: CommonText(
 
                                     fontSize: 12,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w600,
                                     color: AppColors.primaryColor,
                                     text: AppString.joinUs),
                               ),

@@ -22,7 +22,7 @@ class CustomBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: 370.h,
+      height: 372.h,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

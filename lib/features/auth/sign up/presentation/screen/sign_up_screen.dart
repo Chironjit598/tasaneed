@@ -42,40 +42,38 @@ class SignUpScreen extends StatelessWidget {
                     },
                     child: Icon(
                       Icons.arrow_back_ios,
-                      color: AppColors.textFiledColor,
+                      color: AppColors.black,
                     ),
                   ).start,
 
 
 
                   Center(
-                    child: ClipOval(
-                      child: SizedBox(
-                        height: 130,
-                        width: 130,
-                        child: CommonImage(
-                          fill: BoxFit.cover,
-                          imageSrc: AppImages.logo,
-                        ).center,
-                      ),
-                    ),
+                    child: CommonImage(
+                      fill: BoxFit.cover,
+                      height: 120,
+                      width: 120,
+                      imageSrc: AppImages.logo,
+                    ).center,
                   ),
 
-                  25.height,
+                  32.height,
 
                   CommonText(
 
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                      text: AppString.nannyInformation),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.title2,
+                      text: AppString.yourInformation),
 
 
-                  12.height,
+                  16.height,
                   CommonText(
 
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       maxLines: 2,
+                      color: AppColors.bodyClr,
                       text: AppString.nannyInformationDes),
 
 
@@ -87,37 +85,20 @@ class SignUpScreen extends StatelessWidget {
 
                   /// Submit Button Here
                   CommonButton(
-                    titleText: AppString.signUp,
+                    buttonRadius: 60,
+                    titleText: AppString.continuess,
                     isLoading: controller.isLoading,
                     onTap: controller.signUpUser,
                   ),
                   25.height,
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 1,
-                        width: 96.w,
-                        color: AppColors.textFiledColor,
-                      ),
-
-                      CommonText(
-                          left: 8,
-                          right: 8,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          text: AppString.orSignUpWith),
-
-
-
-                      Container(
-                        height: 1,
-                        width: 96.w,
-                        color: AppColors.textFiledColor,
-                      ),
-                    ],
-                  ),
+                  CommonText(
+                      left: 8,
+                      right: 8,
+                      fontSize: 12,
+                      color: AppColors.bodyClr,
+                      fontWeight: FontWeight.w400,
+                      text: AppString.or),
 
                   15.height,
 

@@ -11,6 +11,7 @@ class AppString {
   static const String areYouSure = "Are you sure";
   static const String enterYouPassword = "Enter you password";
   static const String enterYourFullName = "Enter your full name";
+  static const String selectYourRole = "Select your role";
   static const String enterYourName = "Enter your name";
   static const String cancel = "Cancel";
   static const String cancelBooking = "Cancel Booking";
@@ -41,6 +42,7 @@ class AppString {
   static const String password = "Password";
   static const String continues = "Continue";
   static const String email = "Email";
+  static const String chooseRole = "Choose Role";
   static const String codeHasBeenSendTo = "Code has been send to";
   static const String otpIsInValid = "Otp is inValid";
   static const String resendCode = "Resend Code";
@@ -60,6 +62,7 @@ class AppString {
   static const String remove = "Remove";
   static const String orLoginWith = "Or login with";
   static const String orSignUpWith = "Or sign up with";
+  static const String or = "Or";
   static const String signIn = "Sign in";
   static const String doNotHaveAccount = "Don’t have an account";
   static const String signUp = "Sign up";
@@ -242,6 +245,7 @@ class AppString {
   static const String enterCertifications = "Enter Certifications";
   static const String company = "Company";
   static const String position = "Position";
+  static const String continuess = "Continue";
   static const String submit = "Submit";
   static const String dayRate = "Day Rate";
   static const String monday = "Monday";
@@ -264,6 +268,7 @@ class AppString {
   static const String onboardingThreeTitle = "Showcase Your Own Art";
   static const String joinUs = "Join Us";
   static const String confirm = "Confirm";
+  static const String yourInformation = "Your Information";
 
   static const String onboardingDesOne = "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";
   static const String onboardingDesTwo = "Support independent creators by purchasing or commissioning artwork with just a few taps.";

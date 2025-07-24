@@ -17,8 +17,8 @@ class ContinueWithGoogle extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(60.r),
-        border: Border.all(color: AppColors.textFiledColor)
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: AppColors.normalGray2)
       ),
       
       child: Row(

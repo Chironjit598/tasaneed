@@ -71,19 +71,15 @@ class _VerifyUserState extends State<VerifyUser> {
 
 
 
-                      55.height,
+                      73.height,
 
                       Center(
-                        child: ClipOval(
-                          child: SizedBox(
-                            height: 130,
-                            width: 130,
-                            child: CommonImage(
-                              fill: BoxFit.cover,
-                              imageSrc: AppImages.logo,
-                            ).center,
-                          ),
-                        ),
+                        child: CommonImage(
+                          height: 120,
+                          width: 120,
+                          fill: BoxFit.cover,
+                          imageSrc: AppImages.logo,
+                        ).center,
                       ),
 
 
@@ -180,7 +176,7 @@ class _VerifyUserState extends State<VerifyUser> {
                         isLoading: controller.isLoadingVerify,
                         onTap: () {
                           if (formKey.currentState!.validate()) {
-                            Get.toNamed(AppRoutes.accountVerifiedScreen);
+                            Get.toNamed(AppRoutes.signIn);
                           }
                         },
                       ),

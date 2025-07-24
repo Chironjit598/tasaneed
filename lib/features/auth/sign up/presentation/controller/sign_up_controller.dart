@@ -42,6 +42,11 @@ class SignUpController extends GetxController {
   TextEditingController emailController = TextEditingController(
     text: kDebugMode ? "developernaimul00@gmail.com" : '',
   );
+
+
+  TextEditingController chooseRoleController = TextEditingController(
+
+  );
   TextEditingController passwordController = TextEditingController(
     text: kDebugMode ? 'hello123' : '',
   );
@@ -52,8 +57,27 @@ class SignUpController extends GetxController {
     text: kDebugMode ? '1865965581' : '',
   );
   TextEditingController otpController = TextEditingController(
-    text: kDebugMode ? '123456' : '',
+    text: kDebugMode ? '1234' : '',
   );
+
+
+  var selectedRole = '';
+
+  List roleList = [
+
+    "User / Collector",
+    "Artist / Curator",
+    "Museum / Educational Institution",
+
+
+  ];
+
+  void changeChooseRole(String value) {
+    selectedRole = value;
+    chooseRoleController.text=value;
+    update();
+  }
+
 
   @override
   void dispose() {
