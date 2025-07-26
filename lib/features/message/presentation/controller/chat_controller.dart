@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tasaned_project/utils/constants/app_images.dart';
 import '../../data/model/chat_list_model.dart';
 import '../../../../services/api/api_service.dart';
 import '../../../../services/socket/socket_service.dart';
@@ -26,7 +27,7 @@ class ChatController extends GetxController {
         id: "",
         fullName: "Chironjit Roy",
         image:
-            "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+            AppImages.profileActive,
       ),
       latestMessage: LatestMessage(
         id: "",
@@ -39,7 +40,7 @@ class ChatController extends GetxController {
         id: "",
         fullName: "Chironjit Roy",
         image:
-            "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+        AppImages.profileActive,
       ),
       latestMessage: LatestMessage(
         id: "",
@@ -52,7 +53,7 @@ class ChatController extends GetxController {
         id: "",
         fullName: "Chironjit Roy",
         image:
-            "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+        AppImages.female,
       ),
       latestMessage: LatestMessage(
         id: "",

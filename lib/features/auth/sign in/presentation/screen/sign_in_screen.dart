@@ -106,7 +106,7 @@ class SignInScreen extends StatelessWidget {
 
                           /// Account Password Input here
                           const CommonText(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w700,
                             text: AppString.password,
                             bottom: 8,

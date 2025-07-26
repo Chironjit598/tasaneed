@@ -44,7 +44,7 @@ Widget chatListItem({required ChatModel item}) {
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                     ),
-                    CommonImage(imageSrc: AppImages.verifiedBatch),
+                    // CommonImage(imageSrc: AppImages.verifiedBatch),
                   ],
                 ),
 

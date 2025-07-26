@@ -22,7 +22,7 @@ class LogOutPopUp{
                CommonImage(
                    height: 88,
                    width: 78,
-                   imageSrc: AppImages.alert),
+                   imageSrc: AppImages.profileActive),
 
                CommonText(
                    fontSize: 15,

@@ -21,6 +21,11 @@ class AppColors {
   static const normalGray2 = Color(0xffd4d4dc);
   static const gridClr = Color(0xffFFEDD5);
   static const chatClr = Color(0xffE5E8EC);
+  static const redBg = Color(0xffFFFBFA);
+
+  static const searchBg = Color(0xffF6F8FA);
+  static const stroke = Color(0xffE6E6E6);
+  static const searchText = Color(0xffAAAAAA);
 
 
 

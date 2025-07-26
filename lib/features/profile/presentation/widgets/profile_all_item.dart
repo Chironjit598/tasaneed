@@ -57,7 +57,7 @@ class ProfileAllItem extends StatelessWidget {
 
                 Item(
                   iconColor: AppColors.primaryColor,
-                  image: AppImages.presence,
+                  image: AppImages.profileActive,
                   title: AppString.preference,
                   onTap: () => Get.toNamed(AppRoutes.preferenceScreen),
                 ),
@@ -173,22 +173,22 @@ class ProfileAllItem extends StatelessWidget {
                 onTap: () => Get.toNamed(AppRoutes.privacyPolicy),
               ),
 
-              17.height,
-              Item(
-                iconColor: AppColors.primaryColor,
-                image: AppImages.privacyPolicy,
-                title: AppString.termsOfServices
-                ,
-                onTap: () => Get.toNamed(AppRoutes.termsOfServices),
-              ),
-
-              17.height,
-              Item(
-                iconColor: AppColors.primaryColor,
-                image: AppImages.aboutUs,
-                title: AppString.aboutUs,
-                onTap: () => Get.toNamed(AppRoutes.aboutUsScreen),
-              ),
+              // 17.height,
+              // Item(
+              //   iconColor: AppColors.primaryColor,
+              //   image: AppImages.privacyPolicy,
+              //   title: AppString.termsOfServices
+              //   ,
+              //   onTap: () => Get.toNamed(AppRoutes.termsOfServices),
+              // ),
+              //
+              // 17.height,
+              // Item(
+              //   iconColor: AppColors.primaryColor,
+              //   image: AppImages.aboutUs,
+              //   title: AppString.aboutUs,
+              //   onTap: () => Get.toNamed(AppRoutes.aboutUsScreen),
+              // ),
 
 
             ],

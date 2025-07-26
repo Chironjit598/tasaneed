@@ -62,7 +62,7 @@ class NunnySavedItem extends StatelessWidget {
                       CommonImage(
                           height: 20,
                           width: 20,
-                          imageSrc: AppImages.verifiedBatch
+                          imageSrc: AppImages.female
                       )
 
 

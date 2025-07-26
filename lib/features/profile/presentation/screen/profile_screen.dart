@@ -29,9 +29,7 @@ class ProfileScreen extends StatelessWidget {
             
                 Stack(
                   children: [
-                    CommonImage(
-                        width: double.infinity,
-                        imageSrc: AppImages.profileBg),
+
 
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: 8.w),
@@ -65,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
                                   height: 100,
                                   width: 100,
 
-                                  imageSrc: AppImages.female),
+                                  imageSrc: AppImages.profileActive),
                             ),
                           ).center,
 
@@ -96,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
       ),
 
       /// Bottom Navigation Bar Section Starts here
-      bottomNavigationBar:  CommonBottomNavBar(currentIndex:LocalStorage.myRoll=="parents"? 4:3),
+      bottomNavigationBar:  CommonBottomNavBar(currentIndex:4),
     );
   }
 }

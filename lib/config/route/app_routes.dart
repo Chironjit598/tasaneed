@@ -1,22 +1,15 @@
 import 'package:get/get.dart';
-
-import '../../features/another_screens/children/presentation/screens/add_children_screen.dart';
-import '../../features/another_screens/children/presentation/screens/childen_details_screen.dart';
-import '../../features/another_screens/children/presentation/screens/edit_children_screen.dart';
+import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
+import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
+import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/home_screen.dart';
 import '../../features/another_screens/nunny_booking/presentation/screens/nunny_booking_screen.dart';
-import '../../features/another_screens/nunny_dettails_by_parents/presentation/screens/nunny_dettails_screen.dart';
-import '../../features/another_screens/nunny_home/presentation/screens/nunny_home_screen.dart';
 import '../../features/another_screens/parent_booking/presentation/screens/parent_booking_screen.dart';
-import '../../features/another_screens/parents_home/presentation/screens/parents_home_screen.dart';
 import '../../features/another_screens/saved/presentation/screens/saved_screens.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
 import '../../features/auth/forgot password/presentation/screen/verify_screen.dart';
 import '../../features/auth/sign in/presentation/screen/sign_in_screen.dart';
-import '../../features/auth/sign up/presentation/screen/account_verified_screen.dart';
-import '../../features/auth/sign up/presentation/screen/add_photo_screen.dart';
-import '../../features/auth/sign up/presentation/screen/join_mamaCare_screen.dart';
 import '../../features/auth/sign up/presentation/screen/sign_up_screen.dart';
 import '../../features/auth/sign up/presentation/screen/verify_user.dart';
 import '../../features/message/presentation/screen/chat_screen.dart';
@@ -82,6 +75,15 @@ class AppRoutes {
   static const String availabilityScreen = "/availabilityScreen";
   static const String rescheduleBooking = "/rescheduleBooking";
 
+
+
+  //============================
+  static const String userHomeScreen = "/userHomeScreen";
+  static const String categoryScreen = "/categoryScreen";
+  static const String learnAndGrowScreen = "/learnAndGrowScreen";
+
+
+
   static List<GetPage> routes = [
     GetPage(name: splash, page: () => const SplashScreen()),
     GetPage(name: onboarding, page: () =>  OnboardingScreen()),
@@ -101,22 +103,19 @@ class AppRoutes {
     GetPage(name: termsOfServices, page: () => const TermsOfServicesScreen()),
     GetPage(name: setting, page: () => const SettingScreen()),
 
-    GetPage(name: mamaCareScreen, page: () => JoinMamacareScreen()),
-    GetPage(name: accountVerifiedScreen, page: () => AccountVerifiedScreen()),
-    GetPage(name: addPhotoScreen, page: () => AddPhotoScreen()),
-    GetPage(name: parentHomeScreen, page: () => ParentsHomeScreen()),
     GetPage(name: parentBookingScreen, page: () => ParentBookingScreen()),
     GetPage(name: savedScreen, page: () => SavedScreens()),
-    GetPage(name: nunnyDetailsScreen, page: () => NunnyDetailsScreen()),
-    GetPage(name: children, page: () => ChildrenDetailsScreen()),
-    GetPage(name: addChildrenScreen, page: () => AddChildrenScreen()),
-    GetPage(name: editChildrenScreen, page: () => EditChildrenScreen()),
     GetPage(name: notificationSettings, page: () => NotificationSettings()),
     GetPage(name: helpAndSupportScreen, page: () => HelpAndSupportScreen()),
     GetPage(name: aboutUsScreen, page: () => AboutUsScreen()),
-    GetPage(name: nunnHomeScreen, page: () => NunnyHomeScreen()),
     GetPage(name: nunnyBookingScreen, page: () => NunnyBookingScreen()),
 
+
+    //================ user home screen
+
+    GetPage(name: userHomeScreen, page: () => UserHomeScreen()),
+    GetPage(name: categoryScreen, page: () => CategoryScreen()),
+    GetPage(name: learnAndGrowScreen, page: () => LearnAndGrowScreen()),
 
   ];
 }

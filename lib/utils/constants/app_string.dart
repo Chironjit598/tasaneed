@@ -268,7 +268,14 @@ class AppString {
   static const String onboardingThreeTitle = "Showcase Your Own Art";
   static const String joinUs = "Join Us";
   static const String confirm = "Confirm";
+  static const String recommendedArts = "Recommended Arts";
+  static const String upcomingExhibition = "Upcoming Exhibition";
+  static const String popularArtist = "Popular Artist";
+  static const String category = "Category";
+  static const String recentlyViewed = "Recently Viewed";
   static const String yourInformation = "Your Information";
+  static const String featureArts = "Feature Arts";
+  static const String searchHintText = "Search Artworks, Artists, Exhibitions";
 
   static const String onboardingDesOne = "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";
   static const String onboardingDesTwo = "Support independent creators by purchasing or commissioning artwork with just a few taps.";

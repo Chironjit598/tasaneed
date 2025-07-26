@@ -63,8 +63,8 @@ class EditProfile extends StatelessWidget {
                                       height: 93.h,
                                       fit: BoxFit.fill,
                                     )
-                                    : const CommonImage(
-                                      imageSrc: AppImages.profile,
+                                    :  CommonImage(
+                                      imageSrc: AppImages.profileActive,
                                       height: 93,
                                       width: 93,
                                     ),
