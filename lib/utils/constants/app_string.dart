@@ -141,8 +141,7 @@ class AppString {
   static const String seeAll = "See all";
   static const String findNannyNearYou = "Find a Nanny Near You";
   static const String nannyNearYou = "Nanny Near You";
-  static const String sort = "Sort";
-  static const String filter = "Filter";
+
   static const String nannyProfile = "Nanny Profile";
   static const String reviews = "Reviews";
   static const String gallery = "Gallery";
@@ -275,6 +274,9 @@ class AppString {
   static const String recentlyViewed = "Recently Viewed";
   static const String yourInformation = "Your Information";
   static const String featureArts = "Feature Arts";
+  static const String sort = "Sort";
+  static const String filter = "Filter";
+
   static const String searchHintText = "Search Artworks, Artists, Exhibitions";
 
   static const String onboardingDesOne = "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
+import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/home_screen.dart';
 import '../../features/another_screens/nunny_booking/presentation/screens/nunny_booking_screen.dart';
 import '../../features/another_screens/parent_booking/presentation/screens/parent_booking_screen.dart';
@@ -81,6 +82,7 @@ class AppRoutes {
   static const String userHomeScreen = "/userHomeScreen";
   static const String categoryScreen = "/categoryScreen";
   static const String learnAndGrowScreen = "/learnAndGrowScreen";
+  static const String featureArtsScreen = "/featureArtsScreen";
 
 
 
@@ -116,6 +118,7 @@ class AppRoutes {
     GetPage(name: userHomeScreen, page: () => UserHomeScreen()),
     GetPage(name: categoryScreen, page: () => CategoryScreen()),
     GetPage(name: learnAndGrowScreen, page: () => LearnAndGrowScreen()),
+    GetPage(name: featureArtsScreen, page: () => FeatureArtsScreen()),
 
   ];
 }

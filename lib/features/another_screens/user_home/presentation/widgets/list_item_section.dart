@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/arts_item.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/category_item.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/popular_artist_item.dart';
@@ -30,11 +32,18 @@ class ListItemSection extends StatelessWidget {
               text: AppString.featureArts,
             ),
 
-            CommonText(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColors.bodyClr,
-              text: AppString.seeAll,
+            InkWell(
+              onTap: (){
+                Get.toNamed(AppRoutes.featureArtsScreen, arguments: {
+                  "title":AppString.featureArts
+                });
+              },
+              child: CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                text: AppString.seeAll,
+              ),
             ),
           ],
         ),
@@ -63,11 +72,19 @@ class ListItemSection extends StatelessWidget {
               text: AppString.recentlyViewed,
             ),
 
-            CommonText(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColors.bodyClr,
-              text: AppString.seeAll,
+            InkWell(
+              onTap: (){
+                Get.toNamed(AppRoutes.featureArtsScreen, arguments: {
+                  "title":AppString.featureArts
+                });
+              },
+
+              child: CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                text: AppString.seeAll,
+              ),
             ),
           ],
         ),
@@ -205,11 +222,18 @@ class ListItemSection extends StatelessWidget {
               text: AppString.recommendedArts,
             ),
 
-            CommonText(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColors.bodyClr,
-              text: AppString.seeAll,
+            InkWell(
+              onTap: (){
+                Get.toNamed(AppRoutes.featureArtsScreen, arguments: {
+                  "title":AppString.recommendedArts
+                });
+              },
+              child: CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                text: AppString.seeAll,
+              ),
             ),
           ],
         ),
