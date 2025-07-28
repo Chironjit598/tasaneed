@@ -439,6 +439,9 @@ class ArtDetailsScreen extends StatelessWidget {
                       Expanded(
                         child: CommonButton(
                             buttonRadius: 60,
+                            onTap: (){
+                              Get.toNamed(AppRoutes.checkOutScreen);
+                            },
 
 
 

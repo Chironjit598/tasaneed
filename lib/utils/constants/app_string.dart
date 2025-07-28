@@ -154,7 +154,6 @@ class AppString {
   static const String bookNow = "Book Now";
   static const String requestToBook = "Request to Book";
   static const String choosePaymentOption = "Choose Payment Option";
-  static const String paymentMethod = "Payment Method";
   static const String goHome = "Go Home";
   static const String paymentSuccessful = "Payment Successful";
   static const String paymentSuccessfulDes = "We will notify you , when your booking will be confirmed by the nanny.";
@@ -284,6 +283,17 @@ class AppString {
   static const String follow = "Follow";
   static const String makeAnOffer  = "Make an Offer";
   static const String purchase  = "Purchase";
+  static const String checkout  = "Checkout";
+  static const String placeOrder  = "Place Order";
+  static const String totalPrice  = "Total Price";
+  static const String shippingFee  = "Shipping Fee";
+  static const String itemCost  = "Item Cost";
+  static const String choosePaymentMethod  = "Choose Payment method";
+  static const String paymentMethod  = "Payment Method";
+  static const String chooseDeliveryOption  = "Choose Delivery Option";
+  static const String deliveryOptions  = "Delivery Options";
+  static const String shippingAddress  = "Shipping Address";
+  static const String iHaveReadAndAgreeToTheWebsite  = "I have read and agree to the website ";
 
   static const String searchHintText = "Search Artworks, Artists, Exhibitions";
 

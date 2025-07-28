@@ -8,6 +8,7 @@ class AppImages {
 
 
   //================
+  static const String editIcon= "$baseurl/edit_icon.png";
 
   static const String logo = "$baseurl/logo.png" ;
   static const String onboardingOne = "$baseurl/onboarding_first_screen.png" ;
