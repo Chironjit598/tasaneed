@@ -14,7 +14,7 @@ class ExhibitionItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(right: 16.w),
       width: 158.w,
-      height: 182.h,
+      height: 185.h,
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(12.r),

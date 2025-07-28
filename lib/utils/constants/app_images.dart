@@ -29,6 +29,7 @@ class AppImages {
   static const String category= "$baseurl/category.png";
   static const String exhibition= "$baseurl/exhibition.png";
   static const String sort= "$baseurl/sort.png";
+  static const String elips= "$baseurl/elips.png";
 
 
 }

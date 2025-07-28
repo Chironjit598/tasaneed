@@ -1,8 +1,11 @@
 import 'package:get/get.dart';
+import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/art_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/home_screen.dart';
+import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/popular_artist_screen.dart';
+import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/upcomming_exhibition_screen.dart';
 import '../../features/another_screens/nunny_booking/presentation/screens/nunny_booking_screen.dart';
 import '../../features/another_screens/parent_booking/presentation/screens/parent_booking_screen.dart';
 import '../../features/another_screens/saved/presentation/screens/saved_screens.dart';
@@ -83,6 +86,9 @@ class AppRoutes {
   static const String categoryScreen = "/categoryScreen";
   static const String learnAndGrowScreen = "/learnAndGrowScreen";
   static const String featureArtsScreen = "/featureArtsScreen";
+  static const String popularArtistScreen = "/popularArtistScreen";
+  static const String upComingExhibitionScreen = "/upComingExhibitionScreen";
+  static const String artDetailsScreen = "/artDetailsScreen";
 
 
 
@@ -119,6 +125,9 @@ class AppRoutes {
     GetPage(name: categoryScreen, page: () => CategoryScreen()),
     GetPage(name: learnAndGrowScreen, page: () => LearnAndGrowScreen()),
     GetPage(name: featureArtsScreen, page: () => FeatureArtsScreen()),
+    GetPage(name: popularArtistScreen, page: () => PopularArtistScreen()),
+    GetPage(name: upComingExhibitionScreen, page: () => UpComingExhibitionScreen()),
+    GetPage(name: artDetailsScreen, page: () => ArtDetailsScreen()),
 
   ];
 }

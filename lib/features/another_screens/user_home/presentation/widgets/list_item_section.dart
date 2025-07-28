@@ -56,7 +56,12 @@ class ListItemSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
-              return ArtsItem();
+              return InkWell(
+
+                  onTap: (){
+                    Get.toNamed(AppRoutes.artDetailsScreen);
+                  },
+                  child: ArtsItem());
             },
           ),
         ),
@@ -97,7 +102,12 @@ class ListItemSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
-              return ArtsItem();
+              return InkWell(
+
+                  onTap: (){
+                    Get.toNamed(AppRoutes.artDetailsScreen);
+                  },
+                  child: ArtsItem());
             },
           ),
         ),
@@ -115,11 +125,16 @@ class ListItemSection extends StatelessWidget {
               text: AppString.category,
             ),
 
-            CommonText(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColors.bodyClr,
-              text: AppString.seeAll,
+            InkWell(
+              onTap: (){
+                Get.toNamed(AppRoutes.categoryScreen);
+              },
+              child: CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                text: AppString.seeAll,
+              ),
             ),
           ],
         ),
@@ -150,11 +165,16 @@ class ListItemSection extends StatelessWidget {
               text: AppString.popularArtist,
             ),
 
-            CommonText(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColors.bodyClr,
-              text: AppString.seeAll,
+            InkWell(
+              onTap: (){
+               Get.toNamed(AppRoutes.popularArtistScreen);
+              },
+              child: CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                text: AppString.seeAll,
+              ),
             ),
           ],
         ),
@@ -189,11 +209,16 @@ class ListItemSection extends StatelessWidget {
               text: AppString.upcomingExhibition,
             ),
 
-            CommonText(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: AppColors.bodyClr,
-              text: AppString.seeAll,
+            InkWell(
+              onTap: (){
+                Get.toNamed(AppRoutes.upComingExhibitionScreen);
+              },
+              child: CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                text: AppString.seeAll,
+              ),
             ),
           ],
         ),
@@ -201,7 +226,7 @@ class ListItemSection extends StatelessWidget {
         16.height,
 
         SizedBox(
-          height: 187.h,
+          height: 190.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 5,
@@ -246,7 +271,11 @@ class ListItemSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
-              return ArtsItem();
+              return InkWell(
+                  onTap: (){
+                    Get.toNamed(AppRoutes.artDetailsScreen);
+                  },
+                  child: ArtsItem());
             },
           ),
         ),

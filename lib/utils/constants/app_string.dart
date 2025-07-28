@@ -276,6 +276,14 @@ class AppString {
   static const String featureArts = "Feature Arts";
   static const String sort = "Sort";
   static const String filter = "Filter";
+  static const String allCategories = "All Categories";
+  static const String topArtist = "Top Artist";
+  static const String artDetails = "Art Details";
+  static const String aboutArtist = "About Artist";
+  static const String description = "Description";
+  static const String follow = "Follow";
+  static const String makeAnOffer  = "Make an Offer";
+  static const String purchase  = "Purchase";
 
   static const String searchHintText = "Search Artworks, Artists, Exhibitions";
 
