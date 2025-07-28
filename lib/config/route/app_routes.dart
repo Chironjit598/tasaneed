@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/art_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/check_out_screen.dart';
+import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/payment_confirmation_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
@@ -91,6 +92,7 @@ class AppRoutes {
   static const String upComingExhibitionScreen = "/upComingExhibitionScreen";
   static const String artDetailsScreen = "/artDetailsScreen";
   static const String checkOutScreen = "/checkOutScreen";
+  static const String paymentConfirmationScreen = "/paymentConfirmationScreen";
 
 
 
@@ -131,6 +133,7 @@ class AppRoutes {
     GetPage(name: upComingExhibitionScreen, page: () => UpComingExhibitionScreen()),
     GetPage(name: artDetailsScreen, page: () => ArtDetailsScreen()),
     GetPage(name: checkOutScreen, page: () => CheckOutScreen()),
+    GetPage(name: paymentConfirmationScreen, page: () => PaymentConfirmationScreen()),
 
   ];
 }
