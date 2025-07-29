@@ -39,7 +39,11 @@ class CategoryScreen extends StatelessWidget {
               itemCount: 20,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,  // Number of columns
-                crossAxisSpacing: 1, // Horizontal space between items
+                crossAxisSpacing: 1,
+
+                mainAxisExtent: 127.h
+                ,
+                // Horizontal space between items
                 mainAxisSpacing:20 , // Vertical space between items
               ), itemBuilder: (context, index){
 

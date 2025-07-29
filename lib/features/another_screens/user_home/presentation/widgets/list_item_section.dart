@@ -142,7 +142,7 @@ class ListItemSection extends StatelessWidget {
         16.height,
 
         SizedBox(
-          height: 80.h,
+          height: 90.h,
           child:ListView.builder(
             scrollDirection: Axis.horizontal,
               itemCount: 5,
@@ -182,7 +182,7 @@ class ListItemSection extends StatelessWidget {
         16.height,
 
         SizedBox(
-          height: 87.h,
+          height: 90.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 5,

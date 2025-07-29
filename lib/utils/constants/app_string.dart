@@ -298,8 +298,14 @@ class AppString {
   static const String searchHintText = "Search Artworks, Artists, Exhibitions";
   static const String myOrder = "My Order";
   static const String home = "Home";
+  static const String shows = "Shows";
+  static const String artWork = "Art work";
+  static const String featuredRepresentation = "Featured Representation";
+  static const String keyAchievements = "Key Achievements";
   static const String confirmationTitle = "Thank You for Your Order!";
   static const String confirmation = "Confirmation";
+  static const String grandeGallery = "Grande Gallery";
+  static const String biography = "Biography";
   static const String confirmationDes  = "Your order is being processed and will be shipped shortly. We're excited to get your items to you!";
 
   static const String onboardingDesOne = "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";

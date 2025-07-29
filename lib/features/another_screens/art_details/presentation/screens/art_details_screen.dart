@@ -14,8 +14,8 @@ import '../../../../../config/route/app_routes.dart';
 import '../../../user_home/presentation/widgets/arts_item.dart';
 import '../widgets/banner_dot_indecator.dart';
 
-class ArtDetailsScreen extends StatelessWidget {
-  const ArtDetailsScreen({super.key});
+class GrandleGalleryScreen extends StatelessWidget {
+  const GrandleGalleryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -262,50 +262,55 @@ class ArtDetailsScreen extends StatelessWidget {
         
                   17.height,
         
-                  Row(
-                    children: [
-                      ClipOval(
-                        child: CommonImage(
-                            height: 40,
-                            width: 40,
-                            fill: BoxFit.cover,
-                            imageSrc: AppImages.female),
-                      ),
-                      
-                      8.width,
-                      
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CommonText(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.titleColor,
-                              text: "John Currin"),
-        
-                          CommonText(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.titleColor,
-                              text: "American , B 1960"),
-                        ],
-                      ),
-        
-                      Spacer(),
-        
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 7.h, horizontal: 17.w),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(32.r),
-                          border: Border.all(color: AppColors.stroke),
-                          color: AppColors.transparent
+                  InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.artistDetailsScreen);
+                    },
+                    child: Row(
+                      children: [
+                        ClipOval(
+                          child: CommonImage(
+                              height: 40,
+                              width: 40,
+                              fill: BoxFit.cover,
+                              imageSrc: AppImages.female),
                         ),
-                      child: CommonText(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          text: AppString.follow),
-                      )
-                    ],
+
+                        8.width,
+
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CommonText(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.titleColor,
+                                text: "John Currin"),
+
+                            CommonText(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.titleColor,
+                                text: "American , B 1960"),
+                          ],
+                        ),
+
+                        Spacer(),
+
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 7.h, horizontal: 17.w),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(32.r),
+                            border: Border.all(color: AppColors.stroke),
+                            color: AppColors.transparent
+                          ),
+                        child: CommonText(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            text: AppString.follow),
+                        )
+                      ],
+                    ),
                   ),
                   
                   12.height,
@@ -336,33 +341,38 @@ class ArtDetailsScreen extends StatelessWidget {
                   
                   12.height,
                   
-                  Row(
-                    children: [
-                      CommonImage(
-                          height: 34,
-                          width: 34,
-                          imageSrc: AppImages.elips),
+                  InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.grandleGallery);
+                    },
+                    child: Row(
+                      children: [
+                        CommonImage(
+                            height: 34,
+                            width: 34,
+                            imageSrc: AppImages.elips),
 
-                      8.width,
-                      
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CommonText(
-                              fontSize: 14,
-                              color: AppColors.titleColor,
-                              fontWeight: FontWeight.w500,
-                              text: "The Verdant Contemporary "),
+                        8.width,
 
-                          CommonText(
-                              fontSize: 12,
-                              color: AppColors.bodyClr,
-                              fontWeight: FontWeight.w400,
-                              text: "(Est. 2018)"),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CommonText(
+                                fontSize: 14,
+                                color: AppColors.titleColor,
+                                fontWeight: FontWeight.w500,
+                                text: "The Verdant Contemporary "),
 
-                        ],
-                      )
-                    ],
+                            CommonText(
+                                fontSize: 12,
+                                color: AppColors.bodyClr,
+                                fontWeight: FontWeight.w400,
+                                text: "(Est. 2018)"),
+
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                   
                   CommonText(

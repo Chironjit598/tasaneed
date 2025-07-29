@@ -8,9 +8,15 @@ class AppImages {
 
 
   //================
+  static const String manBg= "$baseurl/man_bg.png";
+
+  static const String artistCover= "$baseurl/artist_cover.png";
+  static const String artistLogo= "$baseurl/artits_logo.png";
+  static const String verified= "$baseurl/verified.png";
   static const String editIcon= "$baseurl/edit_icon.png";
 
   static const String logo = "$baseurl/logo.png" ;
+  static const String ellips = "$baseurl/ellips.png" ;
   static const String onboardingOne = "$baseurl/onboarding_first_screen.png" ;
   static const String onboardingThree = "$baseurl/onboarding_second_screen.png";
   static const String onboardingTwo = "$baseurl/onboarding_third_screen.png";
@@ -32,6 +38,7 @@ class AppImages {
   static const String sort= "$baseurl/sort.png";
   static const String elips= "$baseurl/elips.png";
   static const String confirm= "$baseurl/confirm.png";
+
 
 
 }
