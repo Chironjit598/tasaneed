@@ -274,6 +274,8 @@ class AppString {
   static const String yourInformation = "Your Information";
   static const String featureArts = "Feature Arts";
   static const String sort = "Sort";
+  static const String addToFavourite = "Add to Favourite";
+  static const String getTickets = "Get Tickets";
   static const String filter = "Filter";
   static const String allCategories = "All Categories";
   static const String topArtist = "Top Artist";
@@ -306,6 +308,18 @@ class AppString {
   static const String confirmation = "Confirmation";
   static const String grandeGallery = "Grande Gallery";
   static const String biography = "Biography";
+  static const String virtualTour = "Virtual Tour";
+  static const String curatedBy = "Curated by";
+  static const String overview = 'Overview';
+  static const String artwork = 'Artwork';
+  static const String members = 'Members :';
+  static const String students = 'Students :';
+  static const String general = 'General :';
+  static const String tickerPrice = 'Ticker Price:';
+  static const String venue = 'Venue:';
+  static const String visitingHour = 'Visiting Hour:';
+  static const String exhibitionDetails = 'Exhibition Details';
+  static const String aboutTheExhibition = 'About the Exhibition';
   static const String confirmationDes  = "Your order is being processed and will be shipped shortly. We're excited to get your items to you!";
 
   static const String onboardingDesOne = "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";

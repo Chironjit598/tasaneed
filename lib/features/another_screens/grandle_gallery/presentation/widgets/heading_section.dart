@@ -90,19 +90,13 @@ class HeadingSection extends StatelessWidget {
 
                   5.height,
 
-                  Row(
-                    children: [
-                      Icon(Icons.location_on_outlined, color: AppColors.bodyClr,),
-                      5.width,
-
-                      CommonText(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color:AppColors.bodyClr ,
-
-                          text: "123 Art Street, New York City, NY 10001")
-                    ],
-                  ),
+                  CommonText(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.bodyClr,
+                      textAlign: TextAlign.start,
+                      maxLines: 4,
+                      text: "The Modern Art Museum is committed to showcasing the best of contemporary art. Our mission is to inspire creativity and foster a greater understanding of modern "),
 
                   23.height,
 

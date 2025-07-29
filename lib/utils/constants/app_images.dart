@@ -38,6 +38,7 @@ class AppImages {
   static const String sort= "$baseurl/sort.png";
   static const String elips= "$baseurl/elips.png";
   static const String confirm= "$baseurl/confirm.png";
+  static const String exhibitionScreen= "$baseurl/exhibition_screen.png";
 
 
 

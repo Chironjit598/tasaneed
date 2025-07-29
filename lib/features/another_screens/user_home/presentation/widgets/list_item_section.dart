@@ -231,7 +231,12 @@ class ListItemSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
-              return ExhibitionItem();
+              return InkWell(
+                  onTap: (){
+                    Get.toNamed(AppRoutes.exhibitionScreen);
+                  },
+                  child: ExhibitionItem());
+
             },
           ),
         ),
