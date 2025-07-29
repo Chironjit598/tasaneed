@@ -6,6 +6,7 @@ import 'package:tasaned_project/features/another_screens/artist_details/presenta
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/exhibition/presentation/screens/exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
+import 'package:tasaned_project/features/another_screens/my_listing_screen/presentation/screens/my_listing_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/home_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/popular_artist_screen.dart';
@@ -99,6 +100,7 @@ class AppRoutes {
   static const String artistDetailsScreen = "/artistDetailsScreen";
   static const String paymentConfirmationScreen = "/paymentConfirmationScreen";
   static const String exhibitionScreen = "/exhibitionScreen";
+  static const String myListingScreen = "/myListingScreen";
 
 
 
@@ -143,6 +145,7 @@ class AppRoutes {
     GetPage(name: grandleGallery, page: () => GrandleGallery()),
     GetPage(name: artistDetailsScreen, page: () => ArtistDetailsScreen()),
     GetPage(name: exhibitionScreen, page: () => ExhibitionScreen()),
+    GetPage(name: myListingScreen, page: () => MyListingScreen()),
 
   ];
 }

@@ -318,6 +318,10 @@ class AppString {
   static const String tickerPrice = 'Ticker Price:';
   static const String venue = 'Venue:';
   static const String visitingHour = 'Visiting Hour:';
+  static const String viewProfile = 'View Profile';
+  static const String myListing = 'My Listing';
+  static const String purchaseHistory = 'Purchase History';
+  static const String saved = 'Saved';
   static const String exhibitionDetails = 'Exhibition Details';
   static const String aboutTheExhibition = 'About the Exhibition';
   static const String confirmationDes  = "Your order is being processed and will be shipped shortly. We're excited to get your items to you!";

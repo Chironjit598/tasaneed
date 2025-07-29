@@ -6,6 +6,7 @@ import 'package:tasaned_project/component/text_field/common_text_field.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
 
+import '../widgets/custom_drawer.dart';
 import '../widgets/list_item_section.dart';
 import '../widgets/user_app_bar.dart';
 
@@ -29,6 +30,10 @@ class UserHomeScreen extends StatelessWidget {
           ),
         ),
       ),
+
+      drawer: CustomDrawer(),
+
+
 
       body: SingleChildScrollView(
         child: Column(

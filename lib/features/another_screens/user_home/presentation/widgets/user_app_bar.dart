@@ -34,9 +34,15 @@ class UserAppBar extends StatelessWidget {
                 Icons.shopping_cart_outlined),
             4.width,
 
-            Icon(
-                size: 30.sp,
-                Icons.menu_rounded),
+            InkWell(
+
+              onTap: (){
+                Scaffold.of(context).openDrawer();
+              },
+              child: Icon(
+                  size: 30.sp,
+                  Icons.menu_rounded),
+            ),
           ],
         ),
       ),
