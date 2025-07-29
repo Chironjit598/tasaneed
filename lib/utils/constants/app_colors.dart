@@ -26,6 +26,7 @@ class AppColors {
   static const searchBg = Color(0xffF6F8FA);
   static const stroke = Color(0xffE6E6E6);
   static const searchText = Color(0xffAAAAAA);
+  static const myListBg = Color(0xffF4F4F4);
 
 
 
