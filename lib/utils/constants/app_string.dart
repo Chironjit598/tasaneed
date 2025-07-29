@@ -322,6 +322,7 @@ class AppString {
   static const String myListing = 'My Listing';
   static const String purchaseHistory = 'Purchase History';
   static const String saved = 'Saved';
+  static const String search = 'Search';
   static const String exhibitionDetails = 'Exhibition Details';
   static const String aboutTheExhibition = 'About the Exhibition';
   static const String confirmationDes  = "Your order is being processed and will be shipped shortly. We're excited to get your items to you!";

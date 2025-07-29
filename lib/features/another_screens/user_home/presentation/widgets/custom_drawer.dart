@@ -90,21 +90,26 @@ class CustomDrawer extends StatelessWidget {
 
           16.height,
 
-          Row(
-            children: [
-              25.width,
-              Icon(
-                  size: 23.sp,
-                  Icons.shopping_cart_outlined),
-              CommonText(
-                left: 8,
-                  color: AppColors.titleColor,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  textAlign: TextAlign.start,
-                  text: AppString.purchaseHistory)
+          InkWell(
+            onTap: (){
+              Get.toNamed(AppRoutes.purchaseHistory);
+            },
+            child: Row(
+              children: [
+                25.width,
+                Icon(
+                    size: 23.sp,
+                    Icons.shopping_cart_outlined),
+                CommonText(
+                  left: 8,
+                    color: AppColors.titleColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    textAlign: TextAlign.start,
+                    text: AppString.purchaseHistory)
 
-            ],
+              ],
+            ),
           ),
 
           Container(
