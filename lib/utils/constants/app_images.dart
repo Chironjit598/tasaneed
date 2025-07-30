@@ -48,6 +48,9 @@ class AppImages {
   static const String confirm= "$baseurl/confirm.png";
   static const String exhibitionScreen= "$baseurl/exhibition_screen.png";
   static const String myListing= "$baseurl/my_listing.png";
+  static const String getTransaction= "$baseurl/get_transaction.png";
+  static const String received= "$baseurl/received.png";
+  static const String send= "$baseurl/send.png";
 
 
 

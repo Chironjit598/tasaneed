@@ -12,6 +12,7 @@ import 'package:tasaned_project/features/another_screens/user_home/presentation/
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/home_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/popular_artist_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/upcomming_exhibition_screen.dart';
+import 'package:tasaned_project/features/profile/presentation/screen/transantion_screen.dart';
 import '../../features/another_screens/grandle_gallery/presentation/screens/grandle_gallery.dart';
 import '../../features/another_screens/nunny_booking/presentation/screens/nunny_booking_screen.dart';
 import '../../features/another_screens/parent_booking/presentation/screens/parent_booking_screen.dart';
@@ -103,6 +104,7 @@ class AppRoutes {
   static const String exhibitionScreen = "/exhibitionScreen";
   static const String myListingScreen = "/myListingScreen";
   static const String purchaseHistory = "/purchaseHistory";
+  static const String transactionHistory = "/transactionHistory";
 
 
 
@@ -149,6 +151,7 @@ class AppRoutes {
     GetPage(name: exhibitionScreen, page: () => ExhibitionScreen()),
     GetPage(name: myListingScreen, page: () => MyListingScreen()),
     GetPage(name: purchaseHistory, page: () => MyPurchaseScreen()),
+    GetPage(name: transactionHistory, page: () => TransactionScreen()),
 
   ];
 }

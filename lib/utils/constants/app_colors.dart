@@ -28,6 +28,7 @@ class AppColors {
   static const searchText = Color(0xffAAAAAA);
   static const myListBg = Color(0xffF4F4F4);
   static const messageBg = Color(0xffF0F1F6);
+  static const redClr = Color(0xffED544E);
 
 
 

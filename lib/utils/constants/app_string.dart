@@ -288,6 +288,7 @@ class AppString {
   static const String checkout  = "Checkout";
   static const String personalInformation  = "Personal Information";
   static const String transaction  = "Transaction";
+  static const String transactionHistory  = "Transaction History";
   static const String placeOrder  = "Place Order";
   static const String totalPrice  = "Total Price";
   static const String shippingFee  = "Shipping Fee";
@@ -332,6 +333,8 @@ class AppString {
   static const String aboutThisApp = 'About This App';
   static const String paymentSettings = 'Payment Settings';
   static const String exhibitionDetails = 'Exhibition Details';
+  static const String spend = 'Spend';
+  static const String earned = 'Earned';
   static const String aboutTheExhibition = 'About the Exhibition';
   static const String upgradeToPremium = 'Upgrade to Premium';
   static const String upgradeToPremiumDes = 'Enjoy workout access without limits';

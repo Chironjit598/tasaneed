@@ -107,7 +107,7 @@ class ProfileAllItem extends StatelessWidget {
             iconColor: AppColors.primaryColor,
             image: AppImages.transaction,
             title: AppString.transaction,
-            onTap: () => Get.toNamed(AppRoutes.editProfile),
+            onTap: () => Get.toNamed(AppRoutes.transactionHistory),
           ),
 
           CommonText(
