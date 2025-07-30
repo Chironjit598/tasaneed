@@ -5,6 +5,7 @@ import 'package:tasaned_project/features/another_screens/art_details/presentatio
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/screens/artist_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_purchase_screen.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/saved_screen.dart';
 import 'package:tasaned_project/features/another_screens/exhibition/presentation/screens/exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_listing_screen.dart';
@@ -16,7 +17,6 @@ import 'package:tasaned_project/features/profile/presentation/screen/transantion
 import '../../features/another_screens/grandle_gallery/presentation/screens/grandle_gallery.dart';
 import '../../features/another_screens/nunny_booking/presentation/screens/nunny_booking_screen.dart';
 import '../../features/another_screens/parent_booking/presentation/screens/parent_booking_screen.dart';
-import '../../features/another_screens/saved/presentation/screens/saved_screens.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
@@ -128,7 +128,6 @@ class AppRoutes {
     GetPage(name: setting, page: () => const SettingScreen()),
 
     GetPage(name: parentBookingScreen, page: () => ParentBookingScreen()),
-    GetPage(name: savedScreen, page: () => SavedScreens()),
     GetPage(name: notificationSettings, page: () => NotificationSettings()),
     GetPage(name: helpAndSupportScreen, page: () => HelpAndSupportScreen()),
     GetPage(name: aboutUsScreen, page: () => AboutUsScreen()),
@@ -152,6 +151,7 @@ class AppRoutes {
     GetPage(name: myListingScreen, page: () => MyListingScreen()),
     GetPage(name: purchaseHistory, page: () => MyPurchaseScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),
+    GetPage(name: savedScreen, page: () => SavedScreen()),
 
   ];
 }

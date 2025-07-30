@@ -121,19 +121,24 @@ class CustomDrawer extends StatelessWidget {
 
           16.height,
 
-          Row(
-            children: [
-              25.width,
-              Icon(Icons.save_outlined),
-              CommonText(
-                left: 8,
-                  color: AppColors.titleColor,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  textAlign: TextAlign.start,
-                  text: AppString.saved)
+          InkWell(
+            onTap: (){
+              Get.toNamed(AppRoutes.savedScreen);
+            },
+            child: Row(
+              children: [
+                25.width,
+                Icon(Icons.save_outlined),
+                CommonText(
+                  left: 8,
+                    color: AppColors.titleColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    textAlign: TextAlign.start,
+                    text: AppString.saved)
 
-            ],
+              ],
+            ),
           ),
 
           Container(

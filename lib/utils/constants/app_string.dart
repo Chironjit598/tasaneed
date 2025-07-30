@@ -305,6 +305,7 @@ class AppString {
   static const String home = "Home";
   static const String shows = "Shows";
   static const String artWork = "Art work";
+  static const String art = "Art";
   static const String featuredRepresentation = "Featured Representation";
   static const String keyAchievements = "Key Achievements";
   static const String confirmationTitle = "Thank You for Your Order!";
@@ -333,7 +334,10 @@ class AppString {
   static const String aboutThisApp = 'About This App';
   static const String paymentSettings = 'Payment Settings';
   static const String exhibitionDetails = 'Exhibition Details';
+  static const String exhibition = 'Exhibition';
   static const String spend = 'Spend';
+  static const String learningMaterials = 'Learning Materials';
+  static const String events = 'Events';
   static const String earned = 'Earned';
   static const String aboutTheExhibition = 'About the Exhibition';
   static const String upgradeToPremium = 'Upgrade to Premium';
