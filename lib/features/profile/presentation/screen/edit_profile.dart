@@ -20,6 +20,7 @@ class EditProfile extends StatelessWidget {
     return GetBuilder<ProfileController>(
       builder: (controller) {
         return Scaffold(
+          backgroundColor: Color(0xFFFBFCFD),
           /// App Bar Sections Starts here
           appBar: AppBar(
             surfaceTintColor: AppColors.transparent,
@@ -30,7 +31,7 @@ class EditProfile extends StatelessWidget {
                   Get.back();
                 },
                 child: Icon(
-                  color: AppColors.textFiledColor,
+                  color: AppColors.titleColor,
                   Icons.arrow_back_ios, size: 23.sp,)),
             centerTitle: true,
             title: const CommonText(
@@ -51,24 +52,31 @@ class EditProfile extends StatelessWidget {
                   Stack(
                     children: [
                       Center(
-                        child: CircleAvatar(
-                          radius: 47.sp,
-                          backgroundColor: Colors.transparent,
-                          child: ClipOval(
-                            child:
-                                controller.image != null
-                                    ? Image.file(
-                                      File(controller.image!),
-                                      width: 93.h,
-                                      height: 93.h,
-                                      fit: BoxFit.fill,
-                                    )
-                                    :  CommonImage(
-                                      imageSrc: AppImages.profileActive,
-                                      height: 93,
-                                      width: 93,
-                                    ),
+                        child: Container(
+
+                          padding: EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: AppColors.stroke),
+                            shape: BoxShape.circle,
+                            color: AppColors.white
                           ),
+                          child: controller.image != null
+                              ? ClipOval(
+                                child: Image.file(
+                                  File(controller.image!),
+                                  width: 100.h,
+                                  height: 100.h,
+                                  fit: BoxFit.fill,
+                                ),
+                              )
+                              :  ClipOval(
+                                child: CommonImage(
+                                  imageSrc: AppImages.female,
+                                  height: 100,
+                                  fill: BoxFit.fill,
+                                  width: 100,
+                                ),
+                              ),
                         ),
                       ),
 
@@ -81,18 +89,27 @@ class EditProfile extends StatelessWidget {
                           child: Container(
                             padding: EdgeInsets.all(5.r),
                             decoration: BoxDecoration(
-                              border: Border.all(width: 2, color: AppColors.white),
-                              color: AppColors.primaryColor,
+                              border: Border.all(width: 2, color: AppColors.primaryColor),
+                              color: AppColors.gridClr,
                               shape: BoxShape.circle
                             ),
                             child: Icon(
                                 size: 15.sp,
-                                Icons.edit, color: Colors.white),
+                                Icons.edit_outlined, color:AppColors.primaryColor),
                           ),
                         ),
                       ),
                     ],
                   ),
+
+                  10.height,
+                  CommonText(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.titleColor,
+                      text: "Sazzad Chowdhury"),
+
+                  25.height,
 
                   /// user all information filed here
                   EditProfileAllFiled(controller: controller),
@@ -100,7 +117,7 @@ class EditProfile extends StatelessWidget {
 
                   /// Submit Button here
                   CommonButton(
-                    titleText: AppString.updateInfo,
+                    titleText: AppString.update,
                     isLoading: controller.isLoading,
                     onTap:(){
                       Get.back();

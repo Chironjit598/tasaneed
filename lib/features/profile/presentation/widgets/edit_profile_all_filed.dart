@@ -21,8 +21,11 @@ class EditProfileAllFiled extends StatelessWidget {
       children: [
         /// User Full Name here
         const CommonText(
-          text: AppString.fullName,fontSize: 16,
-          fontWeight: FontWeight.w600,
+          text: AppString.fullName,
+
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color:AppColors.titleColor ,
           bottom: 12,
         ),
         CommonTextField(
@@ -36,10 +39,12 @@ class EditProfileAllFiled extends StatelessWidget {
         ),
 
         /// User Full Name here
-        const CommonText(
+         CommonText(
           top: 16,
-          text: AppString.email,fontSize: 16,
-          fontWeight: FontWeight.w600,
+          text: AppString.email,
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color:AppColors.titleColor ,
           bottom: 12,
         ),
         CommonTextField(
@@ -56,8 +61,10 @@ class EditProfileAllFiled extends StatelessWidget {
         /// User Full Name here
         const CommonText(
           top: 16,
-          text: AppString.phoneNumber,fontSize: 16,
-          fontWeight: FontWeight.w600,
+          text: AppString.phoneNumber,
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color:AppColors.titleColor ,
           bottom: 12,
         ),
         CommonTextField(
@@ -74,11 +81,13 @@ class EditProfileAllFiled extends StatelessWidget {
         /// User Full Name here
         const CommonText(
           top: 16,
-          text: AppString.address,fontSize: 16,
-          fontWeight: FontWeight.w600,
+          text: AppString.address,  fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color:AppColors.titleColor ,
           bottom: 12,
         ),
         CommonTextField(
+          maxline: 3,
           controller: controller.addressController,
           validator: OtherHelper.validator,
           hintText: AppString.enterAddress,
