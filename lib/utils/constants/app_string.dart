@@ -95,7 +95,7 @@ class AppString {
   static const String logOut = "Log Out";
   static const String logIn = "log in";
   static const String privacyPolicy = "Privacy Policy";
-  static const String deleteAccount = "Delete account";
+  static const String deleteAccount = "Delete Profile";
   static const String termsOfServices = "Terms & Conditions";
   static const String noInternetConnection = "No internet connection";
   static const String badResponseRequest = "Bad Response Request";
@@ -286,6 +286,8 @@ class AppString {
   static const String makeAnOffer  = "Make an Offer";
   static const String purchase  = "Purchase";
   static const String checkout  = "Checkout";
+  static const String personalInformation  = "Personal Information";
+  static const String transaction  = "Transaction";
   static const String placeOrder  = "Place Order";
   static const String totalPrice  = "Total Price";
   static const String shippingFee  = "Shipping Fee";
@@ -323,8 +325,16 @@ class AppString {
   static const String purchaseHistory = 'Purchase History';
   static const String saved = 'Saved';
   static const String search = 'Search';
+  static const String profileSettings = 'Profile Settings';
+  static const String appSettings = 'App Settings';
+  static const String supportInfo = 'Support & Info';
+  static const String accountSettings = 'Account Settings';
+  static const String aboutThisApp = 'About This App';
+  static const String paymentSettings = 'Payment Settings';
   static const String exhibitionDetails = 'Exhibition Details';
   static const String aboutTheExhibition = 'About the Exhibition';
+  static const String upgradeToPremium = 'Upgrade to Premium';
+  static const String upgradeToPremiumDes = 'Enjoy workout access without limits';
   static const String confirmationDes  = "Your order is being processed and will be shipped shortly. We're excited to get your items to you!";
 
   static const String onboardingDesOne = "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";

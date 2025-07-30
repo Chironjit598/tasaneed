@@ -11,6 +11,11 @@ class AppImages {
 
 
   static const String messageActive= "$baseurl/message_active.png";
+  static const String profileBg= "$baseurl/profile_bg.png";
+  static const String waring= "$baseurl/waring.png";
+  static const String termsCondition= "$baseurl/terms_condition.png";
+  static const String aboutThisApp= "$baseurl/about_this_app.png";
+  static const String transaction= "$baseurl/transaction.png";
   static const String messageInactive= "$baseurl/message_inactive.png";
   static const String profileActive= "$baseurl/profile.png";
   static const String profileInactive= "$baseurl/profile_inactive.png";

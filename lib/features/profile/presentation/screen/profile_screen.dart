@@ -17,6 +17,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFBFCFD),
 
 
       /// Body Section Starts here
@@ -29,6 +30,9 @@ class ProfileScreen extends StatelessWidget {
             
                 Stack(
                   children: [
+                    CommonImage(
+                        width: Get.width,
+                        imageSrc: AppImages.profileBg),
 
 
                     Padding(
@@ -62,17 +66,25 @@ class ProfileScreen extends StatelessWidget {
                               child: CommonImage(
                                   height: 100,
                                   width: 100,
+                                  fill: BoxFit.fill,
 
-                                  imageSrc: AppImages.profileActive),
+                                  imageSrc: AppImages.female),
                             ),
                           ).center,
 
                           CommonText(
-                              top: 12,
+                              top: 18,
                               fontSize: 18,
                               color: AppColors.white,
                               fontWeight: FontWeight.w700,
                               text: "Mrs. Amina Okonkwo"),
+
+                          CommonText(
+                              top: 4,
+                              fontSize: 12,
+                              color: AppColors.white,
+                              fontWeight: FontWeight.w400,
+                              text: "Member / Collector"),
 
                           75.height,
                           ProfileAllItem()

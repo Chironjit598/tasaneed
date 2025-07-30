@@ -16,22 +16,23 @@ class LogOutPopUp{
 
         builder: (context){
          return AlertDialog(
+           backgroundColor: AppColors.white,
            content: Column(
              mainAxisSize: MainAxisSize.min,
              children: [
                CommonImage(
                    height: 88,
                    width: 78,
-                   imageSrc: AppImages.profileActive),
+                   imageSrc: AppImages.waring),
 
                CommonText(
                    fontSize: 15,
-                   fontWeight: FontWeight.w700,
+                   fontWeight: FontWeight.w400,
                    color: AppColors.red,
                    maxLines: 2,
                    text: AppString.logOutTitle),
 
-               CommonText(
+               CommonText(top: 5,
                    fontSize: 12,
                    fontWeight: FontWeight.w400,
                    color: AppColors.bodyClr,

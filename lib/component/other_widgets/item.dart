@@ -14,8 +14,8 @@ class Item extends StatelessWidget {
       this.disableDivider = false,
       this.onTap,
       this.color = AppColors.titleColor,
-      this.vertical = 4,
-      this.horizontal = 0,
+      this.vertical = 11,
+      this.horizontal = 22,
       this.disableIcon = false});
 
   final IconData? icon;
@@ -33,24 +33,38 @@ class Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Padding(
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(color: AppColors.stroke)
+        ),
         padding: EdgeInsets.symmetric(
             horizontal: horizontal.w, vertical: vertical.h),
         child: Column(
           children: [
             Row(
               children: [
-                icon != null
-                    ? Icon(
-                        icon,
-                        color: iconColor,
-                      )
-                    : CommonImage(imageSrc: image),
+
+                Container(
+                  padding: EdgeInsets.all(6.r),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.redBg
+                  ),
+                  child:  icon != null
+                      ? Icon(
+                    icon,
+                    color: iconColor,
+                  )
+                      : CommonImage(imageSrc: image),
+                )
+               ,
                 CommonText(
                   text: title,
                   color: color,
                   fontWeight: FontWeight.w400,
-                  fontSize: 18,
+                  fontSize: 16,
                   left: 16,
                 ),
                 const Spacer(),

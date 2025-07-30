@@ -28,7 +28,7 @@ class AboutUsScreen extends StatelessWidget {
         surfaceTintColor: AppColors.white,
         centerTitle: true,
         title: const CommonText(
-          text: AppString.aboutUs,
+          text: AppString.aboutThisApp,
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
