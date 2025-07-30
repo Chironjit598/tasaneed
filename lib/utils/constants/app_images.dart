@@ -8,6 +8,12 @@ class AppImages {
 
 
   //================
+
+
+  static const String messageActive= "$baseurl/message_active.png";
+  static const String messageInactive= "$baseurl/message_inactive.png";
+  static const String profileActive= "$baseurl/profile.png";
+  static const String profileInactive= "$baseurl/profile_inactive.png";
   static const String manBg= "$baseurl/man_bg.png";
 
   static const String artistCover= "$baseurl/artist_cover.png";
@@ -25,9 +31,6 @@ class AppImages {
   static const String categoryActive= "$baseurl/category_active.png";
   static const String categoryInactive= "$baseurl/category_inactive.png";
   static const String homeInactive= "$baseurl/home_inactive.png";
-  static const String messageActive= "$baseurl/message_active.png";
-  static const String profileInactive= "$baseurl/profile_inactive.png";
-  static const String profileActive= "$baseurl/profile_active.svg";
   static const String homeActive= "$baseurl/home_active.png";
   static const String sellIcon= "$baseurl/add_icon.png";
   static const String logoWithText= "$baseurl/logo_with_text.png";

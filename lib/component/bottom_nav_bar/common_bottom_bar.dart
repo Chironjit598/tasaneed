@@ -31,17 +31,36 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   ];
 
   String getTitle(int index) {
-    return ["Home", "Category", "Sell", "Messages", "Profile"][index];
+    return ["Home", "Category", "Sell", "Inbox", "Profile"][index];
   }
 
   CommonImage selectedIcon(int index) {
     return [
-      CommonImage(imageSrc: AppImages.homeActive),
-      CommonImage(imageSrc: AppImages.categoryActive),
-      CommonImage(imageSrc: AppImages.sellIcon),
-      CommonImage(imageSrc: AppImages.homeActive),
-      CommonImage(imageSrc: AppImages.homeActive),
-      CommonImage(imageSrc: AppImages.homeActive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.homeActive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.categoryActive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.sellIcon),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.messageActive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.profileActive),
 
 
 
@@ -50,12 +69,32 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
 
   CommonImage unselectedIcon(int index) {
     return [
-      CommonImage(imageSrc: AppImages.homeInactive),
-      CommonImage(imageSrc: AppImages.categoryInactive),
-      CommonImage(imageSrc: AppImages.sellIcon),
-      CommonImage(imageSrc: AppImages.homeActive),
-      CommonImage(imageSrc: AppImages.homeActive),
-      CommonImage(imageSrc: AppImages.homeActive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.homeInactive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+
+          imageSrc: AppImages.categoryInactive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.sellIcon),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.messageInactive),
+      CommonImage(
+          height: 24,
+          width: 24,
+          fill: BoxFit.fill,
+          imageSrc: AppImages.profileInactive),
     ][index];
   }
 
@@ -116,8 +155,9 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
+            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
             decoration: BoxDecoration(
+
               borderRadius: BorderRadius.circular(40.r),
               color: isSelected ? AppColors.primaryColor : AppColors.transparent,
             ),
