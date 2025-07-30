@@ -327,6 +327,8 @@ class AppString {
   static const String purchaseHistory = 'Purchase History';
   static const String saved = 'Saved';
   static const String search = 'Search';
+  static const String lessons = 'Lessons';
+  static const String searchLearningMaterials = 'Search Learning materials';
   static const String profileSettings = 'Profile Settings';
   static const String appSettings = 'App Settings';
   static const String supportInfo = 'Support & Info';
@@ -338,7 +340,11 @@ class AppString {
   static const String spend = 'Spend';
   static const String learningMaterials = 'Learning Materials';
   static const String events = 'Events';
+  static const String upcomingEvents = 'Upcoming Events';
   static const String earned = 'Earned';
+  static const String learningObjectives = 'Learning Objectives:';
+  static const String keyPointsLearnInThisLesson = 'Key points you’ll learn in this lesson:';
+  static const String featureEvents  = 'Feature Events ';
   static const String aboutTheExhibition = 'About the Exhibition';
   static const String upgradeToPremium = 'Upgrade to Premium';
   static const String upgradeToPremiumDes = 'Enjoy workout access without limits';

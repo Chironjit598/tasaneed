@@ -9,14 +9,17 @@ import 'package:tasaned_project/features/another_screens/drawer_screens/presenta
 import 'package:tasaned_project/features/another_screens/exhibition/presentation/screens/exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_listing_screen.dart';
+import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learning_materials_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/home_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/popular_artist_screen.dart';
+import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/up_comming_event.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/upcomming_exhibition_screen.dart';
 import 'package:tasaned_project/features/profile/presentation/screen/transantion_screen.dart';
 import '../../features/another_screens/grandle_gallery/presentation/screens/grandle_gallery.dart';
 import '../../features/another_screens/nunny_booking/presentation/screens/nunny_booking_screen.dart';
 import '../../features/another_screens/parent_booking/presentation/screens/parent_booking_screen.dart';
+import '../../features/another_screens/user_home/presentation/screens/learning_metarial_screen.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
@@ -105,6 +108,9 @@ class AppRoutes {
   static const String myListingScreen = "/myListingScreen";
   static const String purchaseHistory = "/purchaseHistory";
   static const String transactionHistory = "/transactionHistory";
+  static const String upComingEventScreen = "/upComingEventScreen";
+  static const String learningMeterials = "/learningMeterials";
+  static const String learningMaterialsDetailsScreen = "/learningMaterialsDetailsScreen";
 
 
 
@@ -152,6 +158,9 @@ class AppRoutes {
     GetPage(name: purchaseHistory, page: () => MyPurchaseScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),
     GetPage(name: savedScreen, page: () => SavedScreen()),
+    GetPage(name: upComingEventScreen, page: () => UpComingEventScreen()),
+    GetPage(name: learningMeterials, page: () => LearningMetarialScreen()),
+    GetPage(name: learningMaterialsDetailsScreen, page: () => LearningMaterialsDetailsScreen()),
 
   ];
 }

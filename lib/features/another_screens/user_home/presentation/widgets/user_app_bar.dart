@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tasaned_project/utils/extensions/extension.dart';
-
 import '../../../../../component/image/common_image.dart';
 import '../../../../../utils/constants/app_colors.dart';
 import '../../../../../utils/constants/app_images.dart';
@@ -29,10 +27,7 @@ class UserAppBar extends StatelessWidget {
 
             Spacer(),
 
-            Icon(
-                size: 30.sp,
-                Icons.shopping_cart_outlined),
-            4.width,
+
 
             InkWell(
 

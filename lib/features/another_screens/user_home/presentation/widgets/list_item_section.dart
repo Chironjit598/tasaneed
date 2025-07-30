@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/config/route/app_routes.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/event_item.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/learning_medarials_item.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/arts_item.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/category_item.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/popular_artist_item.dart';
@@ -240,6 +242,49 @@ class ListItemSection extends StatelessWidget {
             },
           ),
         ),
+        20.height,
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CommonText(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.primaryColor,
+              text: AppString.featureEvents,
+            ),
+
+            InkWell(
+              onTap: (){
+                Get.toNamed(AppRoutes.upComingEventScreen);
+              },
+              child: CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                text: AppString.seeAll,
+              ),
+            ),
+          ],
+        ),
+
+        16.height,
+
+        SizedBox(
+          height: 190.h,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return InkWell(
+                  onTap: (){
+                    Get.toNamed(AppRoutes.exhibitionScreen);
+                  },
+                  child: EventItem());
+
+            },
+          ),
+        ),
      20.height,
 
         Row(
@@ -249,14 +294,12 @@ class ListItemSection extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: AppColors.primaryColor,
-              text: AppString.recommendedArts,
+              text: AppString.learningMaterials,
             ),
 
             InkWell(
               onTap: (){
-                Get.toNamed(AppRoutes.featureArtsScreen, arguments: {
-                  "title":AppString.recommendedArts
-                });
+                Get.toNamed(AppRoutes.learningMeterials);
               },
               child: CommonText(
                 fontSize: 14,
@@ -280,7 +323,7 @@ class ListItemSection extends StatelessWidget {
                   onTap: (){
                     Get.toNamed(AppRoutes.artDetailsScreen);
                   },
-                  child: ArtsItem());
+                  child: LearningMedarialsItem());
             },
           ),
         ),
