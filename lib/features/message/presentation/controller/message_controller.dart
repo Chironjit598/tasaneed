@@ -19,8 +19,8 @@ class MessageController extends GetxController {
 
   List messages = [
 
-    ChatMessageModel(time: DateTime.now(), text: "I am fine", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg", isMe: false),
-    ChatMessageModel(time: DateTime.now(), text: "How are you", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg", isMe: true),
+    ChatMessageModel(time: DateTime.now(), text: "Is the Hiking Traveler Backpack good for hiking?", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg", isMe: false),
+    ChatMessageModel(time: DateTime.now(), text: "Yes, it’s durable, water-resistant, and has plenty of space for your gear.", image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg", isMe: true),
 
   ];
 

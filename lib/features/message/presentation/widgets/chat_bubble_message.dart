@@ -30,7 +30,7 @@ class ChatBubbleMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.symmetric(horizontal: 17.w, vertical: 12.h),
       child: Column(
         crossAxisAlignment:
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
@@ -38,13 +38,31 @@ class ChatBubbleMessage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.r),
-                color: isMe?AppColors.primaryColor:AppColors.chatClr                    ),
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-            child: CommonText(
-              maxLines: 5,
-              text: text,
-              fontSize: 18,
-              color:isMe? AppColors.white:AppColors.primaryColor,
+                color: isMe?Color(0xFFE7EAED):AppColors.primaryColor                    ),
+            padding:  EdgeInsets.symmetric(horizontal: 17.w, vertical: 12.h),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Expanded(
+                  child: CommonText(
+                    
+                    
+                    maxLines: 5,
+                    textAlign: TextAlign.start,
+                    text: text,
+                    fontSize: 18,
+                    color:isMe? AppColors.titleColor:AppColors.white,
+                  ),
+                ),
+                
+                CommonText(
+                    color:isMe?Color(0xFF111827):AppColors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 10,
+                    text: "11:08 PM")
+
+
+              ],
             ),
           ),
         ],

@@ -25,20 +25,13 @@ class ChatListScreen extends StatelessWidget {
         surfaceTintColor: AppColors.transparent,
         shadowColor: AppColors.transparent,
         backgroundColor: AppColors.white,
-        leading: InkWell(
-          onTap: (){
-            Get.back();
-          },
-          child: Icon(
-              size: 23,
-              color: AppColors.textFiledColor,
-              Icons.arrow_back_ios),
-        ),
+
         centerTitle: true,
-        title: const CommonText(
-          text: AppString.inbox,
+        title:  CommonText(
+          text: AppString.message,
           fontWeight: FontWeight.w600,
-          fontSize: 24,
+          color: AppColors.titleColor,
+          fontSize: 16,
         ),
       ),
 
@@ -61,8 +54,9 @@ class ChatListScreen extends StatelessWidget {
                   children: [
                     /// User Search bar here
                     CommonTextField(
+                      borderColor: AppColors.stroke,
                       prefixIcon: const Icon(Icons.search),
-                      hintText: AppString.searchDoctor,
+                      hintText: AppString.search,
                     ),
 
                     /// Show all Chat List here

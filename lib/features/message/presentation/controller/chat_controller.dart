@@ -25,26 +25,26 @@ class ChatController extends GetxController {
       id: "",
       participant: Participant(
         id: "",
-        fullName: "Chironjit Roy",
+        fullName: "Kathryn Murphy",
         image:
-            AppImages.profileActive,
+            AppImages.female,
       ),
       latestMessage: LatestMessage(
         id: "",
-        message: "How are you?",
+        message: "Product Price ?",
         createdAt: DateTime.now(),
       ),
     ), ChatModel(
       id: "",
       participant: Participant(
         id: "",
-        fullName: "Chironjit Roy",
+        fullName: "CDevon Lane",
         image:
-        AppImages.profileActive,
+        AppImages.female,
       ),
       latestMessage: LatestMessage(
         id: "",
-        message: "How are you?",
+        message: "Product Price ?",
         createdAt: DateTime.now(),
       ),
     ), ChatModel(
@@ -57,7 +57,7 @@ class ChatController extends GetxController {
       ),
       latestMessage: LatestMessage(
         id: "",
-        message: "How are you?",
+        message: "Product Price ?",
         createdAt: DateTime.now(),
       ),
     ),
