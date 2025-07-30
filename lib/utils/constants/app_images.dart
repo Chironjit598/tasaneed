@@ -56,6 +56,7 @@ class AppImages {
   static const String getTransaction= "$baseurl/get_transaction.png";
   static const String received= "$baseurl/received.png";
   static const String send= "$baseurl/send.png";
+  static const String videoDuration= "$baseurl/video_duration.png";
 
 
 
