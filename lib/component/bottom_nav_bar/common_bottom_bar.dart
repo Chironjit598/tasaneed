@@ -5,7 +5,6 @@ import 'package:tasaned_project/utils/constants/app_images.dart';
 
 import '../../config/route/app_routes.dart';
 import '../../utils/constants/app_colors.dart';
-import '../../utils/constants/app_icons.dart';
 import '../image/common_image.dart';
 import '../text/common_text.dart';
 
@@ -31,7 +30,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   ];
 
   String getTitle(int index) {
-    return ["Home", "Category", "Sell", "Inbox", "Profile"][index];
+    return ["Home", "Category", "Resell", "Inbox", "Profile"][index];
   }
 
   CommonImage selectedIcon(int index) {
@@ -124,17 +123,17 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    Get.offAllNamed(routes[2]); // Sell Screen-এ যাবে
+                   Get.toNamed(AppRoutes.userReselScreen);
                   },
                   backgroundColor: AppColors.primaryColor,
                   shape: const CircleBorder(),
                   child: CommonImage( imageSrc: AppImages.sellIcon),
                 ),
-                SizedBox(height: 12.h),
+                SizedBox(height: 27.h),
                 CommonText(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w600,
-                  text: "Sell",
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  text: "Resell",
                   color: Colors.black,
                 ),
               ],
@@ -165,8 +164,8 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
           ),
           SizedBox(height: 2.h),
           CommonText(
-            fontSize: 10,
-            fontWeight: FontWeight.w600,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
             text: getTitle(index),
           ),
         ],

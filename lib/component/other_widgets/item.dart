@@ -14,7 +14,7 @@ class Item extends StatelessWidget {
       this.disableDivider = false,
       this.onTap,
       this.color = AppColors.titleColor,
-      this.vertical = 11,
+      this.vertical = 7,
       this.horizontal = 22,
       this.disableIcon = false});
 

@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tasaned_project/utils/app_utils.dart';
 
 import '../constants/app_colors.dart';
 import '../constants/app_string.dart';
@@ -98,6 +101,24 @@ class OtherHelper {
     //   return croppedFile?.path;
     // }
     return null;
+  }
+
+  static Future<List<String>> pickMultipleImage({required int imageLimit}) async {
+    final ImagePicker picker = ImagePicker();
+    log("Image Limit: $imageLimit");
+
+    final List<XFile> getImages = await picker.pickMultiImage(imageQuality: 50, limit: imageLimit) ?? [];
+
+    if (getImages.isEmpty) return [];
+
+    if (getImages.length > imageLimit) {
+
+      Utils.successSnackBar("You exceeded the image limit", "You can select up to $imageLimit ${imageLimit > 1 ? 'images' : 'image'} only.");
+
+      return [];
+    }
+
+    return getImages.map((file) => file.path).toList();
   }
 
   static Future<String?> pickVideoFromGallery() async {

@@ -131,8 +131,7 @@ class AppString {
   static const String accountVerifiedDes =
       "Your MamaCare account is now verified. Connect with trusted African caregivers near you.";
   static const String signUpAsParentDes = "I am Parent/ Guardian seeking care";
-  static const String signInDes =
-      "Sign in to continue";
+  static const String signInDes = "Sign in to continue";
   static const String onboardingOneTwoDes =
       "Browse through profiles of experienced and trusted nannies. All caregivers ready to provide the best care for your children";
   static const String onboardingOneThreeDes =
@@ -156,7 +155,8 @@ class AppString {
   static const String choosePaymentOption = "Choose Payment Option";
   static const String goHome = "Go Home";
   static const String paymentSuccessful = "Payment Successful";
-  static const String paymentSuccessfulDes = "We will notify you , when your booking will be confirmed by the nanny.";
+  static const String paymentSuccessfulDes =
+      "We will notify you , when your booking will be confirmed by the nanny.";
   static const String estimateTotal = "Estimate Total";
   static const String extraBabyCharge = "Extra Baby charge:";
   static const String hourlyRate = "Hourly Rate:";
@@ -203,9 +203,12 @@ class AppString {
   static const String uploadChildImage = "Upload Child Image";
   static const String dateOfBirthFormat = "DD / MM / YYYY";
   static const String enterChildFullName = "Enter child full name";
-  static const String removeChildrenDes = "This will permanently remove your child’s information.";
-  static const String removeChildrenTitle = "Are you sure you want to remove this child from your profile?";
-  static const String anySpecialInstructionsOrRequirements = "Any Special Instructions or Requirements";
+  static const String removeChildrenDes =
+      "This will permanently remove your child’s information.";
+  static const String removeChildrenTitle =
+      "Are you sure you want to remove this child from your profile?";
+  static const String anySpecialInstructionsOrRequirements =
+      "Any Special Instructions or Requirements";
   static const String bookingUpdates = "Booking Updates";
   static const String chatMessage = "Chat Messages";
   static const String paymentAndInvoice = "Payment & Invoice Alerts";
@@ -254,12 +257,14 @@ class AppString {
   static const String submitReport = "Submit a report";
   static const String giveReview = "Give Review";
   static const String reschedule = "Reschedule";
-  static const String cancelTitle = "Are you sure you want to cancel this booking?";
-  static const String cancelDes = "Canceling will remove your booking and may prevent rebooking for the same time.";
-  static const String logOutDes = "Any unsaved changes will be lost. Do you want to log out?";
+  static const String cancelTitle =
+      "Are you sure you want to cancel this booking?";
+  static const String cancelDes =
+      "Canceling will remove your booking and may prevent rebooking for the same time.";
+  static const String logOutDes =
+      "Any unsaved changes will be lost. Do you want to log out?";
 
   //==========================tasaneed
-
 
   static const String onboardingOneTitle = "Discover Inspiring Art & Artists";
   static const String onboardingTwoTitle = "Buy Directly from Artists";
@@ -270,6 +275,7 @@ class AppString {
   static const String upcomingExhibition = "Upcoming Exhibition";
   static const String popularArtist = "Popular Artist";
   static const String category = "Category";
+  static const String selectCategory = "Select category";
   static const String recentlyViewed = "Recently Viewed";
   static const String yourInformation = "Your Information";
   static const String featureArts = "Feature Arts";
@@ -283,22 +289,23 @@ class AppString {
   static const String aboutArtist = "About Artist";
   static const String description = "Description";
   static const String follow = "Follow";
-  static const String makeAnOffer  = "Make an Offer";
-  static const String purchase  = "Purchase";
-  static const String checkout  = "Checkout";
-  static const String personalInformation  = "Personal Information";
-  static const String transaction  = "Transaction";
-  static const String transactionHistory  = "Transaction History";
-  static const String placeOrder  = "Place Order";
-  static const String totalPrice  = "Total Price";
-  static const String shippingFee  = "Shipping Fee";
-  static const String itemCost  = "Item Cost";
-  static const String choosePaymentMethod  = "Choose Payment method";
-  static const String paymentMethod  = "Payment Method";
-  static const String chooseDeliveryOption  = "Choose Delivery Option";
-  static const String deliveryOptions  = "Delivery Options";
-  static const String shippingAddress  = "Shipping Address";
-  static const String iHaveReadAndAgreeToTheWebsite  = "I have read and agree to the website ";
+  static const String makeAnOffer = "Make an Offer";
+  static const String purchase = "Purchase";
+  static const String checkout = "Checkout";
+  static const String personalInformation = "Personal Information";
+  static const String transaction = "Transaction";
+  static const String transactionHistory = "Transaction History";
+  static const String placeOrder = "Place Order";
+  static const String totalPrice = "Total Price";
+  static const String shippingFee = "Shipping Fee";
+  static const String itemCost = "Item Cost";
+  static const String choosePaymentMethod = "Choose Payment method";
+  static const String paymentMethod = "Payment Method";
+  static const String chooseDeliveryOption = "Choose Delivery Option";
+  static const String deliveryOptions = "Delivery Options";
+  static const String shippingAddress = "Shipping Address";
+  static const String iHaveReadAndAgreeToTheWebsite =
+      "I have read and agree to the website ";
 
   static const String searchHintText = "Search Artworks, Artists, Exhibitions";
   static const String myOrder = "My Order";
@@ -342,16 +349,41 @@ class AppString {
   static const String events = 'Events';
   static const String upcomingEvents = 'Upcoming Events';
   static const String earned = 'Earned';
+  static const String tapToUploadImage = 'Tap to upload image';
+  static const String chooseYourMainPhotoFirst =
+      'Photos: 0/05 : Choose your main photo first';
   static const String learningObjectives = 'Learning Objectives:';
-  static const String keyPointsLearnInThisLesson = 'Key points you’ll learn in this lesson:';
-  static const String featureEvents  = 'Feature Events ';
+  static const String keyPointsLearnInThisLesson =
+      'Key points you’ll learn in this lesson:';
+  static const String featureEvents = 'Feature Events ';
   static const String aboutTheExhibition = 'About the Exhibition';
   static const String upgradeToPremium = 'Upgrade to Premium';
-  static const String upgradeToPremiumDes = 'Enjoy workout access without limits';
-  static const String confirmationDes  = "Your order is being processed and will be shipped shortly. We're excited to get your items to you!";
+  static const String acceptOffersFromBuyers = 'Accept offers from Buyers';
+  static const String includeOriginalFrame = 'Include Original Frame';
+  static const String frame = 'Frame';
+  static const String selectAuthentication = 'Select Authentication';
+  static const String heightIn = 'Height (in)';
+  static const String widthIn = 'Width (in)';
+  static const String dimensions = 'Dimensions';
+  static const String describeYourArtwork = 'Describe your artwork';
+  static const String enterArtworkTitle = 'Enter artwork title';
+  static const String artworkTitle = 'Artwork Title';
+  static const String medium = 'Medium';
+  static const String searchArtist = 'Search Artist';
+  static const String artist = 'Artist';
+  static const String price = 'Price';
+  static const String listArtwork = 'List Artwork';
+  static const String authentication = 'Authentication';
+  static const String mediumHintText = 'e.g., Watercolor on paper, oil on canvas';
+  static const String upgradeToPremiumDes =
+      'Enjoy workout access without limits';
+  static const String confirmationDes =
+      "Your order is being processed and will be shipped shortly. We're excited to get your items to you!";
 
-  static const String onboardingDesOne = "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";
-  static const String onboardingDesTwo = "Support independent creators by purchasing or commissioning artwork with just a few taps.";
-  static const String onboardingDesThree = "Upload your portfolio, join exhibitions, and connect with collectors and curators globally.";
-
+  static const String onboardingDesOne =
+      "Explore original artworks, curated collections, and rising talents from around the world — all in one place.";
+  static const String onboardingDesTwo =
+      "Support independent creators by purchasing or commissioning artwork with just a few taps.";
+  static const String onboardingDesThree =
+      "Upload your portfolio, join exhibitions, and connect with collectors and curators globally.";
 }

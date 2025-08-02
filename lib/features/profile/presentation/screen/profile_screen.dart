@@ -32,6 +32,10 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     CommonImage(
                         width: Get.width,
+
+                        height: 280.h,
+                        fill: BoxFit.fill,
+
                         imageSrc: AppImages.profileBg),
 
 
