@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
-import '../../../../component/image/common_image.dart';
 import '../../../../component/other_widgets/item.dart';
-import '../../../../component/pop_up/common_pop_menu.dart';
-import '../../../../component/pop_up/delete_popup.dart';
 import '../../../../component/text/common_text.dart';
 import '../../../../config/route/app_routes.dart';
-import '../../../../services/storage/storage_services.dart';
 import '../../../../utils/constants/app_colors.dart';
 import '../../../../utils/constants/app_images.dart';
 import '../../../../utils/constants/app_string.dart';

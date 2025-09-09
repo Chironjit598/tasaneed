@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/widgets/artist_details_heading_section.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
-
 import '../../../grandle_gallery/presentation/controller/controller/artist_details_controller.dart';
-import '../../../grandle_gallery/presentation/widgets/about_us_section.dart';
-import '../../../grandle_gallery/presentation/widgets/art_work_section.dart';
-import '../../../grandle_gallery/presentation/widgets/heading_section.dart';
-import '../../../grandle_gallery/presentation/widgets/shows_section.dart';
 import '../widgets/artist_about_us_section.dart';
 import '../widgets/artist_art_work_section.dart';
 

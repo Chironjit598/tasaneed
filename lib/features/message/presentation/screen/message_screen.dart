@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../component/image/common_image.dart';
 import '../../../../component/text/common_text.dart';
 import '../../../../component/text_field/common_text_field.dart';
 import '../../../../utils/constants/app_colors.dart';

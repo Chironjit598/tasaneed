@@ -6,8 +6,6 @@ import 'package:tasaned_project/component/text_field/common_text_field.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
-
-import '../widgets/my_list_item.dart';
 import '../widgets/my_purchase_item.dart';
 
 class MyPurchaseScreen extends StatelessWidget {

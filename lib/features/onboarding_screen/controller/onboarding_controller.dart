@@ -71,7 +71,7 @@ class OnboardingController extends GetxController {
                 desList: titleDes,
                 index: pageIndex.value,
                 signUp: () {
-                  Get.offAllNamed(AppRoutes.signUp);
+                  Get.offAllNamed(AppRoutes.chooseRole);
                 },
                 signIn: () {
                   Get.offAllNamed(AppRoutes.signIn);

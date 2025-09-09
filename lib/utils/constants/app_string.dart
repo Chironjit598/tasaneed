@@ -111,7 +111,7 @@ class AppString {
   static const String unknownError = "Unknown Error";
   static const String getStarted = "Get Started";
   static const String onboardingOneDes =
-      "Your trusted childcare solution! Discover reliable nannies within your community to care for your little ones while you’re busy.";
+      "Explore original artworks collections, and rising talents from around the world all in one place.";
   static const String newHere = "New here?";
   static const String joinMamaCareFamily = "Join MamaCare Family";
   static const String welcomeToMamaCare = "Welcome to MamaCare";
@@ -133,9 +133,9 @@ class AppString {
   static const String signUpAsParentDes = "I am Parent/ Guardian seeking care";
   static const String signInDes = "Sign in to continue";
   static const String onboardingOneTwoDes =
-      "Browse through profiles of experienced and trusted nannies. All caregivers ready to provide the best care for your children";
+      "Support independent creators by purchasing or commissioning artwork with just a few taps.";
   static const String onboardingOneThreeDes =
-      "Simply book a nanny, select your preferred hours, and make secure payments all within the app. It's fast, easy, and safe!";
+      "Upload your portfolio, join exhibitions, and connect with collectors and curators globally.";
   static const String addPhoto = "Add Photo";
   static const String seeAll = "See all";
   static const String findNannyNearYou = "Find a Nanny Near You";
@@ -266,9 +266,21 @@ class AppString {
 
   //==========================tasaneed
 
-  static const String onboardingOneTitle = "Discover Inspiring Art & Artists";
+  static const String onboardingOneTitle = "Explore Inspiring Art & Artists";
   static const String onboardingTwoTitle = "Buy Directly from Artists";
   static const String onboardingThreeTitle = "Showcase Your Own Art";
+  static const String welcomeToTasaneeArt = "Welcome to Tasanee Art";
+  static const String welcomeToTasaneeArtDes =
+      "Discover a world of creativity, where artists, curators, and art lovers come together.";
+  // Choose Role
+  static const String chooseRoleTitle = "Choose Role";
+  static const String chooseRoleSubtitle = "Select your role to begin your journey.";
+  static const String roleGeneralUserCollectorTitle = "General User/ Collector";
+  static const String roleGeneralUserCollectorDes = "I love discovering and collecting art.";
+  static const String roleArtistCuratorTitle = "Artist / Curator Role";
+  static const String roleArtistCuratorDes = "I create and curate art exhibitions.";
+  static const String roleMuseumEduTitle = "Museum / Edu Institution";
+  static const String roleMuseumEduDes = "I manage exhibitions and provide learning materials.";
   static const String joinUs = "Join Us";
   static const String confirm = "Confirm";
   static const String recommendedArts = "Recommended Arts";

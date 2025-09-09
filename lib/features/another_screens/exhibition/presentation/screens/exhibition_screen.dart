@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:tasaned_project/component/bottom_nav_bar/common_bottom_bar.dart';
 import 'package:tasaned_project/component/button/common_button.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/features/another_screens/exhibition/presentation/controller/exhibition_controller.dart';

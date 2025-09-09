@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
-import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/category_item.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
-
 import '../../../../../component/bottom_nav_bar/common_bottom_bar.dart';
-import '../../../user_home/presentation/widgets/arts_item.dart';
 import '../widget/category_item_vertical.dart';
 
 class CategoryScreen extends StatelessWidget {

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tasaned_project/component/text/common_text.dart';
-
 import '../../../user_home/presentation/widgets/exhibition_item.dart';
 
 class ShowsSection extends StatelessWidget {

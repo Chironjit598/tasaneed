@@ -1,15 +1,9 @@
-
-import 'dart:io';
-
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/features/another_screens/user_resel/presentation/controller/user_resell_controller.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
-import 'package:tasaned_project/utils/constants/app_string.dart';
-import 'package:tasaned_project/utils/extensions/extension.dart';
 
 import '../widget/all_text_filed_section.dart';
 import '../widget/upload_image_section.dart';

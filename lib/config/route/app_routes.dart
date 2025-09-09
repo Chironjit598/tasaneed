@@ -33,6 +33,8 @@ import '../../features/message/presentation/screen/chat_screen.dart';
 import '../../features/message/presentation/screen/message_screen.dart';
 import '../../features/notifications/presentation/screen/notifications_screen.dart';
 import '../../features/onboarding_screen/screens/onboarding_screen.dart';
+import '../../features/onboarding_screen/screens/welcome_screen.dart';
+import '../../features/onboarding_screen/screens/choose_role_screen.dart';
 import '../../features/profile/presentation/screen/edit_profile.dart';
 import '../../features/profile/presentation/screen/notification_settings.dart';
 import '../../features/profile/presentation/screen/profile_screen.dart';
@@ -47,6 +49,8 @@ class AppRoutes {
   static const String test = "/test_screen.dart";
   static const String splash = "/splash_screen.dart";
   static const String onboarding = "/onboarding_screen.dart";
+  static const String welcome = "/welcome_screen.dart";
+  static const String chooseRole = "/choose_role_screen.dart";
   static const String signUp = "/sign_up_screen.dart";
   static const String verifyUser = "/verify_user.dart";
   static const String signIn = "/sign_in_screen.dart";
@@ -120,6 +124,8 @@ class AppRoutes {
 
   static List<GetPage> routes = [
     GetPage(name: splash, page: () => const SplashScreen()),
+    GetPage(name: welcome, page: () => const WelcomeScreen()),
+    GetPage(name: chooseRole, page: () => const ChooseRoleScreen()),
     GetPage(name: onboarding, page: () =>  OnboardingScreen()),
     GetPage(name: signUp, page: () => SignUpScreen()),
     GetPage(name: verifyUser, page: () => const VerifyUser()),

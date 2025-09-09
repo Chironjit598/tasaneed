@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 import '../../../component/button/common_button.dart';
 import '../../../component/text/common_text.dart';
@@ -22,7 +20,7 @@ class CustomBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: 380.h,
+      height: 340.h,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -39,13 +37,13 @@ class CustomBottomSheet extends StatelessWidget {
             CommonText(
               fontSize: 20,
                 maxLines: 1,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w700,
 
 
                 text: titleList[index]),
             5.height,
             CommonText(
-              fontSize: 14,
+              fontSize: 12,
 
                 fontWeight: FontWeight.w400,
                 color: AppColors.bodyClr,

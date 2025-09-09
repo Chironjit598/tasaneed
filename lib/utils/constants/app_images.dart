@@ -57,6 +57,7 @@ class AppImages {
   static const String received= "$baseurl/received.png";
   static const String send= "$baseurl/send.png";
   static const String videoDuration= "$baseurl/video_duration.png";
+   static const String welcomeScreenBgImage= "$baseurl/welcome_screen_bg_image.png";
 
 
 

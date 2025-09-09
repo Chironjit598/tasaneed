@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../../config/route/app_routes.dart';
-import '../../../user_home/presentation/widgets/arts_item.dart';
 import 'artist_item_details.dart';
 
 class ArtistArtWorkSection extends StatelessWidget {
