@@ -1,0 +1,192 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/component/button/common_button.dart';
+import 'package:tasaned_project/utils/constants/app_colors.dart';
+import 'package:tasaned_project/utils/constants/app_images.dart';
+import 'package:tasaned_project/utils/extensions/extension.dart';
+import 'package:tasaned_project/utils/constants/app_strings.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_image_carousel.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/controller/my_order_controller.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_info_table.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/my_information_card.dart';
+
+class MyOrderScreen extends StatelessWidget {
+  const MyOrderScreen({super.key, required this.order});
+
+  final Map<String, dynamic> order;
+
+  @override
+  Widget build(BuildContext context) {
+    // put controller for carousel
+    Get.put(MyOrderController());
+    final title = (order['title'] ?? '').toString();
+    final price = (order['price'] ?? 0).toString();
+    final status = (order['status'] ?? '').toString();
+
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      appBar: AppBar(
+        backgroundColor: AppColors.white,
+        shadowColor: AppColors.transparent,
+        surfaceTintColor: AppColors.transparent,
+        centerTitle: true,
+        title: CommonText(
+          text: AppStrings.myOrder,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: AppColors.titleColor,
+        ),
+        leading: InkWell(
+          onTap: () => Get.back(),
+          child: Icon(Icons.arrow_back_ios, size: 20.sp, color: AppColors.titleColor),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 16.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Top image/banner as slidable carousel
+              Padding(
+                padding: EdgeInsets.all(16.w),
+                child: OrderImageCarousel(
+                  images: const [
+                    AppImages.arts,
+                    AppImages.exhibition,
+                    AppImages.classic,
+                  ],
+                  height: 300.h,
+                ),
+              ),
+
+              // Title, subtitle, price
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CommonText(
+                      text: title,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.titleColor,
+                    ),
+                    5.height,
+                    CommonText(
+                      text: AppStrings.abstract,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.titleColorSecondary,
+                    ),
+                    8.height,
+                    CommonText(
+                      text: '\$${price}',
+                      fontSize:24,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.primaryColor,
+                    ),
+                  ],
+                ),
+              ),
+
+              20.height,
+
+              // Order Details card
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: CommonText(
+                  text: AppStrings.orderDetails,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.titleColor,
+                ),
+              ),
+              8.height,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: InfoTable(rows: [
+                  RowItem(AppStrings.orderId, '#ORD-2024-0892'),
+                  RowItem(AppStrings.orderDate, 'Aug 19, 2025'),
+                  RowItem(AppStrings.orderStatus, status),
+                  RowItem(AppStrings.paymentMethod, 'Credit Card'),
+                  RowItem(AppStrings.paymentStatus, 'Paid'),
+                  RowItem(AppStrings.totalAmount, '\$${price}.00'),
+                ]),
+              ),
+
+              24.height,
+
+              // My Information
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: CommonText(
+                  text: AppStrings.myInformation,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.titleColor,
+                ),
+              ),
+              8.height,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: const MyInformationCard(),
+              ),
+
+              24.height,
+
+              // Additional Information
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: CommonText(
+                  text: AppStrings.additionalInformation,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.titleColor,
+                ),
+              ),
+              8.height,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    border: Border(left: BorderSide(color: AppColors.primaryColor, width: 3)),
+                    color: AppColors.yelloFade,
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: CommonText(
+                    text: AppStrings.callMeBeforeSending,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.titleColor,
+                  ),
+                ),
+              ),
+
+              20.height,
+
+              // View product details button
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: CommonButton(
+                  buttonColor: AppColors.transparent,
+                  titleText: AppStrings.viewProductDetails,
+                  buttonRadius: 60,
+                  titleColor: AppColors.primaryColor,
+                  onTap: () {},
+                ),
+              ),
+
+              20.height,
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+}

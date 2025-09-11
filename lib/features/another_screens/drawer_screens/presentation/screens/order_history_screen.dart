@@ -6,6 +6,8 @@ import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_tabs.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_list.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_filter_sheet.dart';
+import 'package:tasaned_project/utils/constants/app_strings.dart';
 import '../controller/order_history_controller.dart';
 
 class OrderHistoryScreen extends StatelessWidget {
@@ -13,6 +15,8 @@ class OrderHistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Provide controller for AppBar actions and the body
+    final controller = Get.put(OrderHistoryController());
     return Scaffold(
       backgroundColor: AppColors.myListBg,
       appBar: AppBar(
@@ -21,7 +25,7 @@ class OrderHistoryScreen extends StatelessWidget {
         surfaceTintColor: AppColors.transparent,
         centerTitle: true,
         title: CommonText(
-          text: 'Order History',
+          text: AppStrings.orderHistory,
           fontSize: 16,
           fontWeight: FontWeight.w600,
           color: AppColors.titleColor,
@@ -34,7 +38,21 @@ class OrderHistoryScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 16.w),
             child: OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (_) => OrderFilterSheet(
+                    statuses: controller.statuses,
+                    initialSelected: controller.selectedStatusFilter,
+                    onApply: (value) {
+                      Navigator.of(context).pop();
+                      controller.setFilter(value);
+                    },
+                  ),
+                );
+              },
               style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
                 side: BorderSide(color: AppColors.stroke),
@@ -42,13 +60,12 @@ class OrderHistoryScreen extends StatelessWidget {
                 foregroundColor: AppColors.titleColor,
               ),
               icon: Icon(Icons.filter_alt_outlined, size: 16.sp),
-              label: CommonText(text: 'Filter', fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.titleColor),
+              label: CommonText(text: AppStrings.filter, fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.titleColor),
             ),
           ),
         ],
       ),
       body: GetBuilder<OrderHistoryController>(
-        init: OrderHistoryController(),
         builder: (controller) {
           return SingleChildScrollView(
             child: Column(
@@ -64,7 +81,7 @@ class OrderHistoryScreen extends StatelessWidget {
                 12.height,
                 // Order list
                 OrderList(
-                  items: controller.currentList,
+                  items: controller.filteredList,
                   selectedTab: controller.selectedTab,
                 ),
             

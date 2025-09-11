@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
+import 'package:tasaned_project/utils/constants/app_strings.dart';
 
 class OrderTabs extends StatelessWidget {
   const OrderTabs({
@@ -36,7 +37,7 @@ class OrderTabs extends StatelessWidget {
                           ),
                           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
                           child: const CommonText(
-                            text: 'My Purchase',
+                            text: AppStrings.myPurchase,
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: AppColors.white,
@@ -45,7 +46,7 @@ class OrderTabs extends StatelessWidget {
                       : Padding(
                           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
                           child: const CommonText(
-                            text: 'My Purchase',
+                            text: AppStrings.myPurchase,
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: AppColors.titleColor,
@@ -70,7 +71,7 @@ class OrderTabs extends StatelessWidget {
                           ),
                           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
                           child: const CommonText(
-                            text: 'My Sales',
+                            text: AppStrings.mySales,
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: AppColors.white,
@@ -79,7 +80,7 @@ class OrderTabs extends StatelessWidget {
                       : Padding(
                           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
                           child: const CommonText(
-                            text: 'My Sales',
+                            text: AppStrings.mySales,
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: AppColors.titleColor,
