@@ -6,11 +6,12 @@ import 'package:tasaned_project/component/button/common_button.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
-import 'package:tasaned_project/utils/constants/app_strings.dart';
+import 'package:tasaned_project/utils/constants/app_string.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_image_carousel.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/controller/my_order_controller.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_info_table.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/my_information_card.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/art_details_screen.dart';
 
 class MyOrderScreen extends StatelessWidget {
   const MyOrderScreen({super.key, required this.order});
@@ -33,7 +34,7 @@ class MyOrderScreen extends StatelessWidget {
         surfaceTintColor: AppColors.transparent,
         centerTitle: true,
         title: CommonText(
-          text: AppStrings.myOrder,
+          text: AppString.myOrder,
           fontSize: 16,
           fontWeight: FontWeight.w600,
           color: AppColors.titleColor,
@@ -76,7 +77,7 @@ class MyOrderScreen extends StatelessWidget {
                     ),
                     5.height,
                     CommonText(
-                      text: AppStrings.abstract,
+                      text: AppString.abstractLabel,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       color: AppColors.titleColorSecondary,
@@ -98,7 +99,7 @@ class MyOrderScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: CommonText(
-                  text: AppStrings.orderDetails,
+                  text: AppString.orderDetails,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: AppColors.titleColor,
@@ -108,12 +109,12 @@ class MyOrderScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: InfoTable(rows: [
-                  RowItem(AppStrings.orderId, '#ORD-2024-0892'),
-                  RowItem(AppStrings.orderDate, 'Aug 19, 2025'),
-                  RowItem(AppStrings.orderStatus, status),
-                  RowItem(AppStrings.paymentMethod, 'Credit Card'),
-                  RowItem(AppStrings.paymentStatus, 'Paid'),
-                  RowItem(AppStrings.totalAmount, '\$${price}.00'),
+                  RowItem(AppString.orderId, '#ORD-2024-0892'),
+                  RowItem(AppString.orderDate, 'Aug 19, 2025'),
+                  RowItem(AppString.orderStatus, status),
+                  RowItem(AppString.paymentMethod, 'Credit Card'),
+                  RowItem(AppString.paymentStatus, 'Paid'),
+                  RowItem(AppString.totalAmount, '\$${price}.00'),
                 ]),
               ),
 
@@ -123,7 +124,7 @@ class MyOrderScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: CommonText(
-                  text: AppStrings.myInformation,
+                  text: AppString.myInformation,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: AppColors.titleColor,
@@ -141,7 +142,7 @@ class MyOrderScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: CommonText(
-                  text: AppStrings.additionalInformation,
+                  text: AppString.additionalInformation,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: AppColors.titleColor,
@@ -159,7 +160,7 @@ class MyOrderScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: CommonText(
-                    text: AppStrings.callMeBeforeSending,
+                    text: AppString.callMeBeforeSending,
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                     color: AppColors.titleColor,
@@ -174,10 +175,12 @@ class MyOrderScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: CommonButton(
                   buttonColor: AppColors.transparent,
-                  titleText: AppStrings.viewProductDetails,
+                  titleText: AppString.viewProductDetails,
                   buttonRadius: 60,
                   titleColor: AppColors.primaryColor,
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => ArtDetailsScreen(title: title, price: price));
+                  },
                 ),
               ),
 

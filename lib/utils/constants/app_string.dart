@@ -401,4 +401,35 @@ class AppString {
   static const String orderHistory = 'Order History';
   static const String followers = 'Followers';
   static const String following = 'Following';
+
+  // ==== Added from AppStrings (centralized) ====
+  static const String myPurchase = 'My Purchase';
+  static const String mySales = 'My Sales';
+  static const String apply = 'Apply';
+  static const String viewProductDetails = 'View Product Details';
+  static const String orderDetails = 'Order Details';
+  static const String myInformation = 'My Information';
+  static const String additionalInformation = 'Additional Information';
+  static const String orderId = 'Order ID';
+  static const String orderDate = 'Order Date';
+  static const String orderStatus = 'Order Status';
+  static const String paymentStatus = 'Payment Status';
+  static const String totalAmount = 'Total Amount';
+  static const String callMeBeforeSending = 'Call me before sending the product';
+  // 'abstract' is a reserved keyword; use a safe key
+  static const String abstractLabel = 'Abstract';
+
+  // ==== Art Details screen ====
+  static const String relatedArts = 'Related Arts';
+  static const String artDetailsDesc =
+      "A captivating and evocative artwork that blends nature's serene beauty with abstract elements, capturing the mystical essence of the forest.";
+  static const String dimensionsLabel = 'Dimensions:';
+  static const String dimensionsValue = '13 x 15 5/8 in (33 x 39.7 cm)';
+  static const String authenticationLabel = 'Authentication:';
+  static const String authenticationValue = 'Hand-signed by artist';
+  static const String aboutArtistDesc =
+      'John Currin’s provocative portraits blend satirical exaggeration with grotesque beauty, masterfully exploring themes of identity, culture, and art history.';
+  static const String artistNameSample = 'John Currin';
+  static const String relatedArtTitleSample = 'Whispers of the Fo..';
+  static const String relatedArtPriceSample = '\$250';
 }

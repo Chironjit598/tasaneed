@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tasaned_project/component/button/common_button.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
+import 'package:tasaned_project/utils/constants/app_string.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
-import 'package:tasaned_project/utils/constants/app_strings.dart';
 
 class OrderFilterSheet extends StatefulWidget {
   const OrderFilterSheet({
@@ -56,7 +56,7 @@ class _OrderFilterSheetState extends State<OrderFilterSheet> {
                 child: Row(
                   children: [
                     const CommonText(
-                      text: AppStrings.filter,
+                      text: AppString.filter,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                       color: AppColors.titleColor,
@@ -136,7 +136,7 @@ class _OrderFilterSheetState extends State<OrderFilterSheet> {
          Padding(
            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
            child: CommonButton(
-            titleText: AppStrings.apply,
+            titleText: AppString.apply,
             buttonRadius: 60,
             onTap: () {
               widget.onApply(_selected);

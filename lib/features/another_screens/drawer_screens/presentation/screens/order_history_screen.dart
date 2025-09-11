@@ -7,7 +7,7 @@ import 'package:tasaned_project/utils/extensions/extension.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_tabs.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_list.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_filter_sheet.dart';
-import 'package:tasaned_project/utils/constants/app_strings.dart';
+import 'package:tasaned_project/utils/constants/app_string.dart';
 import '../controller/order_history_controller.dart';
 
 class OrderHistoryScreen extends StatelessWidget {
@@ -25,7 +25,7 @@ class OrderHistoryScreen extends StatelessWidget {
         surfaceTintColor: AppColors.transparent,
         centerTitle: true,
         title: CommonText(
-          text: AppStrings.orderHistory,
+          text: AppString.orderHistory,
           fontSize: 16,
           fontWeight: FontWeight.w600,
           color: AppColors.titleColor,
@@ -60,7 +60,7 @@ class OrderHistoryScreen extends StatelessWidget {
                 foregroundColor: AppColors.titleColor,
               ),
               icon: Icon(Icons.filter_alt_outlined, size: 16.sp),
-              label: CommonText(text: AppStrings.filter, fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.titleColor),
+              label: CommonText(text: AppString.filter, fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.titleColor),
             ),
           ),
         ],
