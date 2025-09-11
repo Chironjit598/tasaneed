@@ -12,7 +12,7 @@ class ExhibitionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 16.w),
+      //margin: EdgeInsets.only(right: 16.w),
       width: 165.w,
       height: 190.h,
       decoration: BoxDecoration(
@@ -26,7 +26,7 @@ class ExhibitionItem extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.r),
                 child: CommonImage(
-                  width: 148.w,
+                  width: 165.w,
                   fill: BoxFit.fill,
                   height: 112.h,
                   imageSrc: AppImages.exhibition,
@@ -68,12 +68,15 @@ class ExhibitionItem extends StatelessWidget {
                     size: 18.sp,
                     color: AppColors.bodyClr,
                     Icons.account_balance_rounded),
-                CommonText(
-                    left: 4,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.bodyClr,
-                    text: "Classical Masters")
+                Flexible(
+                  child: CommonText(
+                    
+                      left: 4,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.bodyClr,
+                      text: "Classical Masters"),
+                )
                
               ],
             ),

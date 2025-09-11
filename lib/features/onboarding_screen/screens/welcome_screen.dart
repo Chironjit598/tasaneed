@@ -23,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
 
             40.height,
             SizedBox(
-              height: 542.h,
+              height: 530.h,
               width: double.infinity,
               child: Stack(
                 fit: StackFit.expand,

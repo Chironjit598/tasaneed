@@ -54,7 +54,8 @@ class ListItemSection extends StatelessWidget {
 
         SizedBox(
           height: 182.h,
-          child: ListView.builder(
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
@@ -65,6 +66,7 @@ class ListItemSection extends StatelessWidget {
                   },
                   child: ArtsItem());
             },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
         ),
         20.height,
@@ -100,17 +102,18 @@ class ListItemSection extends StatelessWidget {
 
         SizedBox(
           height: 182.h,
-          child: ListView.builder(
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
               return InkWell(
-
                   onTap: (){
                     Get.toNamed(AppRoutes.artDetailsScreen);
                   },
                   child: ArtsItem());
             },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
         ),
 
@@ -145,14 +148,15 @@ class ListItemSection extends StatelessWidget {
 
         SizedBox(
           height: 90.h,
-          child:ListView.builder(
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (context, index){
-
-            return CategoryItem();
-          })
-          ,
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return CategoryItem();
+            },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
+          ),
         ),
 
         20.height,
@@ -185,12 +189,14 @@ class ListItemSection extends StatelessWidget {
 
         SizedBox(
           height: 90.h,
-          child: ListView.builder(
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
               return PopularArtistItem();
             },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
         ),
 
@@ -229,7 +235,8 @@ class ListItemSection extends StatelessWidget {
 
         SizedBox(
           height: 200.h,
-          child: ListView.builder(
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
@@ -238,8 +245,8 @@ class ListItemSection extends StatelessWidget {
                     Get.toNamed(AppRoutes.exhibitionScreen);
                   },
                   child: ExhibitionItem());
-
             },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
         ),
         20.height,
@@ -272,7 +279,8 @@ class ListItemSection extends StatelessWidget {
 
         SizedBox(
           height: 200.h,
-          child: ListView.builder(
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
@@ -281,8 +289,8 @@ class ListItemSection extends StatelessWidget {
                     Get.toNamed(AppRoutes.exhibitionScreen);
                   },
                   child: EventItem());
-
             },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
         ),
      20.height,
@@ -315,7 +323,8 @@ class ListItemSection extends StatelessWidget {
 
         SizedBox(
           height: 182.h,
-          child: ListView.builder(
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
@@ -325,6 +334,7 @@ class ListItemSection extends StatelessWidget {
                   },
                   child: LearningMedarialsItem());
             },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
         ),
 

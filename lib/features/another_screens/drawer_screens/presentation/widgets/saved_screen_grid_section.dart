@@ -18,7 +18,7 @@ class SavedScreenGridSection extends StatelessWidget {
       init: SavedController(),
       builder: (controller) {
         return Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 23.w),
+          padding:  EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             children: [
               controller.isSelected=='art'? GridView.builder(
@@ -27,9 +27,11 @@ class SavedScreenGridSection extends StatelessWidget {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,  // Number of columns
-                    crossAxisSpacing: 1, // Horizontal space between items
-                    mainAxisSpacing:20 , // Vertical space between items
+                    crossAxisCount: 2, 
+                    crossAxisSpacing: 15, 
+                    mainAxisSpacing:20 , 
+                    
+                    mainAxisExtent:180.h,
                   ), itemBuilder: (context, index){
 
                 return InkWell(
@@ -45,10 +47,12 @@ class SavedScreenGridSection extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,  // Number of columns
-                      crossAxisSpacing: 1, // Horizontal space between items
+                      crossAxisSpacing: 15, // Horizontal space between items
                       mainAxisSpacing:20 ,
+                                          
 
-                      mainAxisExtent: 190.h
+
+                      mainAxisExtent: 200.h
                     // Vertical space between items
                   ), itemBuilder: (context, index){
 
@@ -60,10 +64,10 @@ class SavedScreenGridSection extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,  // Number of columns
-                      crossAxisSpacing: 1, // Horizontal space between items
+                      crossAxisSpacing: 15, // Horizontal space between items
                       mainAxisSpacing:20 ,
 
-                      mainAxisExtent: 190.h
+                      mainAxisExtent: 185.h
                     // Vertical space between items
                   ), itemBuilder: (context, index){
 
@@ -75,7 +79,7 @@ class SavedScreenGridSection extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,  // Number of columns
-                      crossAxisSpacing: 1, // Horizontal space between items
+                      crossAxisSpacing: 15, // Horizontal space between items
                       mainAxisSpacing:20 ,
 
                       mainAxisExtent: 175.h

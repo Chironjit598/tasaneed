@@ -18,7 +18,7 @@ class LearningMedarialsItem extends StatelessWidget {
         Get.toNamed(AppRoutes.learningMaterialsDetailsScreen);
       },
       child: Container(
-        margin: EdgeInsets.only(right: 16.w),
+        //margin: EdgeInsets.only(right: 16.w),
         width: 158.w,
         height: 170.h,
         decoration: BoxDecoration(
@@ -33,8 +33,8 @@ class LearningMedarialsItem extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12.r),
                   child: CommonImage(
-                    width: 148.w,
-                    fill: BoxFit.fill,
+                    width: 158.w,
+                    fill: BoxFit.cover,
                     height: 112.h,
                     imageSrc: AppImages.learning,
                   ),

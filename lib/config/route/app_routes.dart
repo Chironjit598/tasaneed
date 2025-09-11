@@ -4,7 +4,7 @@ import 'package:tasaned_project/features/another_screens/art_details/presentatio
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/payment_confirmation_screen.dart';
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/screens/artist_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
-import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_purchase_screen.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/order_history_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/saved_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/followers_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/following_screen.dart';
@@ -172,7 +172,7 @@ class AppRoutes {
     GetPage(name: artistDetailsScreen, page: () => ArtistDetailsScreen()),
     GetPage(name: exhibitionScreen, page: () => ExhibitionScreen()),
     GetPage(name: myListingScreen, page: () => MyListingScreen()),
-    GetPage(name: purchaseHistory, page: () => MyPurchaseScreen()),
+    GetPage(name: purchaseHistory, page: () => OrderHistoryScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),
     GetPage(name: savedScreen, page: () => SavedScreen()),
     GetPage(name: followersScreen, page: () => FollowersScreen()),
