@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tasaned_project/component/bottom_nav_bar/common_bottom_bar.dart';
+import 'package:get/get.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/component/text_field/common_text_field.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
@@ -53,6 +55,9 @@ class UserHomeScreen extends StatelessWidget {
                     hintText: AppString.searchHintText,
                     textColor: AppColors.searchText,
                     borderColor: AppColors.searchText,
+                    onTap: (){
+                      Get.toNamed(AppRoutes.searchScreen);
+                    },
                     suffixIcon: Container(
                       margin: EdgeInsets.all(6.r),
                       decoration: BoxDecoration(
