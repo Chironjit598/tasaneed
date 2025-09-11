@@ -6,6 +6,8 @@ import 'package:tasaned_project/features/another_screens/artist_details/presenta
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_purchase_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/saved_screen.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/followers_screen.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/following_screen.dart';
 import 'package:tasaned_project/features/another_screens/exhibition/presentation/screens/exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_listing_screen.dart';
@@ -119,6 +121,8 @@ class AppRoutes {
   static const String learningMeterials = "/learningMeterials";
   static const String learningMaterialVideoScreen = "/LearningMaterialVideoScreen";
   static const String learningMaterialsDetailsScreen = "/learningMaterialsDetailsScreen";
+  static const String followersScreen = "/followersScreen";
+  static const String followingScreen = "/followingScreen";
 
 
 
@@ -168,6 +172,8 @@ class AppRoutes {
     GetPage(name: purchaseHistory, page: () => MyPurchaseScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),
     GetPage(name: savedScreen, page: () => SavedScreen()),
+    GetPage(name: followersScreen, page: () => FollowersScreen()),
+    GetPage(name: followingScreen, page: () => FollowingScreen()),
     GetPage(name: upComingEventScreen, page: () => UpComingEventScreen()),
     GetPage(name: learningMeterials, page: () => LearningMetarialScreen()),
     GetPage(name: userReselScreen, page: () => UserReselScreen()),

@@ -19,138 +19,168 @@ class CustomDrawer extends StatelessWidget {
       child: Column(
         children: [
           // Header Section with profile image, name, and email
-          UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: AppColors.background),
-
-            accountName: CommonText(
-              fontSize: 18,
-                top: 6,
-                fontWeight: FontWeight.w600,
-                color: AppColors.titleColor,
-                text: "Jack Henry"), // Name
-            accountEmail:Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(color: AppColors.primaryColor)
-              ),
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
-                vertical: 3.h
-              ),
-              child: CommonText(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  text: AppString.viewProfile),
-            ), // Email
-            currentAccountPicture: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: AppColors.primaryColor,
-                  width: 2
-                )
-              ),
-              child: ClipOval(child: CommonImage(
-                  fill: BoxFit.cover,
-                  imageSrc: AppImages.female)),
-            ),
-          ),
-
-          16.height,
-
-          InkWell(
-            onTap: (){
-              Get.toNamed(AppRoutes.myListingScreen);
-            },
-            child: Row(
-              children: [
-                25.width,
-                CommonImage(
-                    height: 20,
-                    width: 20,
-                    imageSrc: AppImages.myListing),
-                CommonText(
-                  left: 8,
+          SafeArea(
+            bottom: false,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 12.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 80.w,
+                    height: 80.w,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: AppColors.primaryColor,
+                        width: 2,
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: CommonImage(
+                        fill: BoxFit.cover,
+                        imageSrc: AppImages.female,
+                      ),
+                    ),
+                  ),
+                  10.height,
+                  CommonText(
+                    text: "Jack Henry",
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
                     color: AppColors.titleColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    textAlign: TextAlign.start,
-                    text: AppString.myListing)
-
-              ],
+                  ),
+                  6.height,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.back();
+                          Get.toNamed(AppRoutes.followingScreen);
+                        },
+                        child: CommonText(
+                          text: "570 Following",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.primaryColor,
+                        ),
+                      ),
+                      12.width,
+                      InkWell(
+                        onTap: () {
+                          Get.back();
+                          Get.toNamed(AppRoutes.followersScreen);
+                        },
+                        child: CommonText(
+                          text: "1.2k Followers",
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.primaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
 
+          12.height,
           Container(
-            margin: EdgeInsets.only(left: 25.w, top: 10.h, right: 35.w),
-            width: double.infinity,
-            color: AppColors.stroke,
-            height: 2,
-          ),
-
-          16.height,
-
-          InkWell(
-            onTap: (){
-              Get.toNamed(AppRoutes.purchaseHistory);
-            },
-            child: Row(
-              children: [
-                25.width,
-                Icon(
-                    size: 23.sp,
-                    Icons.shopping_cart_outlined),
-                CommonText(
-                  left: 8,
-                    color: AppColors.titleColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    textAlign: TextAlign.start,
-                    text: AppString.purchaseHistory)
-
-              ],
-            ),
-          ),
-
-          Container(
-            margin: EdgeInsets.only(left: 25.w, top: 10.h, right: 35.w),
-            width: double.infinity,
-            color: AppColors.stroke,
-            height: 2,
-          ),
-
-          16.height,
-
-          InkWell(
-            onTap: (){
-              Get.toNamed(AppRoutes.savedScreen);
-            },
-            child: Row(
-              children: [
-                25.width,
-                Icon(Icons.save_outlined),
-                CommonText(
-                  left: 8,
-                    color: AppColors.titleColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    textAlign: TextAlign.start,
-                    text: AppString.saved)
-
-              ],
-            ),
-          ),
-
-          Container(
-            margin: EdgeInsets.only(left: 25.w, top: 10.h, right: 35.w),
+            margin: EdgeInsets.only(left: 25.w, right: 35.w),
             width: double.infinity,
             color: AppColors.stroke,
             height: 1,
           ),
 
-
-
-
+          // Saved
+          InkWell(
+            onTap: () {
+              Get.toNamed(AppRoutes.savedScreen);
+            },
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.bookmark_border,
+                    size: 22.sp,
+                    color: AppColors.titleColor,
+                  ),
+                  CommonText(
+                    left: 12,
+                    color: AppColors.titleColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    textAlign: TextAlign.start,
+                    text: AppString.saved,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 25.w, right: 35.w),
+            width: double.infinity,
+            color: AppColors.stroke,
+            height: 1,
+          ),
+          // Order History
+          InkWell(
+            onTap: () {
+              Get.toNamed(AppRoutes.purchaseHistory);
+            },
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.shopping_cart_outlined,
+                    size: 22.sp,
+                    color: AppColors.titleColor,
+                  ),
+                  CommonText(
+                    left: 12,
+                    color: AppColors.titleColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    textAlign: TextAlign.start,
+                    text: AppString.orderHistory,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 25.w, right: 35.w),
+            width: double.infinity,
+            color: AppColors.stroke,
+            height: 1,
+          ),
+          // Spacer to push logout to bottom
+          Expanded(child: SizedBox()),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 24.h),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).maybePop();
+                // TODO: Implement real logout logic
+              },
+              child: Row(
+                children: [
+                  Icon(Icons.logout, color: AppColors.primaryColor),
+                  CommonText(
+                    left: 8,
+                    color: AppColors.primaryColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    text: AppString.logOut,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

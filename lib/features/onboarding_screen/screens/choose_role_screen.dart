@@ -39,7 +39,10 @@ class ChooseRoleScreen extends StatelessWidget {
               
                
 
-                CommonImage(imageSrc: AppImages.logo, height: 64.r, width: 64.r,),
+                CommonImage(
+                  
+                  fill: BoxFit.fill,
+                  imageSrc: AppImages.logo, height: 80.r, width: 80.r,),
 
                 30.height,
 
@@ -65,6 +68,7 @@ class ChooseRoleScreen extends StatelessWidget {
 
                 _RoleTile(
                   index: 0,
+                  image: AppImages.generalUserCollector,
                   title: AppString.roleGeneralUserCollectorTitle,
                   subtitle: AppString.roleGeneralUserCollectorDes,
                   isSelected: controller.selectedIndex.value == 0,
@@ -74,6 +78,7 @@ class ChooseRoleScreen extends StatelessWidget {
                 12.height,
                 _RoleTile(
                   index: 1,
+                  image: AppImages.artistCurator,
                   title: AppString.roleArtistCuratorTitle,
                   subtitle: AppString.roleArtistCuratorDes,
                   isSelected: controller.selectedIndex.value == 1,
@@ -83,6 +88,7 @@ class ChooseRoleScreen extends StatelessWidget {
                 12.height,
                 _RoleTile(
                   index: 2,
+                  image: AppImages.museumEdu,
                   title: AppString.roleMuseumEduTitle,
                   subtitle: AppString.roleMuseumEduDes,
                   isSelected: controller.selectedIndex.value == 2,
@@ -117,6 +123,7 @@ class _RoleTile extends StatelessWidget {
   final int index;
   final String title;
   final String subtitle;
+  final String image;
   final bool isSelected;
   final VoidCallback onTap;
   final IconData leadingIcon;
@@ -125,6 +132,7 @@ class _RoleTile extends StatelessWidget {
     required this.index,
     required this.title,
     required this.subtitle,
+    required this.image,
     required this.isSelected,
     required this.onTap,
     required this.leadingIcon,
@@ -140,10 +148,10 @@ class _RoleTile extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 16.h),
         decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(12.r),
           border: Border.all(color: AppColors.stroke),
           boxShadow: const [
-            BoxShadow(color: Colors.black12, blurRadius: 2, offset: Offset(0, 1)),
+            BoxShadow(color: AppColors.stroke, blurRadius: 2, offset: Offset(0, 1)),
           ],
         ),
         child: Row(
@@ -152,11 +160,14 @@ class _RoleTile extends StatelessWidget {
             Container(
               height: 44.r,
               width: 44.r,
+              padding: EdgeInsets.all(10.r),
               decoration: BoxDecoration(
-                color: AppColors.background,
+                color: AppColors.yelloFade,
                 shape: BoxShape.circle,
               ),
-              child: Icon(leadingIcon, color: AppColors.primaryColor),
+              child: CommonImage(
+                fill: BoxFit.fill,
+                imageSrc: image, ),
             ),
             12.width,
             Expanded(
@@ -165,8 +176,9 @@ class _RoleTile extends StatelessWidget {
                 children: [
                   CommonText(
                     text: title,
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w600,
+
                     color: AppColors.titleColor,
                     maxLines: 2,
                   ),
@@ -174,6 +186,7 @@ class _RoleTile extends StatelessWidget {
                   CommonText(
                     text: subtitle,
                     fontSize: 12,
+                    textAlign: TextAlign.start,
                     fontWeight: FontWeight.w400,
                     color: AppColors.bodyClr,
                     maxLines: 2,

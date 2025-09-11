@@ -398,4 +398,7 @@ class AppString {
       "Support independent creators by purchasing or commissioning artwork with just a few taps.";
   static const String onboardingDesThree =
       "Upload your portfolio, join exhibitions, and connect with collectors and curators globally.";
+  static const String orderHistory = 'Order History';
+  static const String followers = 'Followers';
+  static const String following = 'Following';
 }

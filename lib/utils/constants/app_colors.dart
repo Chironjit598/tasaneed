@@ -29,6 +29,7 @@ class AppColors {
   static const myListBg = Color(0xffF4F4F4);
   static const messageBg = Color(0xffF0F1F6);
   static const redClr = Color(0xffED544E);
+    static const yelloFade = Color(0xffF6E9D7);
 
 
 

@@ -58,6 +58,9 @@ class AppImages {
   static const String send= "$baseurl/send.png";
   static const String videoDuration= "$baseurl/video_duration.png";
    static const String welcomeScreenBgImage= "$baseurl/welcome_screen_bg_image.png";
+   static const String generalUserCollector= "$baseurl/general.png";
+   static const String artistCurator= "$baseurl/artist.png";
+   static const String museumEdu= "$baseurl/museum.png";
 
 
 
