@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/image/common_image.dart';
@@ -7,6 +8,7 @@ import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_order_screen.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/resale_art_screen.dart';
 
 class OrderList extends StatelessWidget {
   const OrderList({
@@ -49,11 +51,13 @@ class OrderList extends StatelessWidget {
         final item = items[index];
         final Color statusColor = _statusColor(item['status']);
         return InkWell(
-          onTap: selectedTab == 0
-              ? () {
-                  Get.to(() => MyOrderScreen(order: item));
-                }
-              : null,
+          onTap: () {
+            if (selectedTab == 0) {
+              Get.to(() => MyOrderScreen(order: item));
+            } else {
+              Get.to(() => MyOrderScreen(order: item, isSales: true));
+            }
+          },
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 8.h),
             padding: EdgeInsets.all(12.r),
@@ -89,10 +93,13 @@ class OrderList extends StatelessWidget {
                             ),
                           ),
                           if (selectedTab == 0 && item['status'] == 'Received')
-                            Icon(
-                              Icons.refresh,
-                              size: 16,
-                              color: AppColors.titleColor.withOpacity(0.7),
+                            GestureDetector(
+                              onTap: () => Get.to(() => ResaleArtScreen(order: item)),
+                              child: Icon(
+                                CupertinoIcons.arrow_2_squarepath,
+                                size: 20.sp,
+                                color: AppColors.primaryColor,
+                              ),
                             ),
                         ],
                       ),

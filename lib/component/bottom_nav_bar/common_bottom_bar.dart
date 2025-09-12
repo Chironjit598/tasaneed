@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:tasaned_project/utils/constants/app_images.dart';
 
 import '../../config/route/app_routes.dart';
 import '../../utils/constants/app_colors.dart';
-import '../image/common_image.dart';
+import '../../utils/constants/app_images.dart';
 import '../text/common_text.dart';
+import '../image/common_image.dart';
 
 class CommonBottomNavBar extends StatefulWidget {
   final int currentIndex;
@@ -19,81 +19,34 @@ class CommonBottomNavBar extends StatefulWidget {
 
 class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   final List<String> routes = [
-
-
     AppRoutes.userHomeScreen,
     AppRoutes.categoryScreen,
-    AppRoutes.nunnyBookingDetailsScreen,
+    AppRoutes.myCollectionsScreen, // Collections
     AppRoutes.chat,
-    AppRoutes.profile,
-    AppRoutes.profile,
+    AppRoutes.profile, // Settings/Profile
   ];
 
   String getTitle(int index) {
-    return ["Home", "Category", "Resell", "Inbox", "Profile"][index];
+    return ["Home", "Category", "Collections", "Inbox", "Settings"][index];
   }
 
-  CommonImage selectedIcon(int index) {
+  String selectedImageSrc(int index) {
     return [
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.homeActive),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.categoryActive),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.sellIcon),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.messageActive),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.profileActive),
-
-
-
+      AppImages.homeActive,
+      AppImages.categoryActive,
+      AppImages.collectionActive,
+      AppImages.messageActive,
+      AppImages.profileActive, // Settings (using profile assets)
     ][index];
   }
 
-  CommonImage unselectedIcon(int index) {
+  String unselectedImageSrc(int index) {
     return [
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.homeInactive),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-
-          imageSrc: AppImages.categoryInactive),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.sellIcon),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.messageInactive),
-      CommonImage(
-          height: 24,
-          width: 24,
-          fill: BoxFit.fill,
-          imageSrc: AppImages.profileInactive),
+      AppImages.homeInactive,
+      AppImages.categoryInactive,
+      AppImages.collectionInactive, // Collections
+      AppImages.messageInactive,
+      AppImages.profileInactive,
     ][index];
   }
 
@@ -105,41 +58,12 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
         color: AppColors.white,
         boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 2)],
       ),
-      child: Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(5, (index) {
-
-              if (index == 2) return const SizedBox(width: 70);
-              return buildNavItem(index);
-            }),
-          ),
-          Positioned(
-            top: -37,
-            child: Column(
-              children: [
-                FloatingActionButton(
-                  onPressed: () {
-                   Get.toNamed(AppRoutes.userReselScreen);
-                  },
-                  backgroundColor: AppColors.primaryColor,
-                  shape: const CircleBorder(),
-                  child: CommonImage( imageSrc: AppImages.sellIcon),
-                ),
-                SizedBox(height: 27.h),
-                CommonText(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  text: "Resell",
-                  color: Colors.black,
-                ),
-              ],
-            ),
-          ),
-        ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List.generate(5, (index) => buildNavItem(index)),
+        ),
       ),
     );
   }
@@ -156,17 +80,22 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
           Container(
             padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
             decoration: BoxDecoration(
-
               borderRadius: BorderRadius.circular(40.r),
-              color: isSelected ? AppColors.primaryColor : AppColors.transparent,
+              color: isSelected ? AppColors.title2 : AppColors.transparent,
             ),
-            child:isSelected?selectedIcon(index):unselectedIcon(index) ,
+            child: CommonImage(
+              height: 24,
+              width: 24,
+              fill: BoxFit.fill,
+              imageSrc: isSelected ? selectedImageSrc(index) : unselectedImageSrc(index),
+            ),
           ),
           SizedBox(height: 2.h),
           CommonText(
-            fontSize: 12,
-            fontWeight: FontWeight.w500,
+            fontSize: 11,
+            fontWeight:isSelected ?FontWeight.w500 : FontWeight.w400,
             text: getTitle(index),
+            color: isSelected ? AppColors.title2 : AppColors.titleColor,
           ),
         ],
       ),

@@ -5,6 +5,7 @@ import 'package:tasaned_project/features/another_screens/art_details/presentatio
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/screens/artist_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/order_history_screen.dart';
+import 'package:tasaned_project/features/another_screens/my_collection/presentation/screens/my_collections_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/saved_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/followers_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/following_screen.dart';
@@ -125,6 +126,7 @@ class AppRoutes {
   static const String learningMaterialsDetailsScreen = "/learningMaterialsDetailsScreen";
   static const String followersScreen = "/followersScreen";
   static const String followingScreen = "/followingScreen";
+  static const String myCollectionsScreen = "/myCollectionsScreen";
 
 
 
@@ -178,6 +180,7 @@ class AppRoutes {
     GetPage(name: followersScreen, page: () => FollowersScreen()),
     GetPage(name: followingScreen, page: () => FollowingScreen()),
     GetPage(name: upComingEventScreen, page: () => UpComingEventScreen()),
+    GetPage(name: myCollectionsScreen, page: () => const MyCollectionsScreen()),
     GetPage(name: learningMeterials, page: () => LearningMetarialScreen()),
     GetPage(name: userReselScreen, page: () => UserReselScreen()),
     GetPage(name: learningMaterialVideoScreen, page: () => LearningMaterialVideoScreen()),

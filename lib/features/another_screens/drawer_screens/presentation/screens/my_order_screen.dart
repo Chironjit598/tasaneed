@@ -14,17 +14,23 @@ import 'package:tasaned_project/features/another_screens/drawer_screens/presenta
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/art_details_screen.dart';
 
 class MyOrderScreen extends StatelessWidget {
-  const MyOrderScreen({super.key, required this.order});
+  const MyOrderScreen({super.key, required this.order, this.isSales = false});
 
   final Map<String, dynamic> order;
+  final bool isSales;
 
   @override
   Widget build(BuildContext context) {
-    // put controller for carousel
-    Get.put(MyOrderController());
+    // put controller for carousel and status
+    final myOrderCtrl = Get.put(MyOrderController());
     final title = (order['title'] ?? '').toString();
     final price = (order['price'] ?? 0).toString();
     final status = (order['status'] ?? '').toString();
+
+    // ensure initial status is set after first frame to avoid update() during build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      myOrderCtrl.setInitialStatus((order['status'] ?? '').toString());
+    });
 
     return Scaffold(
       backgroundColor: AppColors.white,
@@ -34,7 +40,7 @@ class MyOrderScreen extends StatelessWidget {
         surfaceTintColor: AppColors.transparent,
         centerTitle: true,
         title: CommonText(
-          text: AppString.myOrder,
+          text: isSales ? AppString.orderDetails : AppString.myOrder,
           fontSize: 16,
           fontWeight: FontWeight.w600,
           color: AppColors.titleColor,
@@ -43,6 +49,21 @@ class MyOrderScreen extends StatelessWidget {
           onTap: () => Get.back(),
           child: Icon(Icons.arrow_back_ios, size: 20.sp, color: AppColors.titleColor),
         ),
+        actions: [
+          if (isSales)
+            GetBuilder<MyOrderController>(builder: (c) {
+              return PopupMenuButton<String>(
+                icon: Icon(Icons.more_horiz, color: AppColors.titleColor, size: 22.sp),
+                onSelected: (val) => c.updateStatus(val),
+                itemBuilder: (_) => c.statuses
+                    .map((s) => PopupMenuItem<String>(
+                          value: s,
+                          child: Text(s),
+                        ))
+                    .toList(),
+              );
+            }),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -108,14 +129,16 @@ class MyOrderScreen extends StatelessWidget {
               8.height,
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: InfoTable(rows: [
-                  RowItem(AppString.orderId, '#ORD-2024-0892'),
-                  RowItem(AppString.orderDate, 'Aug 19, 2025'),
-                  RowItem(AppString.orderStatus, status),
-                  RowItem(AppString.paymentMethod, 'Credit Card'),
-                  RowItem(AppString.paymentStatus, 'Paid'),
-                  RowItem(AppString.totalAmount, '\$${price}.00'),
-                ]),
+                child: GetBuilder<MyOrderController>(builder: (c) {
+                  return InfoTable(rows: [
+                    RowItem(AppString.orderId, '#ORD-2024-0892'),
+                    RowItem(AppString.orderDate, 'Aug 19, 2025'),
+                    RowItem(AppString.orderStatus, c.currentStatus),
+                    RowItem(AppString.paymentMethod, 'Credit Card'),
+                    RowItem(AppString.paymentStatus, 'Paid'),
+                    RowItem(AppString.totalAmount, '\$${price}.00'),
+                  ]);
+                }),
               ),
 
               24.height,
@@ -170,21 +193,23 @@ class MyOrderScreen extends StatelessWidget {
 
               20.height,
 
-              // View product details button
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: CommonButton(
-                  buttonColor: AppColors.transparent,
-                  titleText: AppString.viewProductDetails,
-                  buttonRadius: 60,
-                  titleColor: AppColors.primaryColor,
-                  onTap: () {
-                    Get.to(() => ArtDetailsScreen(title: title, price: price));
-                  },
+              // View product details button (hidden for My Sales)
+              if (!isSales) ...[
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: CommonButton(
+                    buttonColor: AppColors.transparent,
+                    titleText: AppString.viewProductDetails,
+                    buttonRadius: 60,
+                    titleColor: AppColors.primaryColor,
+                    onTap: () {
+                      Get.to(() => ArtDetailsScreen(title: title, price: price));
+                    },
+                  ),
                 ),
-              ),
 
-              20.height,
+                20.height,
+              ],
             ],
           ),
         ),

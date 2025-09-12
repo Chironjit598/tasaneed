@@ -432,4 +432,31 @@ class AppString {
   static const String artistNameSample = 'John Currin';
   static const String relatedArtTitleSample = 'Whispers of the Fo..';
   static const String relatedArtPriceSample = '\$250';
+  
+  // ==== Resale Flow ====
+  static const String resaleArt = 'Resale Art';
+  static const String resaleInformation = 'Resale Information';
+  static const String previousPurchase = 'Previous Purchase';
+  static const String originalPrice = 'Original Price';
+  static const String setYourPrice = 'Set your price';
+  static const String enterAmount = 'Enter Amount';
+  static const String productCondition = 'Product Condition';
+  static const String chooseCondition = 'Choose Condition';
+  static const String additionalInfo = 'Additional Info';
+  static const String writeDownAdditionalInfo = 'Write down additional info';
+  static const String addListing = 'Add Listing';
+  static const String excellent = 'Excellent';
+  static const String veryGood = 'Very good';
+  static const String good = 'Good';
+  static const String fair = 'Fair';
+  static const String bad = 'Bad';
+  
+  // ==== My Collections ====
+  static const String myCollections = 'My Collections';
+  static const String collections = 'Collections';
+  static const String options = 'Options';
+  static const String edit = 'Edit';
+  static const String delete = 'Delete';
+  static const String available = 'Available';
+  static const String sold = 'Sold';
 }

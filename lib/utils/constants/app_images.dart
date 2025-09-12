@@ -42,6 +42,8 @@ class AppImages {
   static const String categoryInactive= "$baseurl/category_inactive.png";
   static const String homeInactive= "$baseurl/home_inactive.png";
   static const String homeActive= "$baseurl/home_active.png";
+  static const String collectionInactive= "$baseurl/collection_inactive.png";
+  static const String collectionActive= "$baseurl/collection_active.png";
   static const String sellIcon= "$baseurl/add_icon.png";
   static const String logoWithText= "$baseurl/logo_with_text.png";
   static const String female= "$baseurl/man.png";
