@@ -18,7 +18,7 @@ class UserHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.redBg,
+      backgroundColor: Color(0xFFFBFBFB),
       appBar: PreferredSize(
         preferredSize: Size(double.infinity, 0),
         child: PreferredSize(
@@ -37,48 +37,55 @@ class UserHomeScreen extends StatelessWidget {
 
 
 
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-        
-            UserAppBar(),
-        
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 20.w),
+      body: Column(
+        children: [
+          UserAppBar(),
+          Expanded(
+            child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+            
               
-                children: [
-                  CommonTextField(
-                    fillColor: AppColors.searchBg,
-                    hintText: AppString.searchHintText,
-                    textColor: AppColors.searchText,
-                    borderColor: AppColors.searchText,
-                    onTap: (){
-                      Get.toNamed(AppRoutes.searchScreen);
-                    },
-                    suffixIcon: Container(
-                      margin: EdgeInsets.all(6.r),
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryColor,
-                        shape: BoxShape.circle
+            
+                Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  
+                    children: [
+                      CommonTextField(
+                        fillColor: AppColors.searchBg,
+                        hintText: AppString.searchHintText,
+                        textColor: AppColors.searchText,
+                        borderColor: AppColors.searchText,
+                        onTap: (){
+                          Get.toNamed(AppRoutes.searchScreen);
+                        },
+                        suffixIcon: Container(
+                          margin: EdgeInsets.all(6.r),
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryColor,
+                            shape: BoxShape.circle
+                          ),
+                          child: Icon(
+                              color: AppColors.white,
+                              Icons.search),
+                        ),
                       ),
-                      child: Icon(
-                          color: AppColors.white,
-                          Icons.search),
-                    ),
+                  
+                      ListItemSection()
+                    ],
                   ),
-              
-                  ListItemSection()
-                ],
+                ),
+            
+                
+            
+              ],
               ),
             ),
-        
-            
-        
-          ],
-        ),
+          ),
+        ],
       ),
       bottomNavigationBar: CommonBottomNavBar(currentIndex: 0),
     );

@@ -35,52 +35,58 @@ class PaymentConfirmationScreen extends StatelessWidget {
       ),
 
       body: Column(
-
-
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           80.height,
-          
-          CommonImage(imageSrc: AppImages.confirm).center,
+
+          CommonImage(
+            height: 80,
+            width: 80,
+            imageSrc: AppImages.confirm).center,
 
           22.height,
           CommonText(
               fontSize: 22,
               fontWeight: FontWeight.w600,
-              color: AppColors.titleColor,
-              text: AppString.confirmationTitle),
+              color: AppColors.primaryColor,
+              text: AppString.congratulations),
 
           12.height,
           CommonText(
-            left: 24,
+              left: 24,
               right: 24,
               fontSize: 14,
               fontWeight: FontWeight.w400,
               color: AppColors.bodyClr,
               maxLines: 3,
               text: AppString.confirmationDes),
-          
-          20.height,
-          
-          Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 20),
-            child: CommonButton(
-                buttonRadius: 60,
-                titleText: AppString.myOrder),
-          ),
 
           24.height,
 
           Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: CommonButton(
                 buttonRadius: 60,
-                onTap: (){
+                titleText: AppString.purchaseHistoryTitle,
+                onTap: () {
+                  Get.toNamed(AppRoutes.purchaseHistory);
+                }),
+          ),
+
+          16.height,
+
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: CommonButton(
+                buttonRadius: 60,
+                onTap: () {
                   Get.toNamed(AppRoutes.userHomeScreen);
                 },
                 buttonColor: AppColors.transparent,
-                borderColor: AppColors.bodyClr,
-                titleColor: AppColors.titleColor ,
-                titleWeight: FontWeight.w700,titleSize: 18,
+                borderColor: AppColors.primaryColor,
+                titleColor: AppColors.primaryColor,
+                titleWeight: FontWeight.w700,
+                titleSize: 18,
                 titleText: AppString.home),
           ),
         ],

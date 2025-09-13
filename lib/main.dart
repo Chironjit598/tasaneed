@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:tasaned_project/services/socket/socket_service.dart';
 import 'package:tasaned_project/services/storage/storage_services.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 
@@ -18,11 +16,11 @@ Future<void> main() async {
 init() async {
   DependencyInjection dI = DependencyInjection();
   dI.dependencies();
-  SocketServices.connectToSocket();
+ // SocketServices.connectToSocket();
 
   await Future.wait([
     LocalStorage.getAllPrefData(),
   //  NotificationService.initLocalNotification(),
-    dotenv.load(fileName: ".env"),
+   // dotenv.load(fileName: ".env"),
   ]);
 }

@@ -337,6 +337,19 @@ class AppString {
   static const String iHaveReadAndAgreeToTheWebsite =
       "I have read and agree to the website ";
 
+  // Checkout: static shipping info samples
+  static const String shippingNameSample = 'Jack Taylor';
+  static const String shippingPhoneSample = '+123456789101';
+  static const String shippingAddressSample =
+      '+123 Maple Street ,Apt 456, Toronto, ON M5A 1A1 ,Canada';
+
+  // Checkout: Edit Shipping dialog labels and actions
+  static const String editShippingInfo = 'Edit Shipping Info';
+  static const String yourName = 'Your Name';
+  static const String enterYourPhoneNumber = 'Enter your phone number';
+  static const String enterYourShippingAddress = 'Enter your shipping address';
+  static const String saveChanges = 'Save Changes';
+
   static const String searchHintText = "Search Artworks, Artists, Exhibitions";
   static const String myOrder = "My Order";
   static const String home = "Home";
@@ -347,6 +360,12 @@ class AppString {
   static const String keyAchievements = "Key Achievements";
   static const String confirmationTitle = "Thank You for Your Order!";
   static const String confirmation = "Confirmation";
+  static const String congratulations = 'Congratulations';
+  static const String purchaseHistoryTitle = 'Purchase History';
+  static const String offerSubmittedSuccessfully = 'Offer Submitted\nSuccessfully!';
+  static const String offerSubmittedDes =
+      "Your offer has been sent to the Seller. You'll receive a notification once they respond.";
+  static const String backToHome = 'Back to Home';
   static const String grandeGallery = "Grande Gallery";
   static const String biography = "Biography";
   static const String virtualTour = "Virtual Tour";
@@ -450,6 +469,11 @@ class AppString {
   static const String artistNameSample = 'John Currin';
   static const String relatedArtTitleSample = 'Whispers of the Fo..';
   static const String relatedArtPriceSample = '\$250';
+  // ==== Make an Offer dialog ====
+  static const String makeAnOfferTitle = 'Make an Offer';
+  static const String yourOfferAmount = 'Your offer Amount';
+  static const String messageOptional = 'Message (Optional)';
+  static const String submitOffer = 'Submit Offer';
   
   // ==== Resale Flow ====
   static const String resaleArt = 'Resale Art';

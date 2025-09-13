@@ -6,28 +6,31 @@ import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
 
 class ArtsItem extends StatelessWidget {
-  const ArtsItem({super.key});
+  final double itemWidth;
+  final double itemHeight;
+
+   ArtsItem({super.key, this.itemWidth = 158, this.itemHeight = 210});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-    //  margin: EdgeInsets.only(right: 16.w),
-      height: 200.h,
-      width: 148.w,
-
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(12.r),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+    return SizedBox(
+      height: itemHeight.h,
+      width: itemWidth.w,
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          border: Border.all(width: 0.5, color: AppColors.stroke),
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
           Stack(
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.r),
                 child: CommonImage(
-                  width: 148.w,
+                  width: double.infinity,
                   fill: BoxFit.fill,
                   height: 107.h,
                   imageSrc: AppImages.arts,
@@ -58,10 +61,11 @@ class ArtsItem extends StatelessWidget {
             left: 6,
             right: 6,
             bottom: 8,
+            maxLines: 1,
             text: "Whispers of the Forest",
           ),
 
-               CommonText(
+          CommonText(
                 fontSize: 14,
                 color: AppColors.primaryColor,
                 left: 6,
@@ -69,7 +73,8 @@ class ArtsItem extends StatelessWidget {
                 text: "\$250",
               ),
           
-  ],
+        ],
+        ),
       ),
     );
   }

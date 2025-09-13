@@ -17,6 +17,7 @@ class CategoryItem extends StatelessWidget {
 
           margin: EdgeInsets.only(right: 12.w),
           decoration: BoxDecoration(
+            color: AppColors.white,
             borderRadius: BorderRadius.circular(5.r),
             border: Border.all(width: 3, color: AppColors.stroke)
           ),

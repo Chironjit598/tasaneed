@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:mime/mime.dart';
 import '../../config/api/api_end_point.dart';
+import '../../utils/constants/app_config.dart';
 import '../../utils/constants/app_string.dart';
 import '../../utils/log/api_log.dart';
 import '../storage/storage_services.dart';
@@ -86,6 +87,10 @@ class ApiService {
     dynamic body,
     Map<String, String>? header,
   }) async {
+    // Frontend-only mode: avoid any network traffic and return a benign response
+    if (AppConfig.frontendOnly) {
+      return ApiResponseModel(200, {"message": "frontendOnly: no network call", "url": url});
+    }
     try {
       final response = await _dio.request(
         url,

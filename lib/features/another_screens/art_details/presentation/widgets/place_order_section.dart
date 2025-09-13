@@ -16,8 +16,7 @@ class PlaceOrderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder(
-      init: CheckOutController(),
+    return GetBuilder<CheckOutController>(
       builder: (controller) {
         return Container(
           width: double.infinity,
@@ -69,7 +68,7 @@ class PlaceOrderSection extends StatelessWidget {
                     color: AppColors.titleColor,
                     text:"\$29.00"),
 
-                  16.height,
+            
 
 
               ],),
@@ -105,12 +104,19 @@ class PlaceOrderSection extends StatelessWidget {
               19.height,
 
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Checkbox(
-                      activeColor: AppColors.primaryColor,
-                      value: controller.isTermsAndCondition, onChanged: (value){
-                    controller.updateTermsAndCondition();
-                  }),
+                  SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: Checkbox(
+                        activeColor: AppColors.primaryColor,
+                        value: controller.isTermsAndCondition, onChanged: (value){
+                      controller.updateTermsAndCondition();
+                    }),
+                  ),
+
+                  10.width,
 
                   Flexible(
                     child: RichText(
@@ -158,7 +164,7 @@ class PlaceOrderSection extends StatelessWidget {
                   buttonRadius: 60,
                   titleText: AppString.placeOrder),
 
-              50.height
+              30.height
 
             ],
           ),

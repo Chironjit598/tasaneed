@@ -5,8 +5,11 @@ import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
+import 'package:tasaned_project/component/text_field/common_text_field.dart';
+import 'package:tasaned_project/utils/extensions/extension.dart';
 import '../widgets/place_order_section.dart';
 import '../widgets/shipping_address_section.dart';
+import '../controller/check_out_controller.dart';
 
 class CheckOutScreen extends StatelessWidget {
   const CheckOutScreen({super.key});
@@ -37,19 +40,48 @@ class CheckOutScreen extends StatelessWidget {
             fontWeight: FontWeight.w600,
             text: AppString.checkout),),
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
+      body: GetBuilder<CheckOutController>(
+        init: CheckOutController(),
+        builder: (_) => SingleChildScrollView(
+          child: Column(
+            children: [
         
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: 20.w),
               child: ShippingAddressSection(),
             ),
-        
+            24.height,
+
+            // Additional Noted
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CommonText(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.titleColor,
+                      text: 'Additional Noted').start,
+                  12.height,
+                  CommonTextField(
+                    hintText: 'Write Additional Notes for seller',
+                    borderColor: AppColors.bodyClr,
+                    maxline: 4,
+                  ),
+                ],
+              ),
+            ),
+
+      
+
+       
+
+            // Order Summary and CTA
             PlaceOrderSection()
           ],
         ),
       ),
-    );
+    ));
   }
 }

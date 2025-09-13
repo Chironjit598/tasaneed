@@ -2,9 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:tasaned_project/component/button/common_button.dart';
 import 'package:tasaned_project/component/image/common_image.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/config/route/app_routes.dart';
+import 'package:tasaned_project/services/storage/storage_services.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
@@ -51,121 +53,93 @@ class CustomDrawer extends StatelessWidget {
                     color: AppColors.titleColor,
                   ),
                   6.height,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Get.back();
-                          Get.toNamed(AppRoutes.followingScreen);
-                        },
-                        child: CommonText(
-                          text: "570 Following",
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.primaryColor,
+                  LocalStorage.myRoll == "visitor"
+                      ? CommonButton(
+                          buttonWidth: 130,
+                          buttonRadius: 60,
+                          titleWeight: FontWeight.w400,
+                          buttonHeight: 35,
+                          titleSize: 12,
+                          buttonColor: AppColors.transparent,
+                          titleColor: AppColors.primaryColor,
+                          titleText: AppString.viewProfile,
+                          onTap: () {
+                            Get.toNamed(AppRoutes.profile);
+                          },
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Get.back();
+                                Get.toNamed(AppRoutes.followingScreen);
+                              },
+                              child: CommonText(
+                                text: "570 Following",
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.primaryColor,
+                              ),
+                            ),
+                            12.width,
+                            InkWell(
+                              onTap: () {
+                                Get.back();
+                                Get.toNamed(AppRoutes.followersScreen);
+                              },
+                              child: CommonText(
+                                text: "1.2k Followers",
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.primaryColor,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      12.width,
-                      InkWell(
-                        onTap: () {
-                          Get.back();
-                          Get.toNamed(AppRoutes.followersScreen);
-                        },
-                        child: CommonText(
-                          text: "1.2k Followers",
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.primaryColor,
-                        ),
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),
           ),
 
           12.height,
-          Container(
-            margin: EdgeInsets.only(left: 25.w, right: 35.w),
-            width: double.infinity,
-            color: AppColors.stroke,
-            height: 1,
-          ),
+          _DrawerDivider(),
 
-          // Saved
-          InkWell(
-            onTap: () {
-              Get.toNamed(AppRoutes.savedScreen);
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.bookmark_border,
-                    size: 22.sp,
-                    color: AppColors.titleColor,
-                  ),
-                  CommonText(
-                    left: 12,
-                    color: AppColors.titleColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    textAlign: TextAlign.start,
-                    text: AppString.saved,
-                  ),
-                ],
-              ),
-            ),
+          //========================Saved item=========================
+          _DrawerRowItem(
+            icon: Icons.bookmark_border,
+            text: AppString.saved,
+            onTap: () => Get.toNamed(AppRoutes.savedScreen),
           ),
-          Container(
-            margin: EdgeInsets.only(left: 25.w, right: 35.w),
-            width: double.infinity,
-            color: AppColors.stroke,
-            height: 1,
-          ),
-          // Order History
-          InkWell(
-            onTap: () {
-              Get.toNamed(AppRoutes.purchaseHistory);
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.shopping_cart_outlined,
-                    size: 22.sp,
-                    color: AppColors.titleColor,
-                  ),
-                  CommonText(
-                    left: 12,
-                    color: AppColors.titleColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    textAlign: TextAlign.start,
-                    text: AppString.orderHistory,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 25.w, right: 35.w),
-            width: double.infinity,
-            color: AppColors.stroke,
-            height: 1,
-          ),
-          // Spacer to push logout to bottom
+          _DrawerDivider(),
+
+          LocalStorage.myRoll == "visitor"
+              ?
+              
+              //========================Following item=========================
+               _DrawerRowItem(
+                  icon: Icons.person_2_outlined,
+                  text: AppString.following,
+                  onTap: () => Get.toNamed(AppRoutes.followingScreen),
+                )
+              : 
+              
+              
+              //========================Order History item=========================
+              _DrawerRowItem(
+                  icon: Icons.shopping_cart_outlined,
+                  text: AppString.orderHistory,
+                  onTap: () => Get.toNamed(AppRoutes.purchaseHistory),
+                ),
+
+          _DrawerDivider(),
+        
           Expanded(child: SizedBox()),
           Padding(
             padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 24.h),
             child: InkWell(
               onTap: () {
                 Navigator.of(context).maybePop();
-                // TODO: Implement real logout logic
               },
               child: Row(
                 children: [
@@ -182,6 +156,49 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _DrawerDivider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 25.w, right: 35.w),
+      width: double.infinity,
+      color: AppColors.stroke,
+      height: 1,
+    );
+  }
+}
+
+class _DrawerRowItem extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  final VoidCallback onTap;
+
+  const _DrawerRowItem({required this.icon, required this.text, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
+        child: Row(
+          children: [
+            Icon(icon, size: 22.sp, color: AppColors.titleColor),
+            CommonText(
+              left: 12,
+              color: AppColors.titleColor,
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
+              textAlign: TextAlign.start,
+              text: text,
+            ),
+          ],
+        ),
       ),
     );
   }

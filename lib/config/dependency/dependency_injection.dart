@@ -12,6 +12,7 @@ import '../../features/profile/presentation/controller/profile_controller.dart';
 import '../../features/setting/presentation/controller/privacy_policy_controller.dart';
 import '../../features/setting/presentation/controller/setting_controller.dart';
 import '../../features/setting/presentation/controller/terms_of_services_controller.dart';
+import '../../features/another_screens/user_home/presentation/controllers/feature_arts_controller.dart';
 
 class DependencyInjection extends Bindings {
   @override
@@ -27,5 +28,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => SettingController(), fenix: true);
     Get.lazyPut(() => PrivacyPolicyController(), fenix: true);
     Get.lazyPut(() => TermsOfServicesController(), fenix: true);
+    Get.lazyPut(() => FeatureArtsController(), fenix: true);
   }
 }

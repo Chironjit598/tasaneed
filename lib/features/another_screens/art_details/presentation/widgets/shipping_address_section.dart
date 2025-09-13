@@ -2,20 +2,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
-
+import 'package:get/get.dart';
 import '../../../../../component/image/common_image.dart';
 import '../../../../../component/text/common_text.dart';
 import '../../../../../component/text_field/common_text_field.dart';
+import '../../../../../component/button/common_button.dart';
 import '../../../../../utils/constants/app_colors.dart';
 import '../../../../../utils/constants/app_images.dart';
 import '../../../../../utils/constants/app_string.dart';
+import '../controller/check_out_controller.dart';
 
 class ShippingAddressSection extends StatelessWidget {
   const ShippingAddressSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return GetBuilder<CheckOutController>(
+      builder: (controller) => Column(
       children: [
 
         10.height,
@@ -51,10 +54,13 @@ class ShippingAddressSection extends StatelessWidget {
                         color: AppColors.white,
                         text: AppString.shippingAddress),
                     Spacer(),
-                    CommonImage(
-                        height: 24,
-                        width: 24,
-                        imageSrc: AppImages.editIcon)
+                    InkWell(
+                      onTap: () => _showEditDialog(context, controller),
+                      child: CommonImage(
+                          height: 24,
+                          width: 24,
+                          imageSrc: AppImages.editIcon),
+                    )
                   ],
                 ),
               ),
@@ -76,11 +82,11 @@ class ShippingAddressSection extends StatelessWidget {
                         6.width,
 
                         CommonText(
-
+                            
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: AppColors.bodyClr,
-                            text: "Jack Taylor")
+                            text: controller.name)
                       ],
                     ),
 
@@ -95,11 +101,11 @@ class ShippingAddressSection extends StatelessWidget {
                         6.width,
 
                         CommonText(
-
+                            
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                             color: AppColors.bodyClr,
-                            text: "+123456789101")
+                            text: controller.phone)
                       ],
                     ),
 
@@ -122,7 +128,7 @@ class ShippingAddressSection extends StatelessWidget {
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                               color: AppColors.bodyClr,
-                              text: "+123 Maple Street ,Apt 456, Toronto, ON M5A 1A1 ,Canada"),
+                              text: controller.address),
                         )
                       ],
                     ),
@@ -141,40 +147,131 @@ class ShippingAddressSection extends StatelessWidget {
           ),
         ),
 
-        24.height,
-
-        CommonText(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: AppColors.titleColor,
-            text: AppString.deliveryOptions).start,
-
-        12.height,
-
-        CommonTextField(
-          hintText: AppString.chooseDeliveryOption,
-          borderColor: AppColors.bodyClr,
-          suffixIcon: Icon(Icons.keyboard_arrow_down_rounded,color: AppColors.bodyClr,),
-        ),
-
-
-        24.height,
-
-        CommonText(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: AppColors.titleColor,
-            text: AppString.paymentMethod).start,
-
-        12.height,
-
-        CommonTextField(
-          hintText: AppString.choosePaymentOption,
-          borderColor: AppColors.bodyClr,
-          suffixIcon: Icon(Icons.keyboard_arrow_down_rounded,color: AppColors.bodyClr,),
-        ),
-
+        // ShippingAddressSection now ends here; delivery and payment are handled in the screen
       ],
-    );
+    ));
   }
+
+  void _showEditDialog(BuildContext context, CheckOutController c) {
+    Get.dialog(
+      AnimatedPadding(
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.decelerate,
+        child: Dialog(
+          backgroundColor: AppColors.white,
+          insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.85,
+            ),
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(16.r),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CommonText(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.titleColor,
+                    text: AppString.editShippingInfo,
+                  ),
+                  InkWell(
+                    onTap: () => Get.back(),
+                    child: Container(
+                      padding: EdgeInsets.all(2.h),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: AppColors.bodyClr),
+                      ),
+                      child: Icon(Icons.close, color: AppColors.bodyClr)),
+                  )
+                ],
+              ),
+              16.height,
+              CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: AppColors.titleColor,
+                text: AppString.yourName,
+              ),
+              8.height,
+              CommonTextField(
+                hintText: AppString.enterYourName,
+                borderColor: AppColors.stroke,
+                controller: c.nameCtrl,
+              ),
+              16.height,
+              CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: AppColors.titleColor,
+                text: AppString.phoneNumber,
+              ),
+              8.height,
+              CommonTextField(
+                hintText: AppString.enterYourPhoneNumber,
+                borderColor: AppColors.stroke,
+                keyboardType: TextInputType.phone,
+                controller: c.phoneCtrl,
+              ),
+              16.height,
+              CommonText(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: AppColors.titleColor,
+                text: AppString.shippingAddress,
+              ),
+              8.height,
+              CommonTextField(
+                hintText: AppString.enterYourShippingAddress,
+                borderColor: AppColors.stroke,
+                maxline: 2,
+                controller: c.addressCtrl,
+              ),
+              20.height,
+              Row(
+                children: [
+                  Expanded(
+                    child: CommonButton(
+                              titleSize: 14,
+                      titleWeight: FontWeight.w600,
+                      titleText: AppString.cancel,
+                      titleColor: AppColors.primaryColor,
+                      buttonColor: AppColors.transparent,
+                      borderColor: AppColors.primaryColor,
+                      onTap: () => Get.back(),
+                      buttonRadius: 60,
+                    ),
+                  ),
+                  12.width,
+                  Expanded(
+                    child: CommonButton(
+                      titleSize: 14,
+                      titleWeight: FontWeight.w600,
+                      titleText: AppString.saveChanges,
+                      onTap: () {
+                        c.saveShippingEdits();
+                        Get.back();
+                      },
+                      buttonRadius: 60,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    )));
+  }
+
+
+
+
 }

@@ -69,53 +69,6 @@ class ListItemSection extends StatelessWidget {
             separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
         ),
-        20.height,
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CommonText(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primaryColor,
-              text: AppString.recentlyViewed,
-            ),
-
-            InkWell(
-              onTap: (){
-                Get.toNamed(AppRoutes.featureArtsScreen, arguments: {
-                  "title":AppString.featureArts
-                });
-              },
-
-              child: CommonText(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                color: AppColors.bodyClr,
-                text: AppString.seeAll,
-              ),
-            ),
-          ],
-        ),
-
-        16.height,
-
-        SizedBox(
-          height: 182.h,
-          child: ListView.separated(
-            padding: EdgeInsets.only(right: 16.w),
-            scrollDirection: Axis.horizontal,
-            itemCount: 5,
-            itemBuilder: (context, index) {
-              return InkWell(
-                  onTap: (){
-                    Get.toNamed(AppRoutes.artDetailsScreen);
-                  },
-                  child: ArtsItem());
-            },
-            separatorBuilder: (_, __) => SizedBox(width: 16.w),
-          ),
-        ),
 
 
         20.height,

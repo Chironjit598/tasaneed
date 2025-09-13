@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/art_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/check_out_screen.dart';
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/payment_confirmation_screen.dart';
+import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/offer_submitted_screen.dart';
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/screens/artist_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/order_history_screen.dart';
@@ -118,6 +119,7 @@ class AppRoutes {
   static const String grandleGallery = "/grandleGallery";
   static const String artistDetailsScreen = "/artistDetailsScreen";
   static const String paymentConfirmationScreen = "/paymentConfirmationScreen";
+  static const String offerSubmittedScreen = "/offerSubmittedScreen";
   static const String exhibitionScreen = "/exhibitionScreen";
   static const String myListingScreen = "/myListingScreen";
   static const String purchaseHistory = "/purchaseHistory";
@@ -172,9 +174,10 @@ class AppRoutes {
     GetPage(name: popularArtistScreen, page: () => PopularArtistScreen()),
     GetPage(name: upComingExhibitionScreen, page: () => UpComingExhibitionScreen()),
     GetPage(name: searchScreen, page: () => SearchScreen()),
-    GetPage(name: artDetailsScreen, page: () => GrandleGalleryScreen()),
+    GetPage(name: artDetailsScreen, page: () => ArtDetailsScreen()),
     GetPage(name: checkOutScreen, page: () => CheckOutScreen()),
     GetPage(name: paymentConfirmationScreen, page: () => PaymentConfirmationScreen()),
+    GetPage(name: offerSubmittedScreen, page: () => const OfferSubmittedScreen()),
     GetPage(name: grandleGallery, page: () => GrandleGallery()),
     GetPage(name: artistDetailsScreen, page: () => ArtistDetailsScreen()),
     GetPage(name: exhibitionScreen, page: () => ExhibitionScreen()),
