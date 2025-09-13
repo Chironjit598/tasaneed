@@ -33,6 +33,8 @@ import '../../features/auth/forgot password/presentation/screen/verify_screen.da
 import '../../features/auth/sign in/presentation/screen/sign_in_screen.dart';
 import '../../features/auth/sign up/presentation/screen/sign_up_screen.dart';
 import '../../features/auth/sign up/presentation/screen/verify_user.dart';
+import '../../features/auth/forgot password/presentation/screen/password_updated_screen.dart';
+import '../../features/auth/sign up/presentation/screen/account_verified_screen.dart';
 import '../../features/message/presentation/screen/chat_screen.dart';
 import '../../features/message/presentation/screen/message_screen.dart';
 import '../../features/notifications/presentation/screen/notifications_screen.dart';
@@ -61,6 +63,7 @@ class AppRoutes {
   static const String forgotPassword = "/forgot_password.dart";
   static const String verifyEmail = "/verify_screen.dart";
   static const String createPassword = "/create_password.dart";
+  static const String passwordUpdated = "/password_updated.dart";
   static const String changePassword = "/change_password_screen.dart";
   static const String notifications = "/notifications_screen.dart";
   static const String chat = "/chat_screen.dart";
@@ -137,10 +140,12 @@ class AppRoutes {
     GetPage(name: onboarding, page: () =>  OnboardingScreen()),
     GetPage(name: signUp, page: () => SignUpScreen()),
     GetPage(name: verifyUser, page: () => const VerifyUser()),
+    GetPage(name: accountVerifiedScreen, page: () => const AccountVerifiedScreen()),
     GetPage(name: signIn, page: () => SignInScreen()),
     GetPage(name: forgotPassword, page: () => ForgotPasswordScreen()),
     GetPage(name: verifyEmail, page: () => const VerifyScreen()),
     GetPage(name: createPassword, page: () => CreatePassword()),
+    GetPage(name: passwordUpdated, page: () => const PasswordUpdatedScreen()),
     GetPage(name: changePassword, page: () => ChangePasswordScreen()),
     GetPage(name: notifications, page: () => const NotificationScreen()),
     GetPage(name: chat, page: () => const ChatListScreen()),

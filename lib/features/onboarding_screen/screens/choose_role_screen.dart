@@ -35,16 +35,14 @@ class ChooseRoleScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                50.height,
-              
-               
-
+                5.height,
+  
                 CommonImage(
                   
                   fill: BoxFit.fill,
                   imageSrc: AppImages.logo, height: 80.r, width: 80.r,),
 
-                30.height,
+                22.height,
 
                 CommonText(
                   text: AppString.chooseRoleTitle,
@@ -53,7 +51,7 @@ class ChooseRoleScreen extends StatelessWidget {
                   color: const Color(0xFFB07353),
                 ),
 
-                10.height,
+                8.height,
 
                 CommonText(
                   text: AppString.chooseRoleSubtitle,
@@ -64,45 +62,75 @@ class ChooseRoleScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
 
-                24.height,
+                20.height,
 
                 _RoleTile(
                   index: 0,
                   image: AppImages.generalUserCollector,
-                  title: AppString.roleGeneralUserCollectorTitle,
-                  subtitle: AppString.roleGeneralUserCollectorDes,
+                  title: AppString.roleVisitorTitle,
+                  subtitle: AppString.roleVisitorDes,
                   isSelected: controller.selectedIndex.value == 0,
                   onTap: () => controller.select(0),
                   leadingIcon: Icons.account_circle_outlined,
                 ),
-                12.height,
+                10.height,
                 _RoleTile(
                   index: 1,
                   image: AppImages.artistCurator,
-                  title: AppString.roleArtistCuratorTitle,
-                  subtitle: AppString.roleArtistCuratorDes,
+                  title: AppString.roleArtistTitle,
+                  subtitle: AppString.roleArtistDes,
                   isSelected: controller.selectedIndex.value == 1,
                   onTap: () => controller.select(1),
                   leadingIcon: Icons.palette_outlined,
                 ),
-                12.height,
+                10.height,
                 _RoleTile(
                   index: 2,
-                  image: AppImages.museumEdu,
-                  title: AppString.roleMuseumEduTitle,
-                  subtitle: AppString.roleMuseumEduDes,
+                  image: AppImages.collectionActive,
+                  title: AppString.roleCollectorTitle,
+                  subtitle: AppString.roleCollectorDes,
                   isSelected: controller.selectedIndex.value == 2,
                   onTap: () => controller.select(2),
+                  leadingIcon: Icons.collections_bookmark_outlined,
+                ),
+                10.height,
+                _RoleTile(
+                  index: 3,
+                  image: AppImages.exhibition,
+                  title: AppString.roleCuratorTitle,
+                  subtitle: AppString.roleCuratorDes,
+                  isSelected: controller.selectedIndex.value == 3,
+                  onTap: () => controller.select(3),
+                  leadingIcon: Icons.workspace_premium_outlined,
+                ),
+                10.height,
+                _RoleTile(
+                  index: 4,
+                  image: AppImages.museumEdu,
+                  title: AppString.roleMuseumTitle,
+                  subtitle: AppString.roleMuseumDes,
+                  isSelected: controller.selectedIndex.value == 4,
+                  onTap: () => controller.select(4),
                   leadingIcon: Icons.museum_outlined,
                 ),
+                12.height,
+                _RoleTile(
+                  index: 5,
+                  image: AppImages.learning,
+                  title: AppString.roleEducationalInstitutionTitle,
+                  subtitle: AppString.roleEducationalInstitutionDes,
+                  isSelected: controller.selectedIndex.value == 5,
+                  onTap: () => controller.select(5),
+                  leadingIcon: Icons.school_outlined,
+                ),
 
-                28.height,
+                18.height,
 
                 CommonButton(
                   titleText: AppString.continues,
                   buttonRadius: 50,
                   onTap: () {
-                    // You can pass the selected role forward if needed
+               
                     Get.offAllNamed(AppRoutes.signUp, arguments: {
                       'role': controller.selectedRoleKey,
                     });
@@ -145,7 +173,7 @@ class _RoleTile extends StatelessWidget {
       borderRadius: BorderRadius.circular(16.r),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(12.r),
@@ -155,11 +183,11 @@ class _RoleTile extends StatelessWidget {
           ],
         ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 44.r,
-              width: 44.r,
+              height: 40.r,
+              width: 40.r,
               padding: EdgeInsets.all(10.r),
               decoration: BoxDecoration(
                 color: AppColors.yelloFade,

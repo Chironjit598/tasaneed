@@ -57,12 +57,12 @@ class CreatePassword extends StatelessWidget {
                           child: Icon(Icons.arrow_back_ios, color: AppColors.textFiledColor,)),
 
 
-                      72.height,
+                      90.height,
 
                       Center(
                         child: CommonImage(
-                          height: 120,
-                          width: 120,
+                          height: 80,
+                          width: 80,
                           fill: BoxFit.cover,
                           imageSrc: AppImages.logo,
                         ).center,
@@ -73,7 +73,7 @@ class CreatePassword extends StatelessWidget {
                       CommonText(
                           fontSize: 22,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.title2
+                          color: AppColors.primaryColor
                           ,
 
                           text: AppString.resetPass).center,
@@ -83,7 +83,7 @@ class CreatePassword extends StatelessWidget {
                           fontSize: 12,
                           left: 12,
                           right: 12,
-                          top: 7,
+                          top: 16,
                           fontWeight: FontWeight.w400,
                           color: AppColors.bodyClr
 

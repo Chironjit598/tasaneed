@@ -92,13 +92,40 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   25.height,
 
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+
+                    Container(
+                      height: 1,
+                      width: 100.w,
+                      color: AppColors.stroke,
+                    ),
+
+
                   CommonText(
-                      left: 8,
-                      right: 8,
+                      left: 16,
+                      
+                      right: 16,
                       fontSize: 12,
                       color: AppColors.bodyClr,
                       fontWeight: FontWeight.w400,
                       text: AppString.or),
+
+                         Container(
+                      height: 1,
+                      width: 100.w,
+                      color: AppColors.stroke,
+                    ),
+
+
+
+                  ],)
+,
+
+
+
 
                   15.height,
 

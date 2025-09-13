@@ -42,6 +42,8 @@ class OnboardingController extends GetxController {
         }
       });
     } catch (e, stackTrace) {
+      debugPrint(e.toString());
+      debugPrint(stackTrace.toString());
 
     }
   }

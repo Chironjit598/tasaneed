@@ -25,7 +25,7 @@ class MyOrderScreen extends StatelessWidget {
     final myOrderCtrl = Get.put(MyOrderController());
     final title = (order['title'] ?? '').toString();
     final price = (order['price'] ?? 0).toString();
-    final status = (order['status'] ?? '').toString();
+    //final status = (order['status'] ?? '').toString();
 
     // ensure initial status is set after first frame to avoid update() during build
     WidgetsBinding.instance.addPostFrameCallback((_) {

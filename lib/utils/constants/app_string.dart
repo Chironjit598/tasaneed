@@ -28,13 +28,17 @@ class AppString {
   static const String changedPassword = "Password Changed!";
   static const String changedPasswordDes =
       "Your can now use your new password to login to your account.";
+  // Password Updated screen
+  static const String passwordUpdated = "Password Updated";
+  static const String passwordUpdatedDes =
+      "Your password has been successfully updated. Please use your new password to log in.";
   static const String currentPassword = "Current Password";
   static const String newPassword = "New Password";
   static const String confirmPassword = "Confirm Password";
   static const String confirmYourPassword = "Confirm your password";
   static const String forgotPassword = "Forgot Password";
   static const String forgotPasswordDes =
-      "To reset your password, you need your email or mobile number that can be authenticated";
+      " Just enter your email and we'll send you a link to reset your password.";
   static const String mamaCareDes =
       "Join a Homegrown Network of Care, Made for African Families";
   static const String createNewPassword = "Create New Password";
@@ -48,7 +52,7 @@ class AppString {
   static const String resendCode = "Resend Code";
   static const String resetPass = "Reset Password";
   static const String resetPassDes =
-      "Create a new password to securely access your MamaCare account ";
+      "Please enter your email address, and we will send you a link to reset your password.";
   static const String resendCodeIn = "Resend code in";
   static const String minute = "minute";
   static const String verify = "Verify";
@@ -71,7 +75,7 @@ class AppString {
   static const String createYourAccount = "Create Your Account";
   static const String otpVerify = "OTP Verify";
   static const String otpVerifyDes =
-      "Enter your OTP which has been sent to your email and completely verify your account.";
+      "Enter the OTP Sent to Your Email";
   static const String inbox = "Inbox";
   static const String searchDoctor = "search a doctor";
   static const String activeNow = "Active Now";
@@ -129,9 +133,9 @@ class AppString {
   static const String signUpAsParent = "Sign up as Parent";
   static const String accountVerified = "Account Verified!";
   static const String accountVerifiedDes =
-      "Your MamaCare account is now verified. Connect with trusted African caregivers near you.";
+      "Your account is now verified. Connect with artist , collector , museum and many more";
   static const String signUpAsParentDes = "I am Parent/ Guardian seeking care";
-  static const String signInDes = "Sign in to continue";
+  static const String signInDes = "Sign in to continue your journey in the art world and connect with fellow artists";
   static const String onboardingOneTwoDes =
       "Support independent creators by purchasing or commissioning artwork with just a few taps.";
   static const String onboardingOneThreeDes =
@@ -281,6 +285,20 @@ class AppString {
   static const String roleArtistCuratorDes = "I create and curate art exhibitions.";
   static const String roleMuseumEduTitle = "Museum / Edu Institution";
   static const String roleMuseumEduDes = "I manage exhibitions and provide learning materials.";
+
+  // === New granular roles (6-role version)
+  static const String roleVisitorTitle = "Visitor";
+  static const String roleVisitorDes = "Explore & buy art";
+  static const String roleArtistTitle = "Artist";
+  static const String roleArtistDes = "Create & sell your art";
+  static const String roleCollectorTitle = "Collector";
+  static const String roleCollectorDes = "Collect & resell artworks";
+  static const String roleCuratorTitle = "Curator";
+  static const String roleCuratorDes = "Organize & curate exhibitions";
+  static const String roleMuseumTitle = "Museum";
+  static const String roleMuseumDes = "Manage exhibitions & collections";
+  static const String roleEducationalInstitutionTitle = "Educational Institution";
+  static const String roleEducationalInstitutionDes = "Provide art learning resources";
   static const String joinUs = "Join Us";
   static const String confirm = "Confirm";
   static const String recommendedArts = "Recommended Arts";

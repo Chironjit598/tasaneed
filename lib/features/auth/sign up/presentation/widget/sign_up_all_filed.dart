@@ -48,28 +48,28 @@ class SignUpAllField extends StatelessWidget {
         ),
 
 
-        /// User Name here
-        CommonText(
-            fontSize: 14,
-            color: AppColors.titleColor,
-            fontWeight: FontWeight.w700,
-            text: AppString.chooseRole, bottom: 8, top: 12),
-        CommonTextField(
-          suffixIcon: InkWell(
-            onTap: (){
-              chooseRoleBottomSheet(context);
-            },
-            child: Icon(
-                color: AppColors.bodyClr,
-                Icons.keyboard_arrow_down_rounded),
-          ),
-          borderColor: AppColors.normalGray2,
+        // /// User Name here
+        // CommonText(
+        //     fontSize: 14,
+        //     color: AppColors.titleColor,
+        //     fontWeight: FontWeight.w700,
+        //     text: AppString.chooseRole, bottom: 8, top: 12),
+        // CommonTextField(
+        //   suffixIcon: InkWell(
+        //     onTap: (){
+        //       chooseRoleBottomSheet(context);
+        //     },
+        //     child: Icon(
+        //         color: AppColors.bodyClr,
+        //         Icons.keyboard_arrow_down_rounded),
+        //   ),
+        //   borderColor: AppColors.normalGray2,
 
 
-          hintText: AppString.selectYourRole,
-          controller: controller.chooseRoleController,
-          validator: OtherHelper.validator,
-        ),
+        //   hintText: AppString.selectYourRole,
+        //   controller: controller.chooseRoleController,
+        //   validator: OtherHelper.validator,
+        // ),
 
         /// User Password here
         const CommonText(

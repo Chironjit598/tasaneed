@@ -50,12 +50,12 @@ class SignInScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          55.height,
+                          80.height,
 
                           Center(
                             child: CommonImage(
-                              height: 120,
-                              width: 120,
+                              height: 80,
+                              width: 80,
                               fill: BoxFit.cover,
                               imageSrc: AppImages.logo,
                             ).center,
@@ -64,11 +64,10 @@ class SignInScreen extends StatelessWidget {
                           Center(
                             child: CommonText(
                               text: AppString.signIn,
-                              fontSize: 22,
-
-                              color: AppColors.title2,
+                              fontSize: 24,
+                              color: AppColors.primaryColor,
                               fontWeight: FontWeight.w600,
-                              top: 25,
+                              top: 22,
                             ),
                           ),
 
@@ -76,10 +75,10 @@ class SignInScreen extends StatelessWidget {
                             child: CommonText(
                               text: AppString.signInDes,
                               fontSize: 12,
-                              maxLines: 2,
+                              maxLines: 3,
                               bottom: 32,
-                              left: 44,
-                              right: 44,
+                              left: 30,
+                              right: 30,
                               top: 10,
                               color: AppColors.bodyClr,
                               fontWeight: FontWeight.w400,
@@ -191,8 +190,27 @@ class SignInScreen extends StatelessWidget {
 
                           16.height,
 
+                          // Or divider
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(height: 1, width: 100.w, color: AppColors.stroke),
+                              CommonText(
+                                left: 16,
+                                right: 16,
+                                fontSize: 12,
+                                color: AppColors.bodyClr,
+                                fontWeight: FontWeight.w400,
+                                text: AppString.or,
+                              ),
+                              Container(height: 1, width: 100.w, color: AppColors.stroke),
+                            ],
+                          ),
+
+                          15.height,
+
                           ContinueWithGoogle(),
-                          20.height,
+                          16.height,
 
 
 
@@ -211,7 +229,7 @@ class SignInScreen extends StatelessWidget {
 
                               InkWell(
                                 onTap: (){
-                                  Get.toNamed(AppRoutes.signUp);
+                                  Get.toNamed(AppRoutes.chooseRole);
                                 },
                                 child: CommonText(
 

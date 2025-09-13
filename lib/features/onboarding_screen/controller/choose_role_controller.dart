@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class ChooseRoleController extends GetxController {
-  // 0: General User/Collector, 1: Artist/Curator, 2: Museum/Edu
+  // 0: Visitor, 1: Artist, 2: Collector, 3: Curator, 4: Museum, 5: Educational Institution
   RxInt selectedIndex = 0.obs;
 
   void select(int index) {
@@ -11,13 +11,20 @@ class ChooseRoleController extends GetxController {
 
   String get selectedRoleKey {
     switch (selectedIndex.value) {
-      case 1:
-        return 'artist_curator';
-      case 2:
-        return 'museum_edu';
       case 0:
+        return 'visitor';
+      case 1:
+        return 'artist';
+      case 2:
+        return 'collector';
+      case 3:
+        return 'curator';
+      case 4:
+        return 'museum';
+      case 5:
+        return 'educational_institution';
       default:
-        return 'general_user_collector';
+        return 'visitor';
     }
   }
 }

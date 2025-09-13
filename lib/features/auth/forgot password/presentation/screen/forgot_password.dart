@@ -57,12 +57,12 @@ class ForgotPasswordScreen extends StatelessWidget {
                           child: Icon(Icons.arrow_back_ios, color: AppColors.textFiledColor,)),
 
 
-                        70.height,
+                        90.height,
 
                         Center(
                           child: CommonImage(
-                            height: 120,
-                            width: 120,
+                            height: 80,
+                            width: 80,
                             fill: BoxFit.cover,
                             imageSrc: AppImages.logo,
                           ).center,
@@ -71,9 +71,9 @@ class ForgotPasswordScreen extends StatelessWidget {
                         Center(
                           child: CommonText(
                             top: 32,
-                              fontSize: 22,
+                              fontSize: 24,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.title2,
+                              color: AppColors.primaryColor,
                               text: AppString.forgotPassword),
                         ),
                         Center(
@@ -81,9 +81,9 @@ class ForgotPasswordScreen extends StatelessWidget {
                             top: 10,
                               left: 20,right: 20,
                               maxLines: 3,
-                              fontSize: 12,
+                              fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.titleColorSecondary,
+                              color: AppColors.bodyClr,
                               text: AppString.forgotPasswordDes),
                         ),
 

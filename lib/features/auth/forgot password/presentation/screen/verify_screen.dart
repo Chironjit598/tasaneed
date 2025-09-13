@@ -72,13 +72,13 @@ class _VerifyScreenState extends State<VerifyScreen> {
 
 
 
-                        73.height,
+                        90.height,
 
                         Center(
                           child: CommonImage(
                             fill: BoxFit.cover,
-                            height: 120,
-                            width: 120,
+                            height: 80,
+                            width: 80,
                             imageSrc: AppImages.logo,
                           ).center,
                         ),
@@ -86,9 +86,9 @@ class _VerifyScreenState extends State<VerifyScreen> {
 
                         32.height,
                         CommonText(
-                          fontSize: 22,
+                          fontSize: 24,
                             fontWeight: FontWeight.w600,
-                            color: AppColors.title2
+                            color: AppColors.primaryColor
                             ,
 
                             text: AppString.otpVerify),
@@ -158,11 +158,12 @@ class _VerifyScreenState extends State<VerifyScreen> {
                           child: CommonText(
                             top: 5,
 
-                              color: AppColors.black,
+                              color: AppColors.bodyClr,
                               fontWeight: FontWeight.w600,
                               text:  AppString.resendCode),
                         ) : CommonText(
                             fontSize: 12,
+                            
                             top: 8,
                             fontWeight: FontWeight.w400,
                             color: AppColors.primaryColor,
