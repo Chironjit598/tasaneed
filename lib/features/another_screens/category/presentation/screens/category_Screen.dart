@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
+import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/category_item.dart';
 import '../../../../../component/bottom_nav_bar/common_bottom_bar.dart';
-import '../widget/category_item_vertical.dart';
+import '../controller/category_controller.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -27,25 +29,28 @@ class CategoryScreen extends StatelessWidget {
             text: AppString.allCategories),
       ),
 
-      body:
-      Expanded(
-        child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16.w),
+      body: GetBuilder<CategoryController>(
+        init: CategoryController(),
+        builder: (c) => Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           child: GridView.builder(
-
-              itemCount: 20,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,  // Number of columns
-                crossAxisSpacing: 1,
-
-                mainAxisExtent: 127.h
-                ,
-                // Horizontal space between items
-                mainAxisSpacing:20 , // Vertical space between items
-              ), itemBuilder: (context, index){
-
-            return CategoryItemVertical();
-          }),
+            itemCount: c.categories.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 12.w,
+              mainAxisSpacing: 16.h,
+              mainAxisExtent: 125.h,
+            ),
+            itemBuilder: (context, index) {
+              final item = c.categories[index];
+              return InkWell(
+                
+                   onTap: () =>     Get.toNamed(AppRoutes.featureArtsScreen, arguments: {
+                  "title":AppString.featureArts
+                }),
+                child: CategoryItem(title: item['title']!, imageSrc: item['image']!));
+            },
+          ),
         ),
       ),
       bottomNavigationBar: CommonBottomNavBar(currentIndex: 1),

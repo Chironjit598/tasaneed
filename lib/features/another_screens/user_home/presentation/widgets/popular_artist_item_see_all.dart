@@ -6,12 +6,13 @@ import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 
-class PopularArtistItem extends StatelessWidget {
-  const PopularArtistItem({super.key});
+class PopularArtistItemSeeAll extends StatelessWidget {
+  const PopularArtistItemSeeAll({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
     
       children: [
     
@@ -36,15 +37,15 @@ class PopularArtistItem extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.group_outlined, size: 14.sp, color: AppColors.bodyClr),
+                Icon(Icons.group_outlined, size: 18.sp, color: AppColors.bodyClr),
 
-                4.width,
+                3.width,
 
-                CommonText(
-                  text: "1200",
-                  fontSize: 10,
-                  color: AppColors.bodyClr,
-                  fontWeight: FontWeight.w400,
+                CommonText(text: "1200",
+                
+                fontSize: 10,
+                color: AppColors.bodyClr,
+                fontWeight: FontWeight.w400,
                 )
               ],
             )

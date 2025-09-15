@@ -9,10 +9,19 @@ import 'package:tasaned_project/features/another_screens/user_home/presentation/
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/category_item.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/popular_artist_item.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
+import 'package:tasaned_project/utils/constants/app_images.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 
 import 'exhibition_item.dart';
+
+// Demo categories for the Home category row
+const List<Map<String, String>> _homeCategories = [
+  {"title": "Abstract", "image": AppImages.category},
+  {"title": "Expressionism", "image": AppImages.category},
+  {"title": "Surrealism", "image": AppImages.category},
+  {"title": "Minimalism", "image": AppImages.category},
+];
 
 class ListItemSection extends StatelessWidget {
   const ListItemSection({super.key});
@@ -100,15 +109,21 @@ class ListItemSection extends StatelessWidget {
         16.height,
 
         SizedBox(
-          height: 90.h,
+          height: 125.h,
           child: ListView.separated(
-            padding: EdgeInsets.only(right: 16.w),
+            padding: EdgeInsets.only(right: 8.w),
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
+            itemCount: _homeCategories.length,
             itemBuilder: (context, index) {
-              return CategoryItem();
+              final item = _homeCategories[index];
+              return InkWell(
+                onTap: () =>     Get.toNamed(AppRoutes.featureArtsScreen, arguments: {
+                  "title":AppString.featureArts
+                }),
+                child: CategoryItem(title: item['title']!, imageSrc: item['image']!),
+              );
             },
-            separatorBuilder: (_, __) => SizedBox(width: 16.w),
+            separatorBuilder: (_, __) => SizedBox(width: 6.w),
           ),
         ),
 
@@ -141,7 +156,7 @@ class ListItemSection extends StatelessWidget {
         16.height,
 
         SizedBox(
-          height: 90.h,
+          height: 120.h,
           child: ListView.separated(
             padding: EdgeInsets.only(right: 16.w),
             scrollDirection: Axis.horizontal,
@@ -295,4 +310,5 @@ class ListItemSection extends StatelessWidget {
       ],
     );
   }
+
 }

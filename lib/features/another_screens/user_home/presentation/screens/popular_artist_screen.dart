@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/popular_artist_item_see_all.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 
-import '../widgets/popular_artist_item.dart';
 
 class PopularArtistScreen extends StatelessWidget {
-  PopularArtistScreen({super.key});
+  const PopularArtistScreen({super.key});
 
 
   @override
@@ -23,7 +23,7 @@ class PopularArtistScreen extends StatelessWidget {
             fontSize: 16,
             fontWeight: FontWeight.w600,
             color: AppColors.titleColor,
-            text: AppString.topArtist),
+            text: AppString.popularArtist),
         leading: InkWell(
             onTap: (){
               Get.back();
@@ -50,7 +50,7 @@ class PopularArtistScreen extends StatelessWidget {
                     mainAxisSpacing:7 , // Vertical space between items
                   ), itemBuilder: (context, index){
 
-                return PopularArtistItem();
+                return PopularArtistItemSeeAll();
               }),
             ),
           )
