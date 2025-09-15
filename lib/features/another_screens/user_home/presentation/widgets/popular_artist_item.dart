@@ -41,7 +41,7 @@ class PopularArtistItem extends StatelessWidget {
                 4.width,
 
                 CommonText(
-                  text: "1200",
+                  text: "1.2k Followers",
                   fontSize: 10,
                   color: AppColors.bodyClr,
                   fontWeight: FontWeight.w400,

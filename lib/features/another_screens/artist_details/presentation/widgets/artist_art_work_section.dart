@@ -19,9 +19,9 @@ class ArtistArtWorkSection extends StatelessWidget {
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,  // Number of columns
-            crossAxisSpacing: 1, // Horizontal space between items
+            crossAxisSpacing: 15, // Horizontal space between items
             mainAxisSpacing:20 ,
-            mainAxisExtent: 180.h
+            mainAxisExtent: 190.h
             // Vertical space between items
           ), itemBuilder: (context, index){
 

@@ -501,4 +501,13 @@ class AppString {
   static const String delete = 'Delete';
   static const String available = 'Available';
   static const String sold = 'Sold';
+  static const String about = 'About';
+  static const String eventDetails = 'Event Details';
+
+  // === Event details screen labels ===
+  static const String aboutTheEvent = 'About the Event';
+  static const String eventOverview = 'Event Overview';
+  static const String time = 'Time:';
+  static const String joinEvent = 'Join Event';
+
 }

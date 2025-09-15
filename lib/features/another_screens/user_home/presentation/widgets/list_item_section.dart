@@ -162,7 +162,12 @@ class ListItemSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
-              return PopularArtistItem();
+              return InkWell(
+                
+                onTap: (){
+                  Get.toNamed(AppRoutes.artistDetailsScreen);
+                },
+                child: PopularArtistItem());
             },
             separatorBuilder: (_, __) => SizedBox(width: 16.w),
           ),
@@ -254,7 +259,7 @@ class ListItemSection extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                   onTap: (){
-                    Get.toNamed(AppRoutes.exhibitionScreen);
+                    Get.toNamed(AppRoutes.eventDetailsScreen);
                   },
                   child: EventItem());
             },

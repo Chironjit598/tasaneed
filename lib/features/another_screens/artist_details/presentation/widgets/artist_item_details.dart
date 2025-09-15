@@ -7,27 +7,32 @@ import 'package:tasaned_project/utils/constants/app_images.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 
 class ArtistItemDetails extends StatelessWidget {
-  const ArtistItemDetails({super.key});
+    final double itemWidth;
+  final double itemHeight;
+
+   ArtistItemDetails({super.key, this.itemWidth = 158, this.itemHeight = 210});
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(6.r),
-      margin: EdgeInsets.only(right: 16.w),
-
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        border: Border.all(color: AppColors.stroke),
-        borderRadius: BorderRadius.circular(12.r),
-      ),
-      child: Column(
-        children: [
+    return SizedBox(
+      height: itemHeight.h,
+      width: itemWidth.w,
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          border: Border.all(width: 0.5, color: AppColors.stroke),
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
           Stack(
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.r),
                 child: CommonImage(
-                  width: 148.w,
+                  width: double.infinity,
                   fill: BoxFit.fill,
                   height: 107.h,
                   imageSrc: AppImages.arts,
@@ -58,24 +63,20 @@ class ArtistItemDetails extends StatelessWidget {
             left: 6,
             right: 6,
             bottom: 8,
+            maxLines: 1,
             text: "Whispers of the Forest",
           ),
 
-          Row(
-            children: [
-              6.width,
-
-
-              CommonText(
+          CommonText(
                 fontSize: 14,
-                color: AppColors.black,
-                right: 6,
-                fontWeight: FontWeight.w400,
+                color: AppColors.primaryColor,
+                left: 6,
+                fontWeight: FontWeight.w600,
                 text: "\$250",
               ),
-            ],
-          ),
+          
         ],
+        ),
       ),
     );
   }
