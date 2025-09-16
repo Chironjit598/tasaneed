@@ -8,7 +8,20 @@ class AppImages {
 
 
   //================
+    static const String createNewEvent= "$baseurl/create_new_event.png";
+        static const String newExhibition= "$baseurl/new_exhibition.png";
+                static const String uploadArtwork= "$baseurl/upload_artwork.png";
 
+
+        static const String addNewInactive= "$baseurl/add_new_inactive.png";
+
+
+  
+  static const String settingsInactive= "$baseurl/setting_inactive.png";
+static const String settingsActive= "$baseurl/settings_active.png";
+
+static const String orderActive= "$baseurl/order_active.png";
+      static const String orderInactive= "$baseurl/order_inactive.png";
 
   static const String messageActive= "$baseurl/message_active.png";
   static const String profileBg= "$baseurl/profile_bg.png";
@@ -63,6 +76,8 @@ class AppImages {
    static const String generalUserCollector= "$baseurl/general.png";
    static const String artistCurator= "$baseurl/artist.png";
    static const String museumEdu= "$baseurl/museum.png";
+
+
 
 
 

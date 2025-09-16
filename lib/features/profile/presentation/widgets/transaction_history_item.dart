@@ -15,7 +15,7 @@ class TransationHistoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
-      height: 77.h,
+   //   height: 77.h,
       padding: EdgeInsets.all(10.r),
       width: double.infinity,
       decoration: BoxDecoration(
@@ -60,21 +60,26 @@ class TransationHistoryItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CommonText(
-                        fontSize: 14.sp,
+                        fontSize: 12.sp,
+                        color: AppColors.bodyClr,
                         fontWeight: FontWeight.w400,
                         text: "14:30 AM"),
 
                     Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10.w),
                       height:12.h,
                       width: 1,
                       color: AppColors.bodyClr,
 
                     ),
 
-                    CommonText(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        text: "Nov 2, 2023"),
+                    Expanded(
+                      child: CommonText(
+                          fontSize: 12.sp,
+                          color: AppColors.bodyClr,
+                          fontWeight: FontWeight.w400,
+                          text: "Nov 2, 2023"),
+                    ),
                   ],
                 ),
               ),
@@ -89,7 +94,7 @@ class TransationHistoryItem extends StatelessWidget {
               fontSize: 14.sp,
               fontWeight: FontWeight.w600,
               color: AppColors.red,
-              text: "\$454.43")
+              text: "\$454.4")
         ],
       ),
     );

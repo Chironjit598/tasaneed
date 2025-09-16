@@ -109,7 +109,7 @@ class ListItemSection extends StatelessWidget {
         16.height,
 
         SizedBox(
-          height: 125.h,
+          height: 130.h,
           child: ListView.separated(
             padding: EdgeInsets.only(right: 8.w),
             scrollDirection: Axis.horizontal,
@@ -215,7 +215,7 @@ class ListItemSection extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                   onTap: (){
-                    Get.toNamed(AppRoutes.exhibitionScreen);
+                    Get.toNamed(AppRoutes.exhibitionDetailsScreen);
                   },
                   child: ExhibitionItem());
             },

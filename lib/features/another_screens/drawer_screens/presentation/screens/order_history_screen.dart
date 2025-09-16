@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:tasaned_project/component/bottom_nav_bar/common_bottom_bar.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/services/storage/storage_services.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_tabs.dart';
@@ -32,7 +34,11 @@ class OrderHistoryScreen extends StatelessWidget {
         ),
         leading: InkWell(
           onTap: () => Get.back(),
-          child: Icon(Icons.arrow_back_ios, size: 20.sp, color: AppColors.titleColor),
+          child: Icon(
+            Icons.arrow_back_ios,
+            size: 20.sp,
+            color: AppColors.titleColor,
+          ),
         ),
         actions: [
           Padding(
@@ -56,11 +62,18 @@ class OrderHistoryScreen extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
                 side: BorderSide(color: AppColors.stroke),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
                 foregroundColor: AppColors.titleColor,
               ),
               icon: Icon(Icons.filter_alt_outlined, size: 16.sp),
-              label: CommonText(text: AppString.filter, fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.titleColor),
+              label: CommonText(
+                text: AppString.filter,
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+                color: AppColors.titleColor,
+              ),
             ),
           ),
         ],
@@ -71,27 +84,27 @@ class OrderHistoryScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-             
                 // Tabs
-                OrderTabs(
-                  selectedTab: controller.selectedTab,
-                  onChanged: controller.changeTab,
-                ),
-            
+                if (LocalStorage.myRoll != "visitor")
+                  OrderTabs(
+                    selectedTab: controller.selectedTab,
+                    onChanged: controller.changeTab,
+                  ),
+
                 12.height,
                 // Order list
                 OrderList(
                   items: controller.filteredList,
                   selectedTab: controller.selectedTab,
                 ),
-            
-            
-            
-            
               ],
             ),
           );
         },
+      ),
+
+      bottomNavigationBar: CommonBottomNavBar(
+        currentIndex: 1,
       ),
     );
   }

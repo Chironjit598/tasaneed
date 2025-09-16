@@ -234,32 +234,6 @@ class EventDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _bullet(String text) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          margin: EdgeInsets.only(top: 6.h),
-          height: 6.r,
-          width: 6.r,
-          decoration: BoxDecoration(
-            color: AppColors.bodyClr,
-            shape: BoxShape.circle,
-          ),
-        ),
-        8.width,
-        Expanded(
-          child: CommonText(
-            text: text,
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-            color: AppColors.bodyClr,
-            textAlign: TextAlign.start,
-          ),
-        ),
-      ],
-    );
-  }
 
   Widget _detailRow({
     required IconData icon,

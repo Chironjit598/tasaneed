@@ -5,6 +5,7 @@ import 'package:tasaned_project/features/another_screens/art_details/presentatio
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/offer_submitted_screen.dart';
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/screens/artist_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/order_history_screen.dart';
 import 'package:tasaned_project/features/another_screens/event_details/presentation/screens/event_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/my_collection/presentation/screens/my_collections_screen.dart';
@@ -12,6 +13,7 @@ import 'package:tasaned_project/features/another_screens/drawer_screens/presenta
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/followers_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/following_screen.dart';
 import 'package:tasaned_project/features/another_screens/exhibition/presentation/screens/exhibition_screen.dart';
+import 'package:tasaned_project/features/another_screens/exhibition_details/presentation/screens/exhibition_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/learn_grow/presentation/screens/learn_and_grow_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_listing_screen.dart';
 import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learnig_metarial_video_screen.dart';
@@ -105,6 +107,7 @@ class AppRoutes {
   static const String availabilityScreen = "/availabilityScreen";
   static const String rescheduleBooking = "/rescheduleBooking";
     static const String eventDetailsScreen = "/eventDetailsScreen";
+    static const String createExhibitionScreen = "/createExhibitionScreen";
 
 
 
@@ -123,6 +126,7 @@ class AppRoutes {
   static const String paymentConfirmationScreen = "/paymentConfirmationScreen";
   static const String offerSubmittedScreen = "/offerSubmittedScreen";
   static const String exhibitionScreen = "/exhibitionScreen";
+  static const String exhibitionDetailsScreen = "/exhibitionDetailsScreen";
   static const String myListingScreen = "/myListingScreen";
   static const String purchaseHistory = "/purchaseHistory";
   static const String transactionHistory = "/transactionHistory";
@@ -183,6 +187,8 @@ class AppRoutes {
     GetPage(name: grandleGallery, page: () => GrandleGallery()),
     GetPage(name: artistDetailsScreen, page: () => ArtistDetailsScreen()),
     GetPage(name: exhibitionScreen, page: () => ExhibitionScreen()),
+    GetPage(name: exhibitionDetailsScreen, page: () => const ExhibitionDetailsScreen()),
+    GetPage(name: createExhibitionScreen, page: () => CreateExhibitionScreen()),
     GetPage(name: myListingScreen, page: () => MyListingScreen()),
     GetPage(name: purchaseHistory, page: () => OrderHistoryScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),

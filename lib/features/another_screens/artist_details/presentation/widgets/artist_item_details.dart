@@ -4,7 +4,6 @@ import 'package:tasaned_project/component/image/common_image.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
-import 'package:tasaned_project/utils/extensions/extension.dart';
 
 class ArtistItemDetails extends StatelessWidget {
     final double itemWidth;

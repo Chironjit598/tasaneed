@@ -417,6 +417,9 @@ class AppString {
   static const String describeYourArtwork = 'Describe your artwork';
   static const String enterArtworkTitle = 'Enter artwork title';
   static const String artworkTitle = 'Artwork Title';
+  static const String createExhibition = 'Create Exhibition';
+  static const String photos = 'Photos';
+  static const String chooseYourMainPhotoFirstShort = 'Choose your main photo first';
   static const String medium = 'Medium';
   static const String searchArtist = 'Search Artist';
   static const String artist = 'Artist';
@@ -509,5 +512,9 @@ class AppString {
   static const String eventOverview = 'Event Overview';
   static const String time = 'Time:';
   static const String joinEvent = 'Join Event';
+  // ==== Create Exhibition success popup ====
+static const String itemListedSuccessfully = 'Item Listed Successfully!';
+static const String itemListedSuccessfullyDes =
+    "Your item has been successfully posted for sale. It's now visible to buyers!";
 
 }
