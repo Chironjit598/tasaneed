@@ -531,4 +531,19 @@ static const String saveAsDraft = 'Save as Draft';
 static const String yourEventIsNowLive = 'Your Event is now Live';
 static const String yourEventIsNowLiveDes = 'Congratulations! Your event is now published and visible to all potential visitors';
 
+  // ==== Create New Event labels ====
+  static const String createNewEvent = 'Create New Event';
+  static const String basicInformation = 'Basic Information';
+  static const String eventTitle = 'Event Title';
+  static const String eventDate = 'Event Date';
+  static const String endDateLabel = 'End Date';
+  static const String venueTitle = 'Venue';
+  static const String next = 'Next';
+  static const String ticketAndBooking = 'Ticket & Booking';
+  static const String ticketPriceLabel = 'Ticket Price';
+  static const String bookingUrlLabel = 'Booking URL';
+  static const String enterBookingUrl = 'Enter booking URL';
+  static const String eventImageLabel = 'Event Image';
+
+  // ... rest of the code remains the same ...
 }

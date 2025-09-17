@@ -5,6 +5,7 @@ import 'package:tasaned_project/features/another_screens/art_details/presentatio
 import 'package:tasaned_project/features/another_screens/art_details/presentation/screens/offer_submitted_screen.dart';
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/screens/artist_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_event/presentation/screens/create_new_event_ticket_booking_screen.dart';
 import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_new_exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_new_exhibition_gallery_screen.dart';
@@ -58,6 +59,8 @@ import '../../features/setting/presentation/screen/privacy_policy_screen.dart';
 import '../../features/setting/presentation/screen/setting_screen.dart';
 import '../../features/setting/presentation/screen/terms_of_services_screen.dart';
 import '../../features/splash/splash_screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_event/presentation/screens/create_new_event_screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_event/presentation/screens/create_new_event_gallery_screen.dart';
 
 class AppRoutes {
   static const String test = "/test_screen.dart";
@@ -116,6 +119,9 @@ class AppRoutes {
     static const String createNewExhibitionGalleryScreen = "/createNewExhibitionGalleryScreen";
     static const String createNewExhibitionFeatureArtistScreen = "/createNewExhibitionFeatureArtistScreen";
     static const String createNewExhibitionTicketBookingScreen = "/createNewExhibitionTicketBookingScreen";
+    static const String createNewEventScreen = "/createNewEventScreen";
+    static const String createNewEventGalleryScreen = "/createNewEventGalleryScreen";
+    static const String createNewEventTicketBookingScreen = "/createNewEventTicketBookingScreen";
 
 
 
@@ -201,6 +207,9 @@ class AppRoutes {
     GetPage(name: createNewExhibitionGalleryScreen, page: () => const CreateNewExhibitionGalleryScreen()),
     GetPage(name: createNewExhibitionFeatureArtistScreen, page: () => const CreateNewExhibitionFeatureArtistScreen()),
     GetPage(name: createNewExhibitionTicketBookingScreen, page: () => const CreateNewExhibitionTicketBookingScreen()),
+    GetPage(name: createNewEventScreen, page: () => const CreateNewEventScreen()),
+    GetPage(name: createNewEventGalleryScreen, page: () => const CreateNewEventGalleryScreen()),
+    GetPage(name: createNewEventTicketBookingScreen, page: () => const CreateNewEventTicketBookingScreen()),
     GetPage(name: myListingScreen, page: () => MyListingScreen()),
     GetPage(name: purchaseHistory, page: () => OrderHistoryScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),

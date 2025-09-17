@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/services/storage/storage_services.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
-
-import '../../config/route/app_routes.dart';
 import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/app_images.dart';
 import '../text/common_text.dart';
@@ -175,8 +174,9 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
                 iconPath: AppImages.createNewEvent,
                 label: 'Create New Event',
                 onTap: () {
-                  // TODO: Navigate to create event screen when route is ready
+                
                   Get.back();
+                  Get.toNamed(AppRoutes.createNewEventScreen);
                 },
               ),
             ],
