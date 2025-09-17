@@ -204,37 +204,7 @@ class CreateExhibitionScreen extends StatelessWidget {
     );
   }
 
-  Widget _dropdown<T>({required T value, required List<T> items, required ValueChanged<T?> onChanged}) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 12.w),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: AppColors.stroke),
-      ),
-      child: DropdownButton<T>(
-        value: value,
-        isExpanded: true,
-        underline: SizedBox.shrink(),
-        icon: Icon(Icons.arrow_drop_down, color: AppColors.bodyClr),
-        items: items
-            .map(
-              (e) => DropdownMenuItem<T>(
-                value: e,
-                child: CommonText(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.bodyClr,
-                  text: e.toString(),
-                ),
-              ),
-            )
-            .toList(),
-        onChanged: onChanged,
-      ),
-    );
-  }
-
+ 
   Widget _imagesGrid(CreateExhibitionController c) {
     final canAddMore = c.imagePaths.length < 5;
     final tiles = <Widget>[];

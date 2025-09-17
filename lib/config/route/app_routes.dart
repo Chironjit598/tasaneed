@@ -6,6 +6,10 @@ import 'package:tasaned_project/features/another_screens/art_details/presentatio
 import 'package:tasaned_project/features/another_screens/artist_details/presentation/screens/artist_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/category/presentation/screens/category_Screen.dart';
 import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_exhibition_screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_new_exhibition_screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_new_exhibition_gallery_screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_new_exhibition_feature_artist_screen.dart';
+import 'package:tasaned_project/features/another_screens/create_new_exhibition/presentation/screens/create_new_exhibition_ticket_booking_screen.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/order_history_screen.dart';
 import 'package:tasaned_project/features/another_screens/event_details/presentation/screens/event_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/my_collection/presentation/screens/my_collections_screen.dart';
@@ -108,6 +112,10 @@ class AppRoutes {
   static const String rescheduleBooking = "/rescheduleBooking";
     static const String eventDetailsScreen = "/eventDetailsScreen";
     static const String createExhibitionScreen = "/createExhibitionScreen";
+    static const String createNewExhibitionScreen = "/createNewExhibitionScreen";
+    static const String createNewExhibitionGalleryScreen = "/createNewExhibitionGalleryScreen";
+    static const String createNewExhibitionFeatureArtistScreen = "/createNewExhibitionFeatureArtistScreen";
+    static const String createNewExhibitionTicketBookingScreen = "/createNewExhibitionTicketBookingScreen";
 
 
 
@@ -189,6 +197,10 @@ class AppRoutes {
     GetPage(name: exhibitionScreen, page: () => ExhibitionScreen()),
     GetPage(name: exhibitionDetailsScreen, page: () => const ExhibitionDetailsScreen()),
     GetPage(name: createExhibitionScreen, page: () => CreateExhibitionScreen()),
+    GetPage(name: createNewExhibitionScreen, page: () => const CreateNewExhibitionScreen()),
+    GetPage(name: createNewExhibitionGalleryScreen, page: () => const CreateNewExhibitionGalleryScreen()),
+    GetPage(name: createNewExhibitionFeatureArtistScreen, page: () => const CreateNewExhibitionFeatureArtistScreen()),
+    GetPage(name: createNewExhibitionTicketBookingScreen, page: () => const CreateNewExhibitionTicketBookingScreen()),
     GetPage(name: myListingScreen, page: () => MyListingScreen()),
     GetPage(name: purchaseHistory, page: () => OrderHistoryScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),

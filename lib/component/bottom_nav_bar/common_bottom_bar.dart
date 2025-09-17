@@ -155,8 +155,9 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
                 iconPath: AppImages.uploadArtwork,
                 label: 'Upload Artwork',
                 onTap: () {
-                  // TODO: Navigate to upload artwork screen when route is ready
+           
                   Get.back();
+                    Get.toNamed(AppRoutes.createExhibitionScreen);
                 },
               ),
               SizedBox(height: 12.h),
@@ -165,7 +166,8 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
                 label: 'Create New Exhibition',
                 onTap: () {
                   Get.back();
-                  Get.toNamed(AppRoutes.createExhibitionScreen);
+  Get.toNamed(AppRoutes.createNewExhibitionScreen);
+                
                 },
               ),
               SizedBox(height: 12.h),

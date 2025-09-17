@@ -517,4 +517,18 @@ static const String itemListedSuccessfully = 'Item Listed Successfully!';
 static const String itemListedSuccessfullyDes =
     "Your item has been successfully posted for sale. It's now visible to buyers!";
 
+
+    // Create New Exhibition strings
+static const String exhibitionTitle = 'Exhibition Title';
+static const String enterExhibitionTitle = 'Enter artwork title';
+static const String writeSomethingAboutTheExhibition = 'Write something about the exhibition';
+static const String mmDdYyyy = 'mm/dd/yyyy';
+static const String visitingHours = 'Visiting Hours';
+static const String visitingHoursHint = 'e.g. 10:00 am - 6pm (Monday Closed)';
+static const String egNewYork = 'e.g New York';
+static const String searchGallery = 'Search Gallery';
+static const String saveAsDraft = 'Save as Draft';
+static const String yourEventIsNowLive = 'Your Event is now Live';
+static const String yourEventIsNowLiveDes = 'Congratulations! Your event is now published and visible to all potential visitors';
+
 }
