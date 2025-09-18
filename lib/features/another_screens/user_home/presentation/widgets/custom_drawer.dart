@@ -133,6 +133,15 @@ class CustomDrawer extends StatelessWidget {
                 ),
 
           _DrawerDivider(),
+
+
+           //========================Saved item=========================
+          _DrawerRowItem(
+            icon: Icons.bookmark_border,
+            text: AppString.myListing,
+            onTap: () => Get.toNamed(AppRoutes.myListScreen),
+          ),
+          _DrawerDivider(),
         
           Expanded(child: SizedBox()),
           Padding(

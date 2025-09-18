@@ -545,5 +545,11 @@ static const String yourEventIsNowLiveDes = 'Congratulations! Your event is now 
   static const String enterBookingUrl = 'Enter booking URL';
   static const String eventImageLabel = 'Event Image';
 
+  // ==== Delete confirmation generic ====
+  static const String areYouSureYouWantToDelete = 'Are you sure you want to Delete ?';
+  static const String deleteWarningDes =
+      "This action cannot be undone. Once deleted, your product will no longer be visible to potential buyers.";
+  static const String yesConfirm = 'Yes, Confirm';
+
   // ... rest of the code remains the same ...
 }

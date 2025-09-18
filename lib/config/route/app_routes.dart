@@ -23,6 +23,8 @@ import 'package:tasaned_project/features/another_screens/learn_grow/presentation
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_listing_screen.dart';
 import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learnig_metarial_video_screen.dart';
 import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learning_materials_details_screen.dart';
+import 'package:tasaned_project/features/another_screens/my_listing_screen/presentation/screens/edit_art_work_screen.dart';
+import 'package:tasaned_project/features/another_screens/my_listing_screen/presentation/screens/my_list_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/home_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/popular_artist_screen.dart';
@@ -152,6 +154,8 @@ class AppRoutes {
   static const String followersScreen = "/followersScreen";
   static const String followingScreen = "/followingScreen";
   static const String myCollectionsScreen = "/myCollectionsScreen";
+  static const String myListScreen = "/myListScreen";
+  static const String editArtWorkScreen = "/editArtWorkScreen";
 
 
 
@@ -223,6 +227,9 @@ class AppRoutes {
     GetPage(name: learningMaterialVideoScreen, page: () => LearningMaterialVideoScreen()),
     GetPage(name: learningMaterialsDetailsScreen, page: () => LearningMaterialsDetailsScreen()),
     GetPage(name: eventDetailsScreen, page: () => EventDetailsScreen()),
+    GetPage(name: myListScreen, page: () => MyListScreen()),
+    GetPage(name: editArtWorkScreen, page: () => EditArtWorkScreen()),
+
 
   ];
 }
