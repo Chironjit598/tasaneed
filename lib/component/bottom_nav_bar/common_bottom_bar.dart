@@ -176,7 +176,7 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
                 onTap: () {
                 
                   Get.back();
-                  Get.toNamed(AppRoutes.createNewEventScreen);
+                  Get.toNamed(AppRoutes.createNewEventScreen, arguments: {"title": "Create New Event"});
                 },
               ),
             ],

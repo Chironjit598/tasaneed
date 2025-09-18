@@ -137,7 +137,16 @@ class CustomDrawer extends StatelessWidget {
 
            //========================Saved item=========================
           _DrawerRowItem(
-            icon: Icons.bookmark_border,
+            icon: Icons.calendar_month,
+            text: AppString.myEvents,
+            onTap: () => Get.toNamed(AppRoutes.myEventScreen),
+          ),
+          _DrawerDivider(),
+
+
+           //========================Saved item=========================
+          _DrawerRowItem(
+            icon: Icons.calendar_month,
             text: AppString.myListing,
             onTap: () => Get.toNamed(AppRoutes.myListScreen),
           ),

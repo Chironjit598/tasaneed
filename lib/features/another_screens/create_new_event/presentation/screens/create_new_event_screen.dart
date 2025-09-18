@@ -11,7 +11,8 @@ import 'package:tasaned_project/utils/extensions/extension.dart';
 import '../controllers/create_new_event_controller.dart';
 
 class CreateNewEventScreen extends StatelessWidget {
-  const CreateNewEventScreen({super.key});
+   CreateNewEventScreen({super.key});
+  final String title = Get.arguments["title"];
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,12 @@ class CreateNewEventScreen extends StatelessWidget {
               onTap: () => Get.back(),
               child: Icon(Icons.arrow_back_ios, size: 22.sp, color: AppColors.titleColor),
             ),
-            title: CommonText(
+            title:title=="Edit Event"? CommonText(
+              text: AppString.editEvent,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.titleColor,
+            ): CommonText(
               text: AppString.createNewEvent,
               fontSize: 16,
               fontWeight: FontWeight.w600,
@@ -215,7 +221,9 @@ class CreateNewEventScreen extends StatelessWidget {
                         titleText: AppString.next,
                         buttonRadius: 60,
                         onTap: () {
-                        Get.toNamed(AppRoutes.createNewEventGalleryScreen);
+                        Get.toNamed(AppRoutes.createNewEventGalleryScreen, arguments: {
+                          "title":title=="Edit Event"? "Edit Event" : "Create New Event"
+                        });
                         },
                       ),
                       20.height,

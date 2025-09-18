@@ -550,6 +550,8 @@ static const String yourEventIsNowLiveDes = 'Congratulations! Your event is now 
   static const String deleteWarningDes =
       "This action cannot be undone. Once deleted, your product will no longer be visible to potential buyers.";
   static const String yesConfirm = 'Yes, Confirm';
+  static const String myEvents = 'My Events';
+  static const String editEvent = 'Edit Event';
 
   // ... rest of the code remains the same ...
 }

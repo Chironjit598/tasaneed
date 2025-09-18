@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/image/common_image.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
@@ -26,7 +27,10 @@ class CreateExhibitionSuccessPopup {
                 Positioned(
                   right: 0,
                   child: InkWell(
-                    onTap: () => Get.back(),
+                    onTap: (){
+                      Get.back();
+                      
+                    },
                     child: Container(
                       padding: EdgeInsets.all(4.h),
                       decoration: BoxDecoration(
@@ -91,7 +95,10 @@ class CreateNewExhibitionSuccessPopup {
                 Positioned(
                   right: 0,
                   child: InkWell(
-                    onTap: () => Get.back(),
+                    onTap: () {
+                      Get.back();
+                      Get.offAllNamed(AppRoutes.myEventScreen);
+                    },
                     child: Container(
                       padding: EdgeInsets.all(4.h),
                       decoration: BoxDecoration(

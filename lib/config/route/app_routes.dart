@@ -23,6 +23,7 @@ import 'package:tasaned_project/features/another_screens/learn_grow/presentation
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/screens/my_listing_screen.dart';
 import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learnig_metarial_video_screen.dart';
 import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learning_materials_details_screen.dart';
+import 'package:tasaned_project/features/another_screens/my_event/presentation/screens/my_event_screen.dart';
 import 'package:tasaned_project/features/another_screens/my_listing_screen/presentation/screens/edit_art_work_screen.dart';
 import 'package:tasaned_project/features/another_screens/my_listing_screen/presentation/screens/my_list_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
@@ -156,6 +157,7 @@ class AppRoutes {
   static const String myCollectionsScreen = "/myCollectionsScreen";
   static const String myListScreen = "/myListScreen";
   static const String editArtWorkScreen = "/editArtWorkScreen";
+  static const String myEventScreen = "/myEventScreen";
 
 
 
@@ -211,9 +213,9 @@ class AppRoutes {
     GetPage(name: createNewExhibitionGalleryScreen, page: () => const CreateNewExhibitionGalleryScreen()),
     GetPage(name: createNewExhibitionFeatureArtistScreen, page: () => const CreateNewExhibitionFeatureArtistScreen()),
     GetPage(name: createNewExhibitionTicketBookingScreen, page: () => const CreateNewExhibitionTicketBookingScreen()),
-    GetPage(name: createNewEventScreen, page: () => const CreateNewEventScreen()),
-    GetPage(name: createNewEventGalleryScreen, page: () => const CreateNewEventGalleryScreen()),
-    GetPage(name: createNewEventTicketBookingScreen, page: () => const CreateNewEventTicketBookingScreen()),
+    GetPage(name: createNewEventScreen, page: () =>  CreateNewEventScreen()),
+    GetPage(name: createNewEventGalleryScreen, page: () =>  CreateNewEventGalleryScreen()),
+    GetPage(name: createNewEventTicketBookingScreen, page: () =>  CreateNewEventTicketBookingScreen()),
     GetPage(name: myListingScreen, page: () => MyListingScreen()),
     GetPage(name: purchaseHistory, page: () => OrderHistoryScreen()),
     GetPage(name: transactionHistory, page: () => TransactionScreen()),
@@ -229,6 +231,7 @@ class AppRoutes {
     GetPage(name: eventDetailsScreen, page: () => EventDetailsScreen()),
     GetPage(name: myListScreen, page: () => MyListScreen()),
     GetPage(name: editArtWorkScreen, page: () => EditArtWorkScreen()),
+    GetPage(name: myEventScreen, page: () => MyEventScreen()),
 
 
   ];

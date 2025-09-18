@@ -12,7 +12,8 @@ import 'package:tasaned_project/config/route/app_routes.dart';
 import '../controllers/create_new_event_gallery_controller.dart';
 
 class CreateNewEventGalleryScreen extends StatelessWidget {
-  const CreateNewEventGalleryScreen({super.key});
+   CreateNewEventGalleryScreen({super.key});
+  final String title = Get.arguments["title"];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,12 @@ class CreateNewEventGalleryScreen extends StatelessWidget {
               onTap: () => Get.back(),
               child: Icon(Icons.arrow_back_ios, size: 22.sp, color: AppColors.titleColor),
             ),
-            title: CommonText(
+            title:title=="Edit Event"? CommonText(
+              text: AppString.editEvent,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.titleColor,
+            ): CommonText(
               text: AppString.createNewEvent,
               fontSize: 16,
               fontWeight: FontWeight.w600,
@@ -96,7 +102,9 @@ class CreateNewEventGalleryScreen extends StatelessWidget {
                         titleText: AppString.next,
                         buttonRadius: 60,
                         onTap: () {
-                          Get.toNamed(AppRoutes.createNewEventTicketBookingScreen);
+                          Get.toNamed(AppRoutes.createNewEventTicketBookingScreen, arguments: {
+                            "title": title=="Edit Event"? "Edit Event" : "Create New Event"
+                          });
                         },
                       ),
 
