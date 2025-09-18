@@ -16,7 +16,9 @@ import '../widgets/banner_dot_indecator.dart';
 import '../controller/art_details_controller.dart';
 
 class ArtDetailsScreen extends StatelessWidget {
-  const ArtDetailsScreen({super.key});
+   ArtDetailsScreen({super.key});
+
+  final String screenType = Get.arguments['screenType'];
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +171,13 @@ class ArtDetailsScreen extends StatelessWidget {
                       text: "Hand-signed by artist"),
                   ]),
 
-                  15.height,
+
+if(screenType!="myListing")
+       Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+                     15.height,
                   Container(
                     height: 1,
                     width: double.infinity,
@@ -295,6 +303,8 @@ class ArtDetailsScreen extends StatelessWidget {
 
                   30.height,
 
+          
+        ])
 
            
                   
@@ -302,7 +312,7 @@ class ArtDetailsScreen extends StatelessWidget {
               ),
             ),
 
-                   Container(
+                screenType=="myListing"?SizedBox():   Container(
                     padding: EdgeInsets.symmetric(horizontal: 24.h),
                     
                     decoration: BoxDecoration(

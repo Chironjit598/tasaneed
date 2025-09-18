@@ -135,7 +135,16 @@ class CustomDrawer extends StatelessWidget {
           _DrawerDivider(),
 
 
-           //========================Saved item=========================
+
+           //========================My Exhibition item=========================
+          _DrawerRowItem(
+            icon: Icons.exit_to_app,
+            text: AppString.myExhibition,
+            onTap: () => Get.toNamed(AppRoutes.myExhibitionsScreen),
+          ),
+          _DrawerDivider(),
+
+           //========================My Events item=========================
           _DrawerRowItem(
             icon: Icons.calendar_month,
             text: AppString.myEvents,
@@ -144,7 +153,7 @@ class CustomDrawer extends StatelessWidget {
           _DrawerDivider(),
 
 
-           //========================Saved item=========================
+           //========================My Listing item=========================
           _DrawerRowItem(
             icon: Icons.calendar_month,
             text: AppString.myListing,

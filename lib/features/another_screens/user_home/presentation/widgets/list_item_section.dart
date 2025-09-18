@@ -71,7 +71,9 @@ class ListItemSection extends StatelessWidget {
               return InkWell(
 
                   onTap: (){
-                    Get.toNamed(AppRoutes.artDetailsScreen);
+                    Get.toNamed(AppRoutes.artDetailsScreen, arguments: {
+                      "screenType": "userHome",
+                    });
                   },
                   child: ArtsItem());
             },

@@ -24,6 +24,7 @@ import 'package:tasaned_project/features/another_screens/drawer_screens/presenta
 import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learnig_metarial_video_screen.dart';
 import 'package:tasaned_project/features/another_screens/learning_materials_details/presentation/screens/learning_materials_details_screen.dart';
 import 'package:tasaned_project/features/another_screens/my_event/presentation/screens/my_event_screen.dart';
+import 'package:tasaned_project/features/another_screens/my_exhibitions/presentation/screens/my_exhibitions_screen.dart';
 import 'package:tasaned_project/features/another_screens/my_listing_screen/presentation/screens/edit_art_work_screen.dart';
 import 'package:tasaned_project/features/another_screens/my_listing_screen/presentation/screens/my_list_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/feature_arts_screen.dart';
@@ -158,6 +159,7 @@ class AppRoutes {
   static const String myListScreen = "/myListScreen";
   static const String editArtWorkScreen = "/editArtWorkScreen";
   static const String myEventScreen = "/myEventScreen";
+  static const String myExhibitionsScreen = "/myExhibitionsScreen";
 
 
 
@@ -207,12 +209,12 @@ class AppRoutes {
     GetPage(name: grandleGallery, page: () => GrandleGallery()),
     GetPage(name: artistDetailsScreen, page: () => ArtistDetailsScreen()),
     GetPage(name: exhibitionScreen, page: () => ExhibitionScreen()),
-    GetPage(name: exhibitionDetailsScreen, page: () => const ExhibitionDetailsScreen()),
+    GetPage(name: exhibitionDetailsScreen, page: () =>  ExhibitionDetailsScreen()),
     GetPage(name: createExhibitionScreen, page: () => CreateExhibitionScreen()),
-    GetPage(name: createNewExhibitionScreen, page: () => const CreateNewExhibitionScreen()),
-    GetPage(name: createNewExhibitionGalleryScreen, page: () => const CreateNewExhibitionGalleryScreen()),
-    GetPage(name: createNewExhibitionFeatureArtistScreen, page: () => const CreateNewExhibitionFeatureArtistScreen()),
-    GetPage(name: createNewExhibitionTicketBookingScreen, page: () => const CreateNewExhibitionTicketBookingScreen()),
+    GetPage(name: createNewExhibitionScreen, page: () =>  CreateNewExhibitionScreen()),
+    GetPage(name: createNewExhibitionGalleryScreen, page: () =>  CreateNewExhibitionGalleryScreen()),
+    GetPage(name: createNewExhibitionFeatureArtistScreen, page: () =>  CreateNewExhibitionFeatureArtistScreen()),
+    GetPage(name: createNewExhibitionTicketBookingScreen, page: () =>  CreateNewExhibitionTicketBookingScreen()),
     GetPage(name: createNewEventScreen, page: () =>  CreateNewEventScreen()),
     GetPage(name: createNewEventGalleryScreen, page: () =>  CreateNewEventGalleryScreen()),
     GetPage(name: createNewEventTicketBookingScreen, page: () =>  CreateNewEventTicketBookingScreen()),
@@ -232,6 +234,7 @@ class AppRoutes {
     GetPage(name: myListScreen, page: () => MyListScreen()),
     GetPage(name: editArtWorkScreen, page: () => EditArtWorkScreen()),
     GetPage(name: myEventScreen, page: () => MyEventScreen()),
+    GetPage(name: myExhibitionsScreen, page: () => MyExhibitionsScreen()),
 
 
   ];

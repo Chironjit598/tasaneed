@@ -15,6 +15,7 @@ import '../controllers/create_exhibition_controller.dart';
 
 class CreateExhibitionScreen extends StatelessWidget {
   const CreateExhibitionScreen({super.key});
+  
 
   @override
   Widget build(BuildContext context) {

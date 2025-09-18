@@ -552,6 +552,8 @@ static const String yourEventIsNowLiveDes = 'Congratulations! Your event is now 
   static const String yesConfirm = 'Yes, Confirm';
   static const String myEvents = 'My Events';
   static const String editEvent = 'Edit Event';
+  static const String myExhibition = 'My Exhibition';
+  static const String editExhibition = 'Edit Exhibition';
 
   // ... rest of the code remains the same ...
 }

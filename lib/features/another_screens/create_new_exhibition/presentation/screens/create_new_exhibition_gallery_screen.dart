@@ -13,7 +13,8 @@ import 'package:tasaned_project/config/route/app_routes.dart';
 import '../controllers/create_new_exhibition_gallery_controller.dart';
 
 class CreateNewExhibitionGalleryScreen extends StatelessWidget {
-  const CreateNewExhibitionGalleryScreen({super.key});
+   CreateNewExhibitionGalleryScreen({super.key});
+   final String title = Get.arguments["title"];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class CreateNewExhibitionGalleryScreen extends StatelessWidget {
             shadowColor: AppColors.transparent,
             surfaceTintColor: AppColors.transparent,
             title: CommonText(
-              text: AppString.createExhibition,
+              text: title=="Edit Exhibition"? AppString.editExhibition: AppString.createExhibition,
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: AppColors.titleColor,
@@ -122,7 +123,11 @@ class CreateNewExhibitionGalleryScreen extends StatelessWidget {
                         titleText: 'Next',
                         buttonRadius: 60,
                         onTap: () {
-                          Get.toNamed(AppRoutes.createNewExhibitionFeatureArtistScreen);
+                          Get.toNamed(AppRoutes.createNewExhibitionFeatureArtistScreen, 
+                          arguments: {
+                            "title": title=="Edit Exhibition"? "Edit Exhibition": "Create New Exhibition"
+                          }
+                          );
                         },
                       ),
                     ],

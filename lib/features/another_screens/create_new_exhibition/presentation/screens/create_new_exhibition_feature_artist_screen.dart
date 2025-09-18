@@ -12,7 +12,8 @@ import 'package:tasaned_project/config/route/app_routes.dart';
 import '../controllers/create_new_exhibition_feature_artist_controller.dart';
 
 class CreateNewExhibitionFeatureArtistScreen extends StatelessWidget {
-  const CreateNewExhibitionFeatureArtistScreen({super.key});
+   CreateNewExhibitionFeatureArtistScreen({super.key});
+   final String title = Get.arguments["title"];
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class CreateNewExhibitionFeatureArtistScreen extends StatelessWidget {
               child: Icon(Icons.arrow_back_ios, size: 22.sp, color: AppColors.titleColor),
             ),
             title: CommonText(
-              text: AppString.createExhibition,
+              text: title=="Edit Exhibition"? AppString.editExhibition: AppString.createExhibition,
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: AppColors.titleColor,
@@ -303,7 +304,10 @@ class CreateNewExhibitionFeatureArtistScreen extends StatelessWidget {
                       titleText: 'Next',
                       buttonRadius: 60,
                       onTap: () {
-                        Get.toNamed(AppRoutes.createNewExhibitionTicketBookingScreen);
+                        Get.toNamed(AppRoutes.createNewExhibitionTicketBookingScreen,
+                        arguments: {
+                          "title": title=="Edit Exhibition"? "Edit Exhibition": "Create New Exhibition"
+                        });
                       },
                     ),
                     20.height,

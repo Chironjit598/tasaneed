@@ -165,7 +165,10 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
                 label: 'Create New Exhibition',
                 onTap: () {
                   Get.back();
-  Get.toNamed(AppRoutes.createNewExhibitionScreen);
+  Get.toNamed(AppRoutes.createNewExhibitionScreen, 
+  
+  arguments: {"title": "Create New Exhibition"}
+  );
                 
                 },
               ),

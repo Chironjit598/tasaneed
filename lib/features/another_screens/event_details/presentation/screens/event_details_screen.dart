@@ -456,4 +456,8 @@ class EventDetailsScreen extends StatelessWidget {
       barrierDismissible: false,
     );
   }
+
+
+
+
 }

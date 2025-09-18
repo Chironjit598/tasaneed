@@ -31,11 +31,7 @@ class CreateNewExhibitionController extends GetxController {
     Get.back();
   }
 
-  void next() {
-    // TODO: validate and go next (for now just close)
-   Get.toNamed(AppRoutes.createNewExhibitionGalleryScreen);
 
-  }
 
   @override
   void onClose() {

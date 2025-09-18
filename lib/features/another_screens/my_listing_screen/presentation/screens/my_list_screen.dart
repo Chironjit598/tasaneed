@@ -57,7 +57,9 @@ class MyListScreen extends StatelessWidget {
               final bool isSold = status == AppString.sold;
               return InkWell(
                 onTap: () {
-                  Get.toNamed(AppRoutes.artDetailsScreen);
+                  Get.toNamed(AppRoutes.artDetailsScreen, arguments: {
+                    "screenType": "myListing",
+                  });
                 },
                 child: Container(
                   padding: EdgeInsets.all(10.r),

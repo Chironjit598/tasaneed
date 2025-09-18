@@ -26,7 +26,7 @@ class MyEventScreen extends StatelessWidget {
             text: AppString.myEvents),
         leading: InkWell(
             onTap: (){
-              Get.back();
+               Get.offAllNamed(AppRoutes.userHomeScreen);
             },
             child: Icon(Icons.arrow_back_ios, size: 23.sp,color: AppColors.titleColor,)),
       ),

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tasaned_project/component/button/common_button.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/component/text_field/common_text_field.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
@@ -11,7 +12,9 @@ import 'package:tasaned_project/utils/extensions/extension.dart';
 import '../controllers/create_new_exhibition_controller.dart';
 
 class CreateNewExhibitionScreen extends StatelessWidget {
-  const CreateNewExhibitionScreen({super.key});
+   CreateNewExhibitionScreen({super.key});
+
+  final String title = Get.arguments["title"];
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ class CreateNewExhibitionScreen extends StatelessWidget {
             shadowColor: AppColors.transparent,
             surfaceTintColor: AppColors.transparent,
             title: CommonText(
-              text: AppString.createExhibition,
+              text: title=="Edit Exhibition"? AppString.editExhibition: AppString.createExhibition,
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: AppColors.titleColor,
@@ -176,7 +179,12 @@ class CreateNewExhibitionScreen extends StatelessWidget {
                       CommonButton(
                         titleText: 'Next',
                         buttonRadius: 60,
-                        onTap: c.next,
+                        onTap: (){
+                          Get.toNamed(AppRoutes.createNewExhibitionGalleryScreen,
+                          arguments: {
+                            "title": title=="Edit Exhibition"? "Edit Exhibition": "Create New Exhibition"
+                          });
+                        },
                       ),
                     ],
                   ),

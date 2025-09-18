@@ -11,7 +11,8 @@ import 'package:tasaned_project/component/pop_up/create_exhibition_success_popup
 import '../controllers/create_new_exhibition_ticket_booking_controller.dart';
 
 class CreateNewExhibitionTicketBookingScreen extends StatelessWidget {
-  const CreateNewExhibitionTicketBookingScreen({super.key});
+   CreateNewExhibitionTicketBookingScreen({super.key});
+   final String title = Get.arguments["title"];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class CreateNewExhibitionTicketBookingScreen extends StatelessWidget {
               child: Icon(Icons.arrow_back_ios, size: 22.sp, color: AppColors.titleColor),
             ),
             title: CommonText(
-              text: AppString.createExhibition,
+              text: title=="Edit Exhibition"? AppString.editExhibition: AppString.createExhibition,
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: AppColors.titleColor,
@@ -135,7 +136,7 @@ class CreateNewExhibitionTicketBookingScreen extends StatelessWidget {
                         titleText: 'Publish',
                         buttonRadius: 60,
                         onTap: () {
-                          CreateNewExhibitionSuccessPopup.show();
+                          CreateNewExhibitionSuccessPopup2.show();
                         },
                       ),
 

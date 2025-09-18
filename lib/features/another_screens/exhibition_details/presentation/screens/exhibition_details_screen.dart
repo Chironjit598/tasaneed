@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tasaned_project/component/button/common_button.dart';
 import 'package:tasaned_project/component/image/common_image.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/features/another_screens/exhibition_details/presentation/widget/art_item.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
@@ -11,7 +12,9 @@ import 'package:tasaned_project/utils/constants/app_string.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 
 class ExhibitionDetailsScreen extends StatelessWidget {
-  const ExhibitionDetailsScreen({super.key});
+   ExhibitionDetailsScreen({super.key});
+
+   final String title=Get.arguments["title"];
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,18 @@ class ExhibitionDetailsScreen extends StatelessWidget {
           color: AppColors.titleColor,
         ),
         actions: [
-          Icon(Icons.favorite_border_outlined, size: 18.sp, color: AppColors.titleColor),
+   title == "My Exhibition"
+              ? _moreActions(
+                  onEdit: () {
+                    Get.toNamed(AppRoutes.createNewExhibitionScreen, arguments: {
+                      "title": "Edit Exhibition"
+                    });
+                   
+           
+                  },
+                  onDelete: () => _confirmDelete(context),
+                )
+              :  Icon(Icons.favorite_border_outlined, size: 18.sp, color: AppColors.titleColor),
           14.width,
         ],
       ),
@@ -326,4 +340,166 @@ class ExhibitionDetailsScreen extends StatelessWidget {
       ],
     );
   }
+
+    Widget _moreActions({
+    required VoidCallback onEdit,
+    required VoidCallback onDelete,
+  }) {
+    return PopupMenuButton<String>(
+      icon: Icon(
+        Icons.more_vert,
+        size: 18.sp,
+        color: AppColors.titleColor,
+      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+      onSelected: (value) {
+        if (value == 'Edit') onEdit();
+        if (value == 'Delete') onDelete();
+      },
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          value: 'Edit',
+          child: Row(
+            children: [
+              Icon(
+                Icons.edit_outlined,
+                size: 18.sp,
+                color: AppColors.bodyClr,
+              ),
+              8.width,
+              CommonText(
+                text: AppString.edit,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: AppColors.bodyClr,
+              ),
+            ],
+          ),
+        ),
+        const PopupMenuDivider(),
+        PopupMenuItem(
+          value: 'Delete',
+          child: Row(
+            children: [
+              Icon(
+                Icons.delete_outline,
+                size: 18.sp,
+                color: AppColors.red,
+              ),
+              8.width,
+              CommonText(
+                text: AppString.delete,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: AppColors.red,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _confirmDelete(BuildContext context) {
+    Get.dialog(
+      Dialog(
+        insetPadding: EdgeInsets.symmetric(horizontal: 24.w),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Warning icon in subtle background
+              Icon(
+                Icons.warning_amber_rounded,
+                color: AppColors.red,
+                size: 80.sp,
+              ),
+              14.height,
+              // Title
+              CommonText(
+                text: 'Are you sure you want to delete this event?',
+                fontSize: 16,
+                maxLines: 2,
+                fontWeight: FontWeight.w700,
+                color: AppColors.red,
+                textAlign: TextAlign.center,
+              ),
+              8.height,
+              // Subtitle/description
+              CommonText(
+                text:
+                    ' This action is permanent and cannot be undone. All related data will be lost.',
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: AppColors.bodyClr,
+                textAlign: TextAlign.center,
+                maxLines: 4,
+              ),
+              20.height,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                child: Row(
+                  children: [
+                 
+                    Expanded(
+                      child: SizedBox(
+                        height: 44.h,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.red,
+                            shape: StadiumBorder(),
+                            elevation: 0,
+                          ),
+                          onPressed: () {
+                            Get.back();
+                            // Perform delete logic here
+                            Get.snackbar('Deleted', 'The event has been deleted.');
+                          },
+                          child: CommonText(
+                            text: AppString.yes,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    12.width,
+                    // NO button (outlined)
+                    Expanded(
+                      child: SizedBox(
+                        height: 44.h,
+                        child: OutlinedButton(
+                          
+                          style: OutlinedButton.styleFrom(
+                            side: BorderSide(color: AppColors.title2, width: 1.2),
+                            shape: StadiumBorder(),
+                          ),
+                          onPressed: () => Get.back(),
+                          child: CommonText(
+                            text: AppString.no,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.titleColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      barrierDismissible: false,
+    );
+  }
+
+
 }
