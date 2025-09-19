@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/widgets/popular_artist_item_see_all.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
@@ -50,7 +51,13 @@ class PopularArtistScreen extends StatelessWidget {
                     mainAxisSpacing:7 , // Vertical space between items
                   ), itemBuilder: (context, index){
 
-                return PopularArtistItemSeeAll();
+                return InkWell
+                (
+                  onTap: (){
+                    Get.toNamed(AppRoutes.artistDetailsScreen);
+                   
+                  },
+                  child: PopularArtistItemSeeAll());
               }),
             ),
           )

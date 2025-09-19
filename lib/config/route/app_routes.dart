@@ -34,6 +34,7 @@ import 'package:tasaned_project/features/another_screens/user_home/presentation/
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/upcomming_exhibition_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_home/presentation/screens/search_screen.dart';
 import 'package:tasaned_project/features/another_screens/user_resel/presentation/screens/user_resel_screen.dart';
+import 'package:tasaned_project/features/another_screens/visitor_order_history/presentations/screens/visitor_order_history_screen.dart';
 import 'package:tasaned_project/features/profile/presentation/screen/transantion_screen.dart';
 import '../../features/another_screens/grandle_gallery/presentation/screens/grandle_gallery.dart';
 import '../../features/another_screens/nunny_booking/presentation/screens/nunny_booking_screen.dart';
@@ -160,6 +161,7 @@ class AppRoutes {
   static const String editArtWorkScreen = "/editArtWorkScreen";
   static const String myEventScreen = "/myEventScreen";
   static const String myExhibitionsScreen = "/myExhibitionsScreen";
+  static const String visitorOrderHistoryScreen = "/visitorOrderHistoryScreen";
 
 
 
@@ -235,6 +237,7 @@ class AppRoutes {
     GetPage(name: editArtWorkScreen, page: () => EditArtWorkScreen()),
     GetPage(name: myEventScreen, page: () => MyEventScreen()),
     GetPage(name: myExhibitionsScreen, page: () => MyExhibitionsScreen()),
+    GetPage(name: visitorOrderHistoryScreen, page: () => VisitorOrderHistoryScreen()),
 
 
   ];

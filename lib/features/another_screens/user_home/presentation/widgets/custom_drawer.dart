@@ -6,6 +6,7 @@ import 'package:tasaned_project/component/button/common_button.dart';
 import 'package:tasaned_project/component/image/common_image.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
 import 'package:tasaned_project/config/route/app_routes.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/controller/order_history_controller.dart';
 import 'package:tasaned_project/services/storage/storage_services.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_images.dart';
@@ -83,7 +84,7 @@ class CustomDrawer extends StatelessWidget {
                               ),
                             ),
                             12.width,
-                            InkWell(
+                         LocalStorage.myRoll == "museum" ? SizedBox() :   InkWell(
                               onTap: () {
                                 Get.back();
                                 Get.toNamed(AppRoutes.followersScreen);
@@ -105,40 +106,49 @@ class CustomDrawer extends StatelessWidget {
           12.height,
           _DrawerDivider(),
 
-          //========================Saved item=========================
-          _DrawerRowItem(
+          if(LocalStorage.myRoll == "visitor")...[
+                      //========================Saved item=========================
+
+       _DrawerRowItem(
             icon: Icons.bookmark_border,
             text: AppString.saved,
             onTap: () => Get.toNamed(AppRoutes.savedScreen),
           ),
           _DrawerDivider(),
 
-          LocalStorage.myRoll == "visitor"
-              ?
-              
-              //========================Following item=========================
+
+           //========================Following item=========================
                _DrawerRowItem(
                   icon: Icons.person_2_outlined,
                   text: AppString.following,
                   onTap: () => Get.toNamed(AppRoutes.followingScreen),
                 )
-              : 
-              
-              
+          ],
+
+          if(LocalStorage.myRoll == "artist")...[
+                          //========================Saved item=========================
+
+       _DrawerRowItem(
+            icon: Icons.bookmark_border,
+            text: AppString.saved,
+            onTap: () => Get.toNamed(AppRoutes.savedScreen),
+          ),
+          _DrawerDivider(),
               //========================Order History item=========================
               _DrawerRowItem(
                   icon: Icons.shopping_cart_outlined,
                   text: AppString.orderHistory,
-                  onTap: () => Get.toNamed(AppRoutes.purchaseHistory),
+                  onTap: (){
+                    OrderHistoryController.instance!.comeFrom("drawer");
+                    Get.toNamed(AppRoutes.purchaseHistory);
+                  },
                 ),
 
           _DrawerDivider(),
 
-
-
-           //========================My Exhibition item=========================
+             //========================My Exhibition item=========================
           _DrawerRowItem(
-            icon: Icons.exit_to_app,
+            icon: Icons.museum_outlined,
             text: AppString.myExhibition,
             onTap: () => Get.toNamed(AppRoutes.myExhibitionsScreen),
           ),
@@ -155,11 +165,129 @@ class CustomDrawer extends StatelessWidget {
 
            //========================My Listing item=========================
           _DrawerRowItem(
-            icon: Icons.calendar_month,
+            icon: Icons.palette_outlined,
             text: AppString.myListing,
             onTap: () => Get.toNamed(AppRoutes.myListScreen),
           ),
           _DrawerDivider(),
+
+
+
+
+          ],
+
+          if(LocalStorage.myRoll == "collector")...[
+
+                              //========================Saved item=========================
+
+       _DrawerRowItem(
+            icon: Icons.bookmark_border,
+            text: AppString.saved,
+            onTap: () => Get.toNamed(AppRoutes.savedScreen),
+          ),
+          _DrawerDivider(),
+
+                     //========================Order History item=========================
+              _DrawerRowItem(
+                  icon: Icons.shopping_cart_outlined,
+                  text: AppString.orderHistory,
+                  onTap: () {
+                    OrderHistoryController.instance!.comeFrom("drawer");
+                    Get.toNamed(AppRoutes.purchaseHistory);
+                  },
+                ),
+
+          _DrawerDivider(),
+
+
+
+          ],
+
+
+              if(LocalStorage.myRoll == "curator")...[
+
+                              //========================Saved item=========================
+
+       _DrawerRowItem(
+            icon: Icons.bookmark_border,
+            text: AppString.saved,
+            onTap: () => Get.toNamed(AppRoutes.savedScreen),
+          ),
+          _DrawerDivider(),
+
+                     //========================Order History item=========================
+              _DrawerRowItem(
+                  icon: Icons.shopping_cart_outlined,
+                  text: AppString.orderHistory,
+                  onTap: () {
+                    OrderHistoryController.instance!.comeFrom("drawer");
+                    Get.toNamed(AppRoutes.purchaseHistory);
+                  },
+                ),
+
+          _DrawerDivider(),
+               //========================My Exhibition item=========================
+          _DrawerRowItem(
+            icon: Icons.museum_outlined,
+            text: AppString.myExhibition,
+            onTap: () => Get.toNamed(AppRoutes.myExhibitionsScreen),
+          ),
+          _DrawerDivider(),
+
+           //========================My Events item=========================
+          _DrawerRowItem(
+            icon: Icons.calendar_month,
+            text: AppString.myEvents,
+            onTap: () => Get.toNamed(AppRoutes.myEventScreen),
+          ),
+          _DrawerDivider(),
+
+
+
+          ],
+
+
+
+              if(LocalStorage.myRoll == "museum" || LocalStorage.myRoll == "educational_institution")...[
+
+                              //========================Saved item=========================
+
+       _DrawerRowItem(
+            icon: Icons.bookmark_border,
+            text: AppString.saved,
+            onTap: () => Get.toNamed(AppRoutes.savedScreen),
+          ),
+          _DrawerDivider(),
+
+             
+               //========================My Exhibition item=========================
+          _DrawerRowItem(
+            icon: Icons.museum_outlined,
+            text: AppString.myExhibition,
+            onTap: () => Get.toNamed(AppRoutes.myExhibitionsScreen),
+          ),
+          _DrawerDivider(),
+
+           //========================My Events item=========================
+          _DrawerRowItem(
+            icon: Icons.calendar_month,
+            text: AppString.myEvents,
+            onTap: () => Get.toNamed(AppRoutes.myEventScreen),
+          ),
+          _DrawerDivider(),
+
+
+
+          ],
+
+        
+
+         
+          
+
+
+
+        
         
           Expanded(child: SizedBox()),
           Padding(

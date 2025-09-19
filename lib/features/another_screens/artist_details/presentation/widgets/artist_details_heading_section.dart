@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 import '../../../../../component/image/common_image.dart';
 import '../../../../../component/text/common_text.dart';
@@ -108,14 +109,20 @@ class ArtistDetailsHeadingSection extends StatelessWidget {
 
                         8.width,
 
-                        Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: AppColors.white,
-                            border: Border.all(color: AppColors.stroke),
-                            borderRadius: BorderRadius.circular(6.r),
+                        InkWell(
+
+                          onTap: (){
+                            Get.toNamed(AppRoutes.message);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(8.r),
+                            decoration: BoxDecoration(
+                              color: AppColors.white,
+                              border: Border.all(color: AppColors.stroke),
+                              borderRadius: BorderRadius.circular(6.r),
+                            ),
+                            child: Icon(Icons.message_outlined, size: 18, color: AppColors.titleColor),
                           ),
-                          child: Icon(Icons.message_outlined, size: 18, color: AppColors.titleColor),
                         )
 
                       ],

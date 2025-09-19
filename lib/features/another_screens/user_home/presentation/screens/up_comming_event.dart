@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
+import 'package:tasaned_project/config/route/app_routes.dart';
 import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/event_item.dart';
 import 'package:tasaned_project/utils/constants/app_colors.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
@@ -54,7 +55,16 @@ class UpComingEventScreen extends StatelessWidget {
                     // Vertical space between items
                   ), itemBuilder: (context, index){
 
-                return EventItem();
+                return InkWell(
+                  
+                  onTap: (){
+                       Get.toNamed(AppRoutes.eventDetailsScreen, 
+                    arguments: {
+                      "title": "User Home",
+                    }
+                    );
+                  },
+                  child: EventItem());
               }),
             )
         

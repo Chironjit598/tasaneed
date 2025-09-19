@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tasaned_project/config/route/app_routes.dart';
+import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/controller/order_history_controller.dart';
 import 'package:tasaned_project/services/storage/storage_services.dart';
 import 'package:tasaned_project/utils/extensions/extension.dart';
 import '../../utils/constants/app_colors.dart';
@@ -21,7 +22,10 @@ class CommonBottomNavBar extends StatefulWidget {
 class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   final List<String> routes = [
     AppRoutes.userHomeScreen,
-    AppRoutes.purchaseHistory,
+    LocalStorage.myRoll == "collector"
+
+        ? AppRoutes.myCollectionsScreen
+        : LocalStorage.myRoll == "visitor"? AppRoutes.visitorOrderHistoryScreen :AppRoutes.purchaseHistory,
     AppRoutes.chat,
     AppRoutes.profile,
   ];
@@ -30,7 +34,12 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
     return [
       "Home",
 
-      LocalStorage.myRoll == "artist" ? "Add New" : "Order",
+      LocalStorage.myRoll == "artist" ||
+              LocalStorage.myRoll == "curator" ||
+              LocalStorage.myRoll == "museum" ||
+              LocalStorage.myRoll == "educational_institution"
+          ? "Add New"
+          : "Order",
       "Inbox",
       "Settings",
     ][index];
@@ -39,7 +48,12 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   String selectedImageSrc(int index) {
     return [
       AppImages.homeActive,
-    LocalStorage.myRoll == "artist" ?  AppImages.addNewInactive : AppImages.orderActive,
+      LocalStorage.myRoll == "artist" ||
+              LocalStorage.myRoll == "curator" ||
+              LocalStorage.myRoll == "museum" ||
+              LocalStorage.myRoll == "educational_institution"
+          ? AppImages.addNewInactive
+          : AppImages.orderActive,
 
       AppImages.messageActive,
       AppImages.settingsActive, // Settings (using profile assets)
@@ -49,7 +63,12 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
   String unselectedImageSrc(int index) {
     return [
       AppImages.homeInactive,
-    LocalStorage.myRoll == "artist" ?  AppImages.addNewInactive : AppImages.orderInactive,
+      LocalStorage.myRoll == "artist" ||
+              LocalStorage.myRoll == "curator" ||
+              LocalStorage.myRoll == "museum" ||
+              LocalStorage.myRoll == "educational_institution"
+          ? AppImages.addNewInactive
+          : AppImages.orderInactive,
       AppImages.messageInactive,
       AppImages.settingsInactive,
     ][index];
@@ -77,9 +96,17 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
     bool isSelected = widget.currentIndex == index;
     return GestureDetector(
       onTap: () {
-        if (index == 1 && LocalStorage.myRoll == "artist") {
+        if (index == 1 &&
+            (LocalStorage.myRoll == "artist" ||
+                LocalStorage.myRoll == "curator" ||
+                LocalStorage.myRoll == "museum" ||
+                LocalStorage.myRoll == "educational_institution")) {
           _showAddNewSheet();
         } else {
+          if (widget.currentIndex == 1 && LocalStorage.myRoll == "visitor") {
+            OrderHistoryController.instance!.comeFrom("bottom");
+          }
+
           Get.offAllNamed(routes[index]);
         }
       },
@@ -147,41 +174,81 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
                 ).center,
               ),
 
-
-         
               SizedBox(height: 16.h),
-              _actionTile(
-                iconPath: AppImages.uploadArtwork,
-                label: 'Upload Artwork',
-                onTap: () {
-           
-                  Get.back();
+
+              if (LocalStorage.myRoll == "artist") ...[
+                _actionTile(
+                  iconPath: AppImages.uploadArtwork,
+                  label: 'Upload Artwork',
+                  onTap: () {
+                    Get.back();
                     Get.toNamed(AppRoutes.createExhibitionScreen);
-                },
-              ),
-              SizedBox(height: 12.h),
-              _actionTile(
-                iconPath: AppImages.newExhibition,
-                label: 'Create New Exhibition',
-                onTap: () {
-                  Get.back();
-  Get.toNamed(AppRoutes.createNewExhibitionScreen, 
-  
-  arguments: {"title": "Create New Exhibition"}
-  );
-                
-                },
-              ),
-              SizedBox(height: 12.h),
-              _actionTile(
-                iconPath: AppImages.createNewEvent,
-                label: 'Create New Event',
-                onTap: () {
-                
-                  Get.back();
-                  Get.toNamed(AppRoutes.createNewEventScreen, arguments: {"title": "Create New Event"});
-                },
-              ),
+                  },
+                ),
+                SizedBox(height: 12.h),
+                _actionTile(
+                  iconPath: AppImages.newExhibition,
+                  label: 'Create New Exhibition',
+                  onTap: () {
+                    Get.back();
+                    Get.toNamed(
+                      AppRoutes.createNewExhibitionScreen,
+
+                      arguments: {"title": "Create New Exhibition"},
+                    );
+                  },
+                ),
+                SizedBox(height: 12.h),
+                _actionTile(
+                  iconPath: AppImages.createNewEvent,
+                  label: 'Create New Event',
+                  onTap: () {
+                    Get.back();
+                    Get.toNamed(
+                      AppRoutes.createNewEventScreen,
+                      arguments: {"title": "Create New Event"},
+                    );
+                  },
+                ),
+              ] else if (LocalStorage.myRoll == "curator" ||
+                  LocalStorage.myRoll == "museum") ...[
+                _actionTile(
+                  iconPath: AppImages.newExhibition,
+                  label: 'Create New Exhibition',
+                  onTap: () {
+                    Get.back();
+                    Get.toNamed(
+                      AppRoutes.createNewExhibitionScreen,
+
+                      arguments: {"title": "Create New Exhibition"},
+                    );
+                  },
+                ),
+                SizedBox(height: 12.h),
+                _actionTile(
+                  iconPath: AppImages.createNewEvent,
+                  label: 'Create New Event',
+                  onTap: () {
+                    Get.back();
+                    Get.toNamed(
+                      AppRoutes.createNewEventScreen,
+                      arguments: {"title": "Create New Event"},
+                    );
+                  },
+                ),
+              ] else if (LocalStorage.myRoll == "educational_institution") ...[
+                _actionTile(
+                  iconPath: AppImages.createNewEvent,
+                  label: 'Upload new Learning Materials',
+                  onTap: () {
+                    Get.back();
+                    // Get.toNamed(
+                    //   AppRoutes.createNewEventScreen,
+                    //   arguments: {"title": "Create New Event"},
+                    // );
+                  },
+                ),
+              ],
             ],
           ),
         ),
@@ -191,7 +258,11 @@ class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
     );
   }
 
-  Widget _actionTile({required String iconPath, required String label, required VoidCallback onTap}) {
+  Widget _actionTile({
+    required String iconPath,
+    required String label,
+    required VoidCallback onTap,
+  }) {
     return InkWell(
       onTap: onTap,
       child: Container(

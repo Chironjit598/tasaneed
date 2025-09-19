@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:tasaned_project/component/bottom_nav_bar/common_bottom_bar.dart';
 import 'package:tasaned_project/component/text/common_text.dart';
-import 'package:tasaned_project/services/storage/storage_services.dart';
+import 'package:tasaned_project/features/another_screens/visitor_order_history/presentations/controller/visitor_order_history_controller.dart';
+import 'package:tasaned_project/features/another_screens/visitor_order_history/presentations/widgets/visitor_order_history_sheet.dart';
+import 'package:tasaned_project/features/another_screens/visitor_order_history/presentations/widgets/visitor_order_list.dart' show VisitorOrderList;
 import 'package:tasaned_project/utils/constants/app_colors.dart';
-import 'package:tasaned_project/utils/extensions/extension.dart';
-import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_tabs.dart';
-import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_list.dart';
-import 'package:tasaned_project/features/another_screens/drawer_screens/presentation/widgets/order_filter_sheet.dart';
 import 'package:tasaned_project/utils/constants/app_string.dart';
-import '../controller/order_history_controller.dart';
+import 'package:tasaned_project/utils/extensions/extension.dart';
 
-class OrderHistoryScreen extends StatelessWidget {
-   OrderHistoryScreen({super.key});
-
+class VisitorOrderHistoryScreen extends StatelessWidget {
+  const VisitorOrderHistoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Provide controller for AppBar actions and the body
-    final controller = Get.put(OrderHistoryController());
+      final controller = Get.put(VisitorOrderHistoryController());
     return Scaffold(
       backgroundColor: AppColors.myListBg,
       appBar: AppBar(
@@ -49,7 +46,7 @@ class OrderHistoryScreen extends StatelessWidget {
                   context: context,
                   isScrollControlled: true,
                   backgroundColor: Colors.transparent,
-                  builder: (_) => OrderFilterSheet(
+                  builder: (_) => VisitorOrderHistorySheet(
                     statuses: controller.statuses,
                     initialSelected: controller.selectedStatusFilter,
                     onApply: (value) {
@@ -78,30 +75,26 @@ class OrderHistoryScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: GetBuilder<OrderHistoryController>(
+      body: GetBuilder<VisitorOrderHistoryController>(
         builder: (controller) {
           return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Tabs
-                if (LocalStorage.myRoll != "visitor")
-                  OrderTabs(
-                    selectedTab: controller.selectedTab,
-                    onChanged: controller.changeTab,
-                  ),
-
+           
                 12.height,
-                // Order list
-                OrderList(
+               
+                VisitorOrderList(
                   items: controller.filteredList,
-                  selectedTab: controller.selectedTab,
+                  
                 ),
               ],
             ),
           );
         },
       ),
+
+      bottomNavigationBar: CommonBottomNavBar(currentIndex:1),
 
   
     );

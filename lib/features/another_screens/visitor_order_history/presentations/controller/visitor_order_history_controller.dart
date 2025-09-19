@@ -1,14 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class OrderHistoryController extends GetxController {
-  // 0 = My Purchase, 1 = My Sales
-  int selectedTab = 0;
-  String comeFromType="";
+class VisitorOrderHistoryController extends GetxController {
+
+
 
   final TextEditingController searchController = TextEditingController();
 
-  static OrderHistoryController? instance =Get.put(OrderHistoryController());
+  static VisitorOrderHistoryController? instance =Get.put(VisitorOrderHistoryController());
 
   // Filter state
   String? selectedStatusFilter; // null means no filter
@@ -33,29 +32,14 @@ class OrderHistoryController extends GetxController {
     {"title": "Whispers of the Forest", "price": 250, "status": "Expired"},
   ];
 
-  final List<Map<String, dynamic>> sales = [
-    {"title": "Whispers of the Forest", "price": 250, "status": "New Offer"},
-    {"title": "Whispers of the Forest", "price": 250, "status": "Processing"},
-    {"title": "Whispers of the Forest", "price": 250, "status": "Confirmed"},
-    {"title": "Whispers of the Forest", "price": 250, "status": "Canceled"},
-    {"title": "Whispers of the Forest", "price": 250, "status": "Rejected"},
-    {"title": "Whispers of the Forest", "price": 250, "status": "Expired"},
-  ];
 
-  void changeTab(int index) {
-    if (selectedTab != index) {
-      selectedTab = index;
-      // Reset filter on tab switch
-      selectedStatusFilter = null;
-      update();
-    }
-  }
 
-  List<Map<String, dynamic>> get currentList => selectedTab == 0 ? purchases : sales;
+
+
 
   // Returns the list respecting the selectedStatusFilter
   List<Map<String, dynamic>> get filteredList {
-    final list = currentList;
+    final list = purchases;
     if (selectedStatusFilter == null) return list;
     return list.where((e) => (e['status'] as String).toLowerCase() == selectedStatusFilter!.toLowerCase()).toList();
   }
@@ -70,16 +54,12 @@ class OrderHistoryController extends GetxController {
     update();
   }
 
-  void comeFrom(String type){
-    comeFromType=type;
-    update();
-
-    
-  }
 
   @override
   void onClose() {
     searchController.dispose();
     super.onClose();
   }
+
 }
+  

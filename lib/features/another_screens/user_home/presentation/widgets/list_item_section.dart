@@ -175,6 +175,42 @@ class ListItemSection extends StatelessWidget {
           ),
         ),
 
+               Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CommonText(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.primaryColor,
+              text: AppString.recommendedArts,
+            ),
+
+         ],
+        ),
+
+        16.height,
+
+        SizedBox(
+          height: 182.h,
+          child: ListView.separated(
+            padding: EdgeInsets.only(right: 16.w),
+            scrollDirection: Axis.horizontal,
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return InkWell(
+
+                  onTap: (){
+                    Get.toNamed(AppRoutes.artDetailsScreen, arguments: {
+                      "screenType": "userHome",
+                    });
+                  },
+                  child: ArtsItem());
+            },
+            separatorBuilder: (_, __) => SizedBox(width: 16.w),
+          ),
+        ),
+
+
 
 
 
@@ -217,7 +253,12 @@ class ListItemSection extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                   onTap: (){
-                    Get.toNamed(AppRoutes.exhibitionDetailsScreen);
+                    Get.toNamed(AppRoutes.exhibitionDetailsScreen,
+                    arguments: {
+                      "title": "User Home",
+                    }
+                    
+                    );
                   },
                   child: ExhibitionItem());
             },
@@ -233,7 +274,7 @@ class ListItemSection extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color: AppColors.primaryColor,
-              text: AppString.featureEvents,
+              text: AppString.upcomingEvents,
             ),
 
             InkWell(
@@ -261,7 +302,11 @@ class ListItemSection extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                   onTap: (){
-                    Get.toNamed(AppRoutes.eventDetailsScreen);
+                    Get.toNamed(AppRoutes.eventDetailsScreen, 
+                    arguments: {
+                      "title": "User Home",
+                    }
+                    );
                   },
                   child: EventItem());
             },
